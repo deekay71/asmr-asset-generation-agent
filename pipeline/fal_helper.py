@@ -28,8 +28,8 @@ from pathlib import Path
 # Dependency management
 # ---------------------------------------------------------------------------
 
-def _ensure_packages():
-    """Install missing packages on first run."""
+def _check_packages():
+    """Raise a clear ImportError if required packages are missing."""
     packages = {
         "fal-client": "fal_client",
         "Pillow": "PIL",
@@ -43,15 +43,13 @@ def _ensure_packages():
             missing.append(pkg_name)
 
     if missing:
-        print(f"[FAL] Installing missing packages: {', '.join(missing)}")
-        import subprocess
-        subprocess.check_call(
-            [sys.executable, "-m", "pip", "install", *missing,
-             "--break-system-packages", "-q"]
+        raise ImportError(
+            f"Missing required packages: {', '.join(missing)}\n"
+            f"Install them with: pip install -r pipeline/requirements.txt"
         )
 
 
-_ensure_packages()
+_check_packages()
 
 import fal_client  # noqa: E402
 from PIL import Image  # noqa: E402
@@ -70,14 +68,11 @@ try:
 except ImportError:
     _HAS_REQUESTS = False
 
-# SSL fix for macOS
-_ssl_ctx = ssl.create_default_context()
-_ssl_ctx.check_hostname = False
-_ssl_ctx.verify_mode = ssl.CERT_NONE
-_opener = urllib.request.build_opener(
-    urllib.request.HTTPSHandler(context=_ssl_ctx)
-)
-urllib.request.install_opener(_opener)
+# macOS sometimes rejects Fal CDN certs; keep a permissive context scoped
+# only to download_image (not installed globally to avoid MITM risk).
+_ssl_ctx_permissive = ssl.create_default_context()
+_ssl_ctx_permissive.check_hostname = False
+_ssl_ctx_permissive.verify_mode = ssl.CERT_NONE
 
 
 # ---------------------------------------------------------------------------
@@ -91,9 +86,14 @@ SEEDREAM_EDIT_MODEL = "fal-ai/flux-pro/kontext"   # Seedream v4.5 deprecated —
 SEEDREAM_T2I_MODEL = "fal-ai/flux/dev"             # Seedream v4.5 T2I deprecated — flux/dev is active
 GPT_IMAGE_MODEL = "fal-ai/gpt-image-1.5"
 NANO_BANANA_EDIT_MODEL = "fal-ai/nano-banana/edit"         # v1
-NANO_BANANA_2_EDIT_MODEL = "fal-ai/nano-banana-2/edit"     # Gemini 2.5 Flash Image
 NANO_BANANA_PRO_EDIT_MODEL = "fal-ai/nano-banana-pro/edit" # Gemini 2.5 Pro Image
 NANO_BANANA_T2I_MODEL = "fal-ai/nano-banana-2"
+
+# I2I workhorse — override via env: NANO_BANANA_MODEL=fal-ai/nano-banana-pro/edit
+# Default: Gemini 2.5 Flash Image ($0.030/image).  Pro: Gemini 2.5 Pro Image (~$0.10/image).
+NANO_BANANA_2_EDIT_MODEL = os.getenv(
+    "NANO_BANANA_MODEL", "fal-ai/nano-banana-2/edit"
+)
 
 # Image size presets (name -> Fal.ai value)
 IMAGE_SIZES = {
@@ -1251,11 +1251,11 @@ def download_image(url, output_path):
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     if _HAS_REQUESTS:
-        response = _requests.get(url, timeout=60)
+        response = _requests.get(url, timeout=60, verify=False)
         response.raise_for_status()
         data = response.content
     else:
-        with urllib.request.urlopen(url) as r:
+        with urllib.request.urlopen(url, context=_ssl_ctx_permissive) as r:
             data = r.read()
 
     output_path.write_bytes(data)

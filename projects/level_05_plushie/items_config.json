@@ -2,7 +2,7 @@
   "level": 5,
   "name": "plushie",
   "title": "Stage Gấu bông (Teddy Bear)",
-  "style_reference": "../style_reference/style_anchor_compact.png",
+  "style_reference": "../../references/style_anchor_compact.png",
   "style_description": "Semi-realistic stylized 3D mobile-game prop render. Soft warm lighting from top-left. Smooth gradients, gentle highlight rim, soft shadow under object. Premium product-photography feel. Warm cream/peach/honey palette. Subtle texture detail without going photoreal. Front-on camera, slight 5-degree tilt. NO flat cel-shading, NO cartoon outlines, NO photoreal.",
   "style_lock_prefix": "Match the EXACT same art style, render quality, lighting and finish as the FIRST reference image. The SECOND image is the source to be transformed. Preserve the bear's chocolate brown fur color (#5C3A20), the same camera framing, zoom, pose and proportions as the second image.",
   "color_constant": "The bear's fur base color is STILL the same chocolate brown (#5C3A20) as the original anchor — only wetness, dirt or foam should change the visible surface, never the underlying fur tone.",

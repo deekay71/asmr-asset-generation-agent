@@ -2,7 +2,7 @@
   "level": 6,
   "name": "aircon",
   "title": "Stage Điều hoà (Air Conditioner)",
-  "style_reference": "../style_reference/style_anchor_compact.png",
+  "style_reference": "../../references/style_anchor_compact.png",
   "style_description": "Semi-realistic stylized 3D mobile-game prop render. Soft warm lighting from top-left. Smooth gradients, gentle highlight rim, soft shadow under object. Premium product-photography feel. Subtle texture detail without going photoreal. Strictly front-on camera, no tilt, no angle. NO flat cel-shading, NO cartoon outlines, NO photoreal.",
   "style_lock_prefix": "Match the EXACT same art style, render quality, lighting and finish as the FIRST reference image. The SECOND image is the source to be transformed. Preserve the same camera framing, zoom, body proportions and overall composition as the second image.",
   "color_constant": "The AC unit is a modern wall-mounted split-system indoor unit, glossy white plastic body. Internal coil fins are aluminium-silver. Only dirt, dust, foam or wetness should change between states — never the base materials or color of the unit itself.",
@@ -22,13 +22,13 @@
       "id": "01_open_shell_off_dusty",
       "tool": "blower_A",
       "source_state": "02_coil_stained",
-      "prompt": "Keep the EXACT same camera framing, zoom and proportions. Only change: the front cover panel, the outer shell housing, and both dust filter screens are all DETACHED and no longer visible on the unit. The internal aluminium coil fins are exposed — but they are HEAVILY DUSTY, packed with thick grey-brown dust between every fin gap, cobweb-like dust hanging from the fan blades, dust caked on the inner shell walls, dirty buildup throughout. A green circuit board is exposed on the right side, NOT yet covered by any plastic bag. The dust is dramatic and obvious. No stains visible yet (they're underneath all the dust). Background: flat grey #808080."
+      "prompt": "Keep the EXACT same camera framing, zoom and proportions. Only change: the front cover panel, the outer shell housing, and both dust filter screens are all DETACHED and no longer visible — what remains is HORRIFICALLY FILTHY, like the unit has been abandoned in a warehouse for 20 years. EVERYTHING VISIBLE is buried in grime: (1) the internal aluminium coil fins are COMPLETELY BURIED under a thick felt-mat of grey-brown dust filling every fin gap, fins barely distinguishable; (2) HEAVY DRAPING COBWEBS hang in multiple thick strands from the fan blades, between coil fins, across the inner shell corners — dust-caked cobwebs sagging like dirty grey curtains; (3) the inner shell walls (left, right, top of the open cavity) are NOT pristine white plastic — they are caked with thick grey-brown grime layers, dirty water streaks running down, accumulated filth buildup; (4) the mounting frame edges visible at the sides look stained and dirty; (5) the green circuit board on the right is partially covered in dust film with cobweb wisps trailing across it (NOT covered by any plastic bag yet). Match the SAME extreme dust density and filth level as a fully closed dusty AC — interior should look as abandoned as exterior would. NO stains visibly revealed yet (they're hidden under the dust mat). Background: flat grey #808080."
     },
     {
       "id": "02_coil_stained",
       "tool": "plastic_bag_circuit_cover",
       "source_state": "03_coil_double_protected",
-      "prompt": "Keep the EXACT same camera framing, zoom and proportions. Only change: all the heavy dust on the coil fins is now COMPLETELY GONE — but underneath the dust, deep ugly STAINS are revealed across the aluminium coil, the fan blades, and the inner shell walls: dark brown coffee-soaked discoloration, blackish sewage-water stains, mouldy yellowish patches, greasy grime streaks. The coil looks shocking and disgusting now that the dust has been blown away. The circuit board on the right is exposed and visible (NO plastic bag yet). NO dust, NO foam, NO bags. Background: flat grey #808080."
+      "prompt": "Keep the EXACT same camera framing, zoom and proportions. Only change: all the heavy dust mat AND all the cobwebs are now COMPLETELY GONE (just blown away) — but underneath, EVERYTHING that was hidden by dust is revealed to be HEAVILY STAINED across the FULL INTERIOR: (1) the aluminium coil fins show deep dark brown coffee-soaked discoloration; (2) the fan blades behind the coil are stained black and greasy; (3) the inner shell walls (left, right, top of the cavity) are NOT clean white anymore — they have blackish sewage-water streaks running down them, mouldy yellowish patches in the corners, greasy grime smears, accumulated water-damage stains; (4) the mounting frame edges show rust-coloured and yellow staining. The whole interior looks shocking and disgusting now that the dust is gone. The green circuit board on the right is fully exposed and visible (NO plastic bag yet). NO dust, NO cobwebs, NO foam, NO bags — only raw revealed stains everywhere. Background: flat grey #808080."
     },
     {
       "id": "03_coil_double_protected",
@@ -40,7 +40,7 @@
       "id": "04_coil_foamed",
       "tool": "hose_A",
       "source_state": "05_coil_clean",
-      "prompt": "Keep the EXACT same camera framing, zoom and proportions. Only change: the entire coil area is now densely and EVENLY covered in a thick UNIFORM layer of fine white car-wash style soap foam — small dense fizzy bubbles in a creamy soapy mass spread CONSISTENTLY across the FULL width of the coil from the LEFT edge all the way to the RIGHT edge, every coil fin completely coated with no gaps, no patches missing foam, no concentration in one spot — the foam fills the coil space evenly like a snow blanket of equal depth across the entire opening. The texture is clearly SOAPY with VISIBLE FINE BUBBLES distributed evenly throughout. The TWO protective plastic bags from the previous state (one BLUE-tinted bag over the green circuit board on the right side of the AC, one LARGE translucent plastic pouch underneath catching drips) are STILL clearly visible and FULLY in place — preserve both bags faithfully exactly where they were. Background: flat grey #808080."
+      "prompt": "Keep the EXACT same camera framing, zoom and proportions. Only change: the entire coil area is now COMPLETELY BURIED under an EXTREMELY THICK HEAVY mound of white car-wash style soap foam — the foam PILES HIGH well above the coil surface level, forming a DEEP creamy mound at least 4-5cm above the fins, foam SPILLING and OVERFLOWING over the top edge and side edges of the coil cavity opening, every single aluminium fin is TOTALLY INVISIBLE under the foam — NO metal visible anywhere, the foam is so THICK AND DEEP it completely hides all internal structure. Dense large bubbly foam texture throughout the entire mound. The foam mass is SO HEAVY it sags slightly under its own weight. The TWO protective plastic bags from the previous state (one BLUE-tinted bag over the green circuit board on the right side of the AC, one LARGE translucent plastic pouch underneath catching drips) are STILL clearly visible and FULLY in place — preserve both bags faithfully exactly where they were. Background: flat grey #808080."
     },
     {
       "id": "05_coil_clean",
@@ -53,35 +53,132 @@
       "tool": null,
       "source_state": null,
       "is_anchor": true,
-      "prompt_t2i_flux": "A modern wall-mounted split-system air conditioner indoor unit, perfectly straight front-on view, no tilt, no angle, camera dead-centre and level with the unit, glossy white plastic body with subtle cream highlights, horizontal louvres across the front, slim modern design, manufacturer logo blank, looks brand new and pristine. Centered on a flat grey #808080 background. Semi-realistic stylized 3D mobile-game prop render, smooth gradients, soft warm top-left lighting, gentle soft shadow under the unit, premium product-style render. NOT photoreal, NOT cartoon flat.",
-      "prompt_i2i_nb2": "Generate a new image in the EXACT same art style, rendering quality, lighting and finish as this reference. Subject: a modern wall-mounted split-system air conditioner indoor unit, perfectly straight front-on view, no tilt, no angle, camera dead-centre and level with the unit, glossy white plastic body with subtle cream highlights in the warm lighting, horizontal louvres across the front, slim modern design, no visible brand name, looks brand new and pristine. Centered on a flat grey #808080 background. Soft warm top-left lighting with gentle soft shadow under the unit. Same semi-realistic stylized 3D-prop render quality as the reference compact powder case. NO text, NO logos, NO branding.",
-      "note": "Anchor — generated in Phase 1. Already locked. This is style_variant_A."
+      "prompt_t2i_flux": "A modern wall-mounted split-system indoor air conditioner unit, Samsung-style design. PERFECTLY FLAT FRONT-ON VIEW — absolutely zero tilt, zero angle, zero perspective distortion, camera dead-centre and perfectly level with the unit face. PURE GLOSSY WHITE plastic body — bright clean white, NOT cream, NOT beige, NOT warm-toned — very slightly convex curved front face, wide rectangular proportions (approximately 3:1 width-to-height ratio). Smooth rounded top edge. Horizontal louvre vent slats running across the bottom third of the face, small LED status indicator dot on the right side panel edge. The unit body is wide and low-profile. Looks brand new and pristine. Centered on a flat grey #808080 background. Semi-realistic stylized 3D mobile-game prop render, smooth gradients, soft neutral top-left lighting, gentle soft shadow under the unit, premium product-style render. NOT photoreal, NOT cartoon flat. NO text, NO logos, NO branding.",
+      "prompt_i2i_nb2": "Generate a new image in the EXACT same art style, rendering quality, lighting and finish as this FIRST reference. Subject: a modern Samsung-style wall-mounted split-system air conditioner indoor unit. PERFECTLY FLAT FRONT-ON VIEW — absolutely zero tilt, zero angle, zero perspective distortion, camera dead-centre and perfectly level with the unit face. PURE GLOSSY WHITE plastic body — bright clean white, NOT cream, NOT beige — very slightly convex curved front face. Wide rectangular proportions (approximately 3:1 width-to-height ratio). Smooth rounded top edge. Horizontal louvre vent slats across the bottom third of the face, small LED indicator on the right side edge. Looks brand new and pristine. Centered on a flat grey #808080 background. Soft neutral top-left lighting with gentle soft shadow under the unit. Same semi-realistic stylized 3D-prop render quality as the first reference. NO text, NO logos, NO branding.",
+      "note": "Anchor — regenerate with updated white Samsung-style prompt. This is style_variant_A."
     }
   ],
   "subparts": [
-    {"id": "cover_dusty",     "filename": "subpart_cover_dusty.png",     "source": "chain:00_closed_dusty", "prompt_t2i": "Look at the FULLY DIRTY closed AC unit in the reference image. EXTRACT JUST the front cover panel (the front rectangular face of the AC with the horizontal louvre slats) from this image and present it ALONE as a single detached part lying isolated on a flat grey #808080 background. Preserve the EXACT same heavy dust pattern, dust matting, dust drips, dirty louvre slats and overall fully-dirty 20-years-in-a-warehouse condition as the cover area in the reference image. The detached panel viewed front-on, full panel clearly visible. Soft warm top-left lighting, gentle soft shadow. Semi-realistic stylized 3D mobile-game prop render. Centered, single object."},
-    {"id": "cover_stained",   "filename": "subpart_cover_stained.png",   "source": "subpart:cover_dusty",   "prompt_t2i": "Take the dusty cover panel in the reference image. Change ONLY: all the dust is COMPLETELY GONE, but underneath, the panel is revealed to be HEAVILY STAINED — dark brown coffee-soaked discoloration across the louvre slats, blackish sewage-water streaks running along the slats, mouldy yellowish patches, greasy grime spots. Looks shocking now that the dust is gone. The panel position, framing, lighting and isolated grey background must remain identical to the reference. NO dust, NO foam, NO bubbles."},
-    {"id": "cover_foamed",    "filename": "subpart_cover_foamed.png",    "source": "subpart:cover_stained", "prompt_t2i": "Take the stained cover panel in the reference image. Change ONLY: the entire panel surface is now densely and EVENLY covered in a thick UNIFORM layer of fine white car-wash style soap foam — small dense fizzy bubbles spread CONSISTENTLY across the full panel from edge to edge, settling into the louvre grooves, no gaps, no patches missing foam. Stained surface underneath is hidden by the foam. Panel position, framing, lighting and isolated grey background remain identical to the reference."},
-    {"id": "cover_scrubbed",  "filename": "subpart_cover_scrubbed.png",  "source": "subpart:cover_foamed",  "prompt_t2i": "Take the foam-covered cover panel in the reference image. Change ONLY: the white foam coating now has CLEAR CURVED WAVY WIPE-ARC LINES across it — flowing cloth-wipe arcs in mixed directions, visible streak ridges where foam gathered and thinned valleys where the cloth pushed it aside. NOT brush-furrows, NOT spirals — soft curved cloth-wipe arcs. Panel position, framing, lighting and isolated grey background remain identical to the reference."},
-    {"id": "cover_clean",     "filename": "subpart_cover_clean.png",     "source": "subpart:cover_scrubbed","prompt_t2i": "Take the scrubbed-foam cover panel in the reference image. Change ONLY: all foam has been completely rinsed off, the panel is now PRISTINE clean — bright glossy white, no dust, no stains, no foam, no smudges, fresh-out-of-the-box look. Panel position, framing, lighting and isolated grey background remain identical to the reference."},
-
-    {"id": "shell_dusty",     "filename": "subpart_shell_dusty.png",     "source": "chain:00_closed_dusty", "prompt_t2i": "Look at the FULLY DIRTY closed AC unit in the reference image. EXTRACT JUST the outer shell housing (the curved glossy white plastic body of the AC including the bottom outlet vent slats, NOT including the front cover face) and present it ALONE as a detached part lying isolated on a flat grey #808080 background. Preserve the EXACT same heavy dust matting, dust drips, dirty vent slats and overall fully-dirty 20-years-in-a-warehouse condition as the shell area of the reference image. The detached shell viewed front-on, full shape clearly visible. Soft warm top-left lighting, gentle soft shadow. Semi-realistic stylized 3D mobile-game prop render. Centered, single object."},
-    {"id": "shell_stained",   "filename": "subpart_shell_stained.png",   "source": "subpart:shell_dusty",   "prompt_t2i": "Take the dusty shell housing in the reference image. Change ONLY: all dust is COMPLETELY GONE, but underneath the shell is now revealed to be HEAVILY STAINED — dark brown coffee discoloration, blackish sewage-water streaks, mouldy yellowish patches, greasy grime spots across the curved surface and along the vent slats. Looks shocking now. Shell position, framing, lighting and isolated grey background remain identical to the reference. NO dust, NO foam."},
-    {"id": "shell_foamed",    "filename": "subpart_shell_foamed.png",    "source": "subpart:shell_stained", "prompt_t2i": "Take the stained shell housing in the reference image. Change ONLY: the entire shell surface is now densely and EVENLY covered in a thick UNIFORM layer of fine white car-wash style soap foam — small dense fizzy bubbles spread CONSISTENTLY across the curved body and settling into the vent slat grooves, no gaps. Stained surface underneath hidden by foam. Shell position, framing, lighting and isolated grey background remain identical to the reference."},
-    {"id": "shell_scrubbed",  "filename": "subpart_shell_scrubbed.png",  "source": "subpart:shell_foamed",  "prompt_t2i": "Take the foam-covered shell housing in the reference image. Change ONLY: the white foam coating now has CLEAR CURVED WAVY WIPE-ARC LINES across it — flowing cloth-wipe arcs in mixed directions, visible streak ridges and thinned valleys. NOT brush-furrows, NOT spirals — soft curved cloth-wipe arcs. Shell position, framing, lighting and isolated grey background remain identical to the reference."},
-    {"id": "shell_clean",     "filename": "subpart_shell_clean.png",     "source": "subpart:shell_scrubbed","prompt_t2i": "Take the scrubbed-foam shell housing in the reference image. Change ONLY: all foam has been completely rinsed off, the shell is now PRISTINE clean — bright glossy white, no dust, no stains, no foam, fresh-out-of-the-box. Shell position, framing, lighting and isolated grey background remain identical to the reference."},
-
-    {"id": "filter_1_dusty",    "filename": "subpart_filter_1_dusty.png",    "source": "chain:00_closed_dusty", "prompt_t2i": "Look at the FULLY DIRTY closed AC unit in the reference image. Generate a SINGLE detached rectangular AC dust filter screen. THE FILTER MUST BE A PERFECTLY FLAT RECTANGULAR PANEL — strict rectangle shape (about 4:5 aspect ratio, slightly taller than wide), no perspective distortion, no warping, no trapezoid shape, no curvature, no foreshortening. Viewed PERFECTLY HEAD-ON like a flat slab seen face-front. White plastic rectangular frame around a fine mesh screen interior. The mesh is COMPLETELY CLOGGED and obscured by a thick felt-like mat of grey-brown dust MATCHING the same dust style, intensity and grey-brown color as the dust visible on the AC in the reference image. Dust fuzz buildup hanging off the frame edges. Mesh essentially invisible under the dust load. Present the filter ALONE as a detached single part lying isolated on a flat grey #808080 background. Soft warm top-left lighting, gentle soft shadow under the panel. Semi-realistic stylized 3D mobile-game prop render. Centered, single flat rectangular object."},
-    {"id": "filter_1_stained",  "filename": "subpart_filter_1_stained.png",  "source": "subpart:filter_1_dusty",   "prompt_t2i": "Take the dusty filter screen in the reference image. Change ONLY: the thick dust mat is COMPLETELY GONE, but the mesh is now revealed to be HEAVILY STAINED — dark brown coffee-soaked discoloration across the mesh strands, blackish sewage-water staining in patches, yellowish mouldy tinge, greasy grime trapped in the weave. Mesh shape now visible but uglified by stains. Filter position, framing, lighting and isolated grey background remain identical to the reference. NO dust, NO foam."},
-    {"id": "filter_1_foamed",   "filename": "subpart_filter_1_foamed.png",   "source": "subpart:filter_1_stained", "prompt_t2i": "Take the stained filter screen in the reference image. Change ONLY: the filter is now densely covered in a thick UNIFORM layer of fine white car-wash style soap foam — small dense bubbles coating both the white plastic frame and clinging in the mesh weave, evenly distributed across the entire filter with no gaps. Stained mesh underneath hidden by foam. Filter position, framing, lighting and isolated grey background remain identical to the reference."},
-    {"id": "filter_1_scrubbed", "filename": "subpart_filter_1_scrubbed.png", "source": "subpart:filter_1_foamed",  "prompt_t2i": "Take the foam-covered filter screen in the reference image. Change ONLY: the foam coating now has CLEAR CURVED WAVY WIPE-ARC LINES across it — flowing cloth-wipe arcs in mixed directions across both mesh and frame. NOT brush-furrows, NOT spirals — soft curved cloth-wipe arcs. Filter position, framing, lighting and isolated grey background remain identical to the reference."},
-    {"id": "filter_1_clean",    "filename": "subpart_filter_1_clean.png",    "source": "subpart:filter_1_scrubbed","prompt_t2i": "Take the scrubbed-foam filter screen in the reference image. Change ONLY: all foam has been completely rinsed off, the filter is now PRISTINE clean — bright white frame, see-through clean mesh strands, no dust, no stains, no foam, fresh-out-of-the-box. Filter position, framing, lighting and isolated grey background remain identical to the reference."},
-
-    {"id": "filter_2_dusty",    "filename": "subpart_filter_2_dusty.png",    "source": "chain:00_closed_dusty", "prompt_t2i": "Look at the FULLY DIRTY closed AC unit in the reference image. Generate a SECOND detached rectangular AC dust filter screen (twin to filter 1). THE FILTER MUST BE A PERFECTLY FLAT RECTANGULAR PANEL — strict rectangle shape (about 4:5 aspect ratio, slightly taller than wide), no perspective distortion, no warping, no trapezoid shape, no curvature, no foreshortening. Viewed PERFECTLY HEAD-ON like a flat slab seen face-front. White plastic rectangular frame around a fine mesh screen interior. The mesh is COMPLETELY CLOGGED with a thick felt-like mat of grey-brown dust MATCHING the dust style and intensity on the AC in the reference image, with a slightly different dust pattern from the first filter so it reads as distinct. Present the filter ALONE as a detached single part lying isolated on a flat grey #808080 background. Soft warm top-left lighting, gentle soft shadow under the panel. Semi-realistic stylized 3D mobile-game prop render. Centered, single flat rectangular object."},
-    {"id": "filter_2_stained",  "filename": "subpart_filter_2_stained.png",  "source": "subpart:filter_2_dusty",   "prompt_t2i": "Take the dusty filter screen in the reference image. Change ONLY: the thick dust mat is COMPLETELY GONE, but the mesh is now revealed to be HEAVILY STAINED — dark brown coffee patches, blackish sewage-water streaks, yellowish mouldy tinge, greasy grime trapped in the weave. Mesh shape now visible but uglified by stains. Filter position, framing, lighting and isolated grey background remain identical to the reference. NO dust, NO foam."},
-    {"id": "filter_2_foamed",   "filename": "subpart_filter_2_foamed.png",   "source": "subpart:filter_2_stained", "prompt_t2i": "Take the stained filter screen in the reference image. Change ONLY: the filter is now densely covered in a thick UNIFORM layer of fine white car-wash style soap foam — small dense bubbles coating both the white plastic frame and clinging in the mesh weave, evenly distributed. Stained mesh underneath hidden by foam. Filter position, framing, lighting and isolated grey background remain identical to the reference."},
-    {"id": "filter_2_scrubbed", "filename": "subpart_filter_2_scrubbed.png", "source": "subpart:filter_2_foamed",  "prompt_t2i": "Take the foam-covered filter screen in the reference image. Change ONLY: the foam coating now has CLEAR CURVED WAVY WIPE-ARC LINES across it — flowing cloth-wipe arcs in mixed directions across both mesh and frame. NOT brush-furrows, NOT spirals — soft curved cloth-wipe arcs. Filter position, framing, lighting and isolated grey background remain identical to the reference."},
-    {"id": "filter_2_clean",    "filename": "subpart_filter_2_clean.png",    "source": "subpart:filter_2_scrubbed","prompt_t2i": "Take the scrubbed-foam filter screen in the reference image. Change ONLY: all foam has been completely rinsed off, the filter is now PRISTINE clean — bright white frame, see-through clean mesh strands, no dust, no stains, no foam, fresh-out-of-the-box. Filter position, framing, lighting and isolated grey background remain identical to the reference."}
+    {
+      "id": "cover_dusty",
+      "filename": "subpart_cover_dusty.png",
+      "source": "chain:00_closed_dusty",
+      "prompt_t2i": "Look at the FULLY DIRTY closed AC unit in the reference image. EXTRACT JUST the front cover panel (the front rectangular face of the AC with the horizontal louvre slats) from this image and present it ALONE as a single detached part lying isolated on a flat grey #808080 background. Preserve the EXACT same heavy dust pattern, dust matting, dust drips, dirty louvre slats and overall fully-dirty 20-years-in-a-warehouse condition as the cover area in the reference image. The detached panel viewed front-on, full panel clearly visible. Soft warm top-left lighting, gentle soft shadow. Semi-realistic stylized 3D mobile-game prop render. Centered, single object."
+    },
+    {
+      "id": "cover_stained",
+      "filename": "subpart_cover_stained.png",
+      "source": "subpart:cover_dusty",
+      "prompt_t2i": "Take the dusty cover panel in the reference image. Change ONLY: all the dust is COMPLETELY GONE, but underneath, the panel is revealed to be HEAVILY STAINED — dark brown coffee-soaked discoloration across the louvre slats, blackish sewage-water streaks running along the slats, mouldy yellowish patches, greasy grime spots. Looks shocking now that the dust is gone. The panel position, framing, lighting and isolated grey background must remain identical to the reference. NO dust, NO foam, NO bubbles."
+    },
+    {
+      "id": "cover_foamed",
+      "filename": "subpart_cover_foamed.png",
+      "source": "subpart:cover_stained",
+      "prompt_t2i": "Take the stained cover panel in the reference image. Change ONLY: the entire panel surface is now COMPLETELY BURIED under an EXTREMELY THICK HEAVY mound of white car-wash style soap foam — foam PILING HIGH 4-5cm above the panel surface, OVERFLOWING and dripping off all four edges, every louvre slat totally invisible under the foam — NO plastic visible anywhere. The stained surface underneath is completely obliterated by the sheer mass of foam. Dense bubbly creamy texture throughout. Panel position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "cover_scrubbed",
+      "filename": "subpart_cover_scrubbed.png",
+      "source": "subpart:cover_foamed",
+      "prompt_t2i": "Take the foam-covered cover panel in the reference image. Change ONLY: the white foam coating now has CLEAR CURVED WAVY WIPE-ARC LINES across it — flowing cloth-wipe arcs in mixed directions, visible streak ridges where foam gathered and thinned valleys where the cloth pushed it aside. NOT brush-furrows, NOT spirals — soft curved cloth-wipe arcs. Panel position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "cover_clean",
+      "filename": "subpart_cover_clean.png",
+      "source": "subpart:cover_scrubbed",
+      "prompt_t2i": "Take the scrubbed-foam cover panel in the reference image. Change ONLY: all foam has been completely rinsed off, the panel is now PRISTINE clean — bright glossy white, no dust, no stains, no foam, no smudges, fresh-out-of-the-box look. Panel position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "shell_dusty",
+      "filename": "subpart_shell_dusty.png",
+      "source": "chain:00_closed_dusty",
+      "prompt_t2i": "Look at the FULLY DIRTY closed AC unit in the reference image. EXTRACT JUST the outer shell housing (the curved glossy white plastic body of the AC including the bottom outlet vent slats, NOT including the front cover face) and present it ALONE as a detached part lying isolated on a flat grey #808080 background. Preserve the EXACT same heavy dust matting, dust drips, dirty vent slats and overall fully-dirty 20-years-in-a-warehouse condition as the shell area of the reference image. The detached shell viewed front-on, full shape clearly visible. Soft warm top-left lighting, gentle soft shadow. Semi-realistic stylized 3D mobile-game prop render. Centered, single object."
+    },
+    {
+      "id": "shell_stained",
+      "filename": "subpart_shell_stained.png",
+      "source": "subpart:shell_dusty",
+      "prompt_t2i": "Take the dusty shell housing in the reference image. Change ONLY: all dust is COMPLETELY GONE, but underneath the shell is now revealed to be HEAVILY STAINED — dark brown coffee discoloration, blackish sewage-water streaks, mouldy yellowish patches, greasy grime spots across the curved surface and along the vent slats. Looks shocking now. Shell position, framing, lighting and isolated grey background remain identical to the reference. NO dust, NO foam."
+    },
+    {
+      "id": "shell_foamed",
+      "filename": "subpart_shell_foamed.png",
+      "source": "subpart:shell_stained",
+      "prompt_t2i": "Take the stained shell housing in the reference image. Change ONLY: the entire shell surface is now COMPLETELY BURIED under an EXTREMELY THICK HEAVY mound of white car-wash style soap foam — foam PILING HIGH 4-5cm above the shell surface, OVERFLOWING and dripping off all edges and vent slats, every part of the curved body totally invisible under the foam — NO plastic visible anywhere. The stained surface is completely obliterated. Dense bubbly creamy foam texture throughout, foam sagging under its own weight. Shell position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "shell_scrubbed",
+      "filename": "subpart_shell_scrubbed.png",
+      "source": "subpart:shell_foamed",
+      "prompt_t2i": "Take the foam-covered shell housing in the reference image. Change ONLY: the white foam coating now has CLEAR CURVED WAVY WIPE-ARC LINES across it — flowing cloth-wipe arcs in mixed directions, visible streak ridges and thinned valleys. NOT brush-furrows, NOT spirals — soft curved cloth-wipe arcs. Shell position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "shell_clean",
+      "filename": "subpart_shell_clean.png",
+      "source": "subpart:shell_scrubbed",
+      "prompt_t2i": "Take the scrubbed-foam shell housing in the reference image. Change ONLY: all foam has been completely rinsed off, the shell is now PRISTINE clean — bright glossy white, no dust, no stains, no foam, fresh-out-of-the-box. Shell position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "filter_1_dusty",
+      "filename": "subpart_filter_1_dusty.png",
+      "source": "chain:00_closed_dusty",
+      "prompt_t2i": "Look at the FULLY DIRTY closed AC unit in the reference image. Generate a SINGLE detached rectangular AC dust filter screen. THE FILTER MUST BE A PERFECTLY FLAT RECTANGULAR PANEL — strict rectangle shape (about 4:5 aspect ratio, slightly taller than wide), no perspective distortion, no warping, no trapezoid shape, no curvature, no foreshortening. Viewed PERFECTLY HEAD-ON like a flat slab seen face-front. White plastic rectangular frame around a fine mesh screen interior. The mesh is COMPLETELY CLOGGED and obscured by a thick felt-like mat of grey-brown dust MATCHING the same dust style, intensity and grey-brown color as the dust visible on the AC in the reference image. Dust fuzz buildup hanging off the frame edges. Mesh essentially invisible under the dust load. Present the filter ALONE as a detached single part lying isolated on a flat grey #808080 background. Soft warm top-left lighting, gentle soft shadow under the panel. Semi-realistic stylized 3D mobile-game prop render. Centered, single flat rectangular object."
+    },
+    {
+      "id": "filter_1_stained",
+      "filename": "subpart_filter_1_stained.png",
+      "source": "subpart:filter_1_dusty",
+      "prompt_t2i": "Take the dusty filter screen in the reference image. Change ONLY: the thick dust mat is COMPLETELY GONE, but the mesh is now revealed to be HEAVILY STAINED — dark brown coffee-soaked discoloration across the mesh strands, blackish sewage-water staining in patches, yellowish mouldy tinge, greasy grime trapped in the weave. Mesh shape now visible but uglified by stains. Filter position, framing, lighting and isolated grey background remain identical to the reference. NO dust, NO foam."
+    },
+    {
+      "id": "filter_1_foamed",
+      "filename": "subpart_filter_1_foamed.png",
+      "source": "subpart:filter_1_stained",
+      "prompt_t2i": "Take the stained filter screen in the reference image. Change ONLY: the filter is now COMPLETELY BURIED under an EXTREMELY THICK HEAVY mound of white car-wash style soap foam — foam PILING HIGH 4-5cm above the filter surface, OVERFLOWING and dripping off all four sides of the plastic frame, mesh completely invisible — NO mesh weave, NO plastic frame visible anywhere under the foam. The filter is obliterated by the sheer foam mass. Dense bubbly creamy texture throughout. Filter position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "filter_1_scrubbed",
+      "filename": "subpart_filter_1_scrubbed.png",
+      "source": "subpart:filter_1_foamed",
+      "prompt_t2i": "Take the foam-covered filter screen in the reference image. Change ONLY: the foam coating now has CLEAR CURVED WAVY WIPE-ARC LINES across it — flowing cloth-wipe arcs in mixed directions across both mesh and frame. NOT brush-furrows, NOT spirals — soft curved cloth-wipe arcs. Filter position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "filter_1_clean",
+      "filename": "subpart_filter_1_clean.png",
+      "source": "subpart:filter_1_scrubbed",
+      "prompt_t2i": "Take the scrubbed-foam filter screen in the reference image. Change ONLY: all foam has been completely rinsed off, the filter is now PRISTINE clean — bright white frame, see-through clean mesh strands, no dust, no stains, no foam, fresh-out-of-the-box. Filter position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "filter_2_dusty",
+      "filename": "subpart_filter_2_dusty.png",
+      "source": "chain:00_closed_dusty",
+      "prompt_t2i": "Look at the FULLY DIRTY closed AC unit in the reference image. Generate a SECOND detached rectangular AC dust filter screen (twin to filter 1). THE FILTER MUST BE A PERFECTLY FLAT RECTANGULAR PANEL — strict rectangle shape (about 4:5 aspect ratio, slightly taller than wide), no perspective distortion, no warping, no trapezoid shape, no curvature, no foreshortening. Viewed PERFECTLY HEAD-ON like a flat slab seen face-front. White plastic rectangular frame around a fine mesh screen interior. The mesh is COMPLETELY CLOGGED with a thick felt-like mat of grey-brown dust MATCHING the dust style and intensity on the AC in the reference image, with a slightly different dust pattern from the first filter so it reads as distinct. Present the filter ALONE as a detached single part lying isolated on a flat grey #808080 background. Soft warm top-left lighting, gentle soft shadow under the panel. Semi-realistic stylized 3D mobile-game prop render. Centered, single flat rectangular object."
+    },
+    {
+      "id": "filter_2_stained",
+      "filename": "subpart_filter_2_stained.png",
+      "source": "subpart:filter_2_dusty",
+      "prompt_t2i": "Take the dusty filter screen in the reference image. Change ONLY: the thick dust mat is COMPLETELY GONE, but the mesh is now revealed to be HEAVILY STAINED — dark brown coffee patches, blackish sewage-water streaks, yellowish mouldy tinge, greasy grime trapped in the weave. Mesh shape now visible but uglified by stains. Filter position, framing, lighting and isolated grey background remain identical to the reference. NO dust, NO foam."
+    },
+    {
+      "id": "filter_2_foamed",
+      "filename": "subpart_filter_2_foamed.png",
+      "source": "subpart:filter_2_stained",
+      "prompt_t2i": "Take the stained filter screen in the reference image. Change ONLY: the filter is now COMPLETELY BURIED under an EXTREMELY THICK HEAVY mound of white car-wash style soap foam — foam PILING HIGH 4-5cm above the filter surface, OVERFLOWING and dripping off all four sides of the plastic frame, mesh completely invisible — NO mesh weave, NO plastic frame visible anywhere under the foam. The filter is obliterated by the sheer foam mass. Dense bubbly creamy texture throughout. Filter position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "filter_2_scrubbed",
+      "filename": "subpart_filter_2_scrubbed.png",
+      "source": "subpart:filter_2_foamed",
+      "prompt_t2i": "Take the foam-covered filter screen in the reference image. Change ONLY: the foam coating now has CLEAR CURVED WAVY WIPE-ARC LINES across it — flowing cloth-wipe arcs in mixed directions across both mesh and frame. NOT brush-furrows, NOT spirals — soft curved cloth-wipe arcs. Filter position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "filter_2_clean",
+      "filename": "subpart_filter_2_clean.png",
+      "source": "subpart:filter_2_scrubbed",
+      "prompt_t2i": "Take the scrubbed-foam filter screen in the reference image. Change ONLY: all foam has been completely rinsed off, the filter is now PRISTINE clean — bright white frame, see-through clean mesh strands, no dust, no stains, no foam, fresh-out-of-the-box. Filter position, framing, lighting and isolated grey background remain identical to the reference."
+    }
   ],
   "style_variants": [
     {
@@ -105,10 +202,30 @@
   ],
   "tool_orientation_rule": "Full side-profile view, rotated diagonally across the frame. Handle in LOWER-RIGHT of the image, business-end in UPPER-LEFT. Full length of the tool clearly visible in profile. The business-end (bristles / nozzle / tip / opening) is visible from the SIDE — not pointing at the camera, not pointing straight away into the background, but oriented diagonally up-left so the side reads clearly. NO water, NO foam, NO mist, NO air stream, NO motion lines, NO sparks, NO attached debris, NO hands holding it — just the dry isolated tool itself. Isolated on flat white background. Semi-realistic stylized 3D mobile-game prop render in the same premium product-photography style as the reference. Soft warm top-left lighting, gentle highlight rim, soft drop shadow directly under the tool. Centered, single object, 15% padding around object.",
   "tools_required": [
-    {"id": "hand_rubber_glove", "filename": "hand_rubber_glove.png", "cached": true, "prompt_t2i": "(cached from prior level — already in manifest)"},
-    {"id": "hose_A",            "filename": "hose_A.png",            "cached": true, "prompt_t2i": "(cached from prior level)"},
-    {"id": "brush_A",           "filename": "brush_A.png",           "cached": true, "prompt_t2i": "(cached from prior level)"},
-    {"id": "mini_blower_A",     "filename": "mini_blower_A.png",     "cached": true, "prompt_t2i": "(cached from prior level)"},
+    {
+      "id": "hand_rubber_glove",
+      "filename": "hand_rubber_glove.png",
+      "cached": true,
+      "prompt_t2i": "(cached from prior level — already in manifest)"
+    },
+    {
+      "id": "hose_A",
+      "filename": "hose_A.png",
+      "cached": true,
+      "prompt_t2i": "(cached from prior level)"
+    },
+    {
+      "id": "brush_A",
+      "filename": "brush_A.png",
+      "cached": true,
+      "prompt_t2i": "(cached from prior level)"
+    },
+    {
+      "id": "mini_blower_A",
+      "filename": "mini_blower_A.png",
+      "cached": true,
+      "prompt_t2i": "(cached from prior level)"
+    },
     {
       "id": "blower_A",
       "filename": "blower_A.png",
