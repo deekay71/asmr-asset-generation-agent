@@ -1,0 +1,35 @@
+{
+  "schema_version": "0.1",
+  "description": "Index of all reusable prompt patterns. composer.py reads this.",
+  "patterns": [
+    {
+      "id": "foam/realistic_flat_suds",
+      "file": "patterns/foam/realistic_flat_suds.md",
+      "category": "foam",
+      "name": "Realistic flat suds",
+      "tags": ["foam", "realistic", "flat", "no-drip", "subpart"],
+      "use_case": "Subpart foam state — clearly visible foam, flat profile, no edge drips.",
+      "snippet": "Take the stained [OBJECT] in the reference image. PRESERVE the EXACT SAME shape, size, position and framing. The [OBJECT] surface is now COMPLETELY COVERED in a CLEARLY VISIBLE layer of PURE WHITE soap foam — foam is THE DOMINANT VISUAL across the [OBJECT], completely OBSCURING the stains underneath. White foam covers 100% of the visible [OBJECT] face. Foam is REALISTIC SOAP SUDS texture (fine bubbly small-bubble texture, like dish soap foam) — clearly bright white with subtle bubble dots, NOT yellowed, NOT cartoonish whipped cream. Foam keeps a MODERATE FLAT-ish profile — visible thickness but not piled into a tall mound, sitting close to the surface like a generous coating of bath foam. ABSOLUTELY NO FOAM DRIPPING OFF EDGES — foam edges stay neatly within the [OBJECT] silhouette boundary, NO foam blobs hanging off the sides, NO drips off the bottom edges, NO sagging foam. [OBJECT] position, framing, lighting and isolated grey background remain identical to the reference.",
+      "negatives": [
+        "NO foam dripping off edges",
+        "NO foam blobs hanging beyond the silhouette",
+        "NO sagging foam under its own weight",
+        "NO whipped-cream / cartoon puffy foam",
+        "NO yellowed or grey foam (must read as bright clean white)",
+        "NO foam covering less than 100% of the surface"
+      ],
+      "placeholders": ["[OBJECT]"],
+      "compatible_with": [
+        "shape_rules/preserve_silhouette",
+        "shape_rules/front_on_view",
+        "scrubbed/wipe_arcs_deflated",
+        "lighting/soft_warm_top_left"
+      ],
+      "tested_on": [
+        {"level": 6, "name": "aircon", "sprites": ["shell_foamed", "filter_1_foamed"], "round": 3, "date": "2026-05-25"}
+      ],
+      "cost_to_derive_usd": 0.18,
+      "rounds_to_dial_in": 2
+    }
+  ]
+}
