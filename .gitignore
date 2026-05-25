@@ -70,5 +70,7 @@ projects/level_*/compare_*.html
 projects/level_*/feedback_server.py
 projects/level_*/staging/versions/
 
-# Claude Code local config
-.claude/
+# Claude Code config — ignore everything by default, whitelist commands/skills
+.claude/*
+!.claude/commands/
+!.claude/skills/
