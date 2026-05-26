@@ -1,0 +1,17 @@
+# Step type: tool_sprite
+# A cleaning tool the player drags onto the asset.
+
+LIGHTING: {{lighting}}
+CAMERA: diagonal side-profile, handle in LOWER-RIGHT of frame, business-end in UPPER-LEFT
+TASK (tool_sprite — player-POV cleaning tool, side profile):
+{{subject_description}}
+
+ISOLATION: ONE SINGLE tool. Single coherent silhouette (NEVER merged into two tools). NO water/foam/mist/motion-lines/sparks/hands. The full tool length clearly visible from the side.
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+BG: {{bg_directive}}

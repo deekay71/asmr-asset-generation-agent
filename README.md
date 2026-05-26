@@ -1,143 +1,103 @@
-# Shine It Asset Agent — V2
+# Shine It Asset Agent — V6
 
-AI asset-generation pipeline for **single-item cleaning games**.
-Takes a level design + art-style reference, produces production-ready transparent
-PNGs for every state in an item's cleaning chain — chain states, sub-parts,
-trash overlays, tools, style variants, and scene backgrounds.
+AI asset-generation pipeline for **single-item ASMR cleaning games**.
+GDD → structured prompts → I2I generation → review → learn → ship.
 
-**Two canonical examples included** so you can run something the moment you set up:
-- **Level 5 — Plushie / Teddy Bear** — single item, 7-state chain + 3 trash overlays
-- **Level 6 — Air Conditioner** — complex item, 7-state chain + 20 sub-parts + 2 special tools + 3 style variants + textured wall background
+V6's new headline feature: **a self-improving prompt agent** that gets smarter every time you give feedback.
 
-## What's New in V2 (vs V1)
+## What V6 Adds
 
-V1 worked but every fix required inline Python scripts. V2 makes everything CLI:
+| Feature | What it does |
+|---|---|
+| **`prompt_agent/`** | Slot-filled template per `step_type` (foam, scrub, dust, stain, etc.). Replaces V3/V4/V5's free-form envelope wrapper. Tight, structured prompts (~600 chars vs ~3,500). |
+| **`step_patterns.json` learning library** | 13 reusable patterns with `best_practices`, `forbid`, and `candidates` arrays. Permanent rules accumulate from feedback. |
+| **`--learn` CLI flag** | After a review session (`regen_queue.json` saved), runs Gemini Flash text-only to distil comments into structured rules, tracks candidates, promotes to permanent after 2nd recurrence. |
+| **Approve / Reject / Regen-with-comment HTML** | Per-asset tri-state radio + free-text comment input. Saves both `approved_ids.json` (for Phase 7 promote) and `regen_queue.json` (for `--learn` + next-regen prompts). |
+| **"Rules learned" banner** | Review HTML shows a banner when the agent has promoted rules since your last visit. |
+| **V5 Backend abstraction** | Vertex Flash default (`gemini-2.5-flash-image`); Fal NB-Pro available for hero shots. |
+| **V4 Sub-flow composite anchor** | New phase 1b for items that open up to reveal detached parts (AC filters, keyboard keycaps). |
+| **V3+ schema fields** | `chain_consistency_contract`, `asmr_framing`, `style_mode`, `containment_rule` — all optional, auto-injected. |
+| **V2 features still work** | Per-asset I2I via `source`, multi-anchor `sources: [...]`, `--state` / `--sprite` / `--tool` selectors, `--dry-run`, `--yes`, partial-promote via `--only-approved`. |
 
-| Feature | V1 | V2 |
-|---|---|---|
-| Regen one state without redoing the chain | inline script | `--state 04_foam` |
-| Regen one sub-part | inline script | `--sprite cover_dusty` |
-| Regen one tool | edit manifest + run | `--tool brush_A --force` |
-| Preview cost before spending | manual math | `--dry-run` |
-| Track lifetime cost | manual | `cost_log.jsonl` |
-| Multi-anchor I2I for sprites | only on chain | `sources: ["style_ref", "chain:00_..."]` |
-| Partial promote | edit files manually | `--only-approved` (via review HTML) |
-| Schema validation | runtime crash | `phase 2` lints, fails fast |
-| Sub-part bg removal | hybrid (kept dust fringes) | local rembg (clean cutouts) |
-| Scene background generation | not supported | `backgrounds` section |
-| Tool orientation rule | inconsistent | locked diagonal side-profile |
-| B-tier alternative tools | not supported | first-class category |
-
-## Quick Start (3 minutes)
+## Quick Start
 
 ```bash
-unzip shine_it_asset_agent_v2.zip
-cd shine_it_asset_agent_v2
-
-# 1. Install Python deps
+unzip shine_it_asset_agent_v6.zip
+cd shine_it_asset_agent_v6
 pip install -r pipeline/requirements.txt
 
-# 2. Add your Fal.ai key
+# Add your Fal key (for fal_nb2 / fal_nb_pro backends):
 cp .env.example .env
-# Edit .env, paste your FAL_KEY from https://fal.ai/dashboard/keys
+# edit .env: FAL_KEY=...
 
-# 3. Smoke-test the package (free)
+# (Optional) Add a Google service-account JSON for Vertex Flash backend:
+cp /path/to/gemini_service_account.json .
+
+# Smoke test (free):
 python pipeline/shine_it_pipeline.py --level 5 --phase 2
 python pipeline/shine_it_pipeline.py --level 6 --phase 2
-# Both should print: "[OK] items_config.json valid — ... All sources resolve."
+python pipeline/shine_it_pipeline.py --level 7 --phase 2
+python pipeline/shine_it_pipeline.py --level 8 --phase 2
 
-# 4. See what a phase WOULD cost (free):
-python pipeline/shine_it_pipeline.py --level 6 --phase 3 --dry-run
+# Cost preview (free):
+python pipeline/shine_it_pipeline.py --level 7 --phase 3 --dry-run
 
-# 5. Generate something for real (only when ready):
-python pipeline/shine_it_pipeline.py --level 6 --phase 3 --state 04_coil_foamed --yes
-# That's a single chain state — costs $0.03
+# Generate for real (Vertex Flash default):
+python pipeline/shine_it_pipeline.py --level 7 --phase 3 --yes
+
+# Learning pass after review (free except for ~$0.001/feedback distillation):
+python pipeline/shine_it_pipeline.py --level 7 --learn
 ```
 
-**👉 Read [WORKFLOW.md](WORKFLOW.md) BEFORE running anything that spends money.** It walks through every phase, where you (the human) need to decide before continuing, and which CLI flags save you the most when iterating.
+## Canonical Levels Included
 
-## Package Layout
+- **L5 Plushie** — V2 schema, simple chain
+- **L6 AC** — V3 schema, sub-parts heavy, plastic-bag tools
+- **L7 Keyboard** — **V6 schema** (canonical example for new levels), sub-flow with keycap_row composite
+- **L8 Fireplace** — V3 schema, brick repair + mortar restoration
+
+## Read These In Order
+
+1. **`README.md`** ← you are here
+2. **`docs/WORKFLOW.md`** — phase-by-phase walkthrough + V6 review/learn loop
+3. **`docs/BEST_PRACTICES.md`** — what's worked across levels
+4. **`docs/V6_CHANGELOG.md`** — V5 → V6 delta with rationale
+5. **`docs/TOOL_RULES.md`** — tool sprite orientation rule
+6. **Look at** `pipeline/step_patterns.json` — the agent's permanent memory. Adds rules every learn pass.
+
+## V6 Architecture at a Glance
 
 ```
-shine_it_asset_agent_v2/
-├── README.md                            ← you are here
-├── SETUP.md                             ← dependencies, env, fal credit
-├── WORKFLOW.md                          ← ★ phase walkthrough + human gates ★
-├── BEST_PRACTICES.md                    ← chain design lessons learned
-├── CHANGELOG.md                         ← V1 → V2 changes
+shine_it_asset_agent_v6/
+├── README.md
 ├── docs/
-│   └── TOOL_RULES.md                    ← tool sprite orientation rule
-├── .env.example
-│
+│   ├── WORKFLOW.md
+│   ├── BEST_PRACTICES.md
+│   ├── V6_CHANGELOG.md
+│   └── TOOL_RULES.md
 ├── pipeline/
-│   ├── shine_it_pipeline.py             ← V2 CLI orchestrator
-│   ├── fal_helper.py                    ← Fal.ai client + rembg + cropping
+│   ├── shine_it_pipeline.py    ← CLI orchestrator
+│   ├── fal_helper.py           ← Fal.ai client + rembg + cropping
+│   ├── i2i_backend.py          ← V5 backend abstraction (Fal NB-2 / Pro, Vertex Flash)
+│   ├── prompt_agent/           ← V6 NEW
+│   │   ├── __init__.py
+│   │   ├── compose.py          ← assembles structured prompts per step_type
+│   │   ├── learn.py            ← distils feedback into rules
+│   │   ├── memory.py           ← step_patterns.json I/O
+│   │   └── templates/          ← 13 step_type templates
+│   ├── step_patterns.json      ← V6 NEW — the agent's permanent memory
 │   └── requirements.txt
-│
-├── references/
-│   ├── style_anchor_compact.png         ← canonical I2I style reference
-│   ├── tool_orientation/                ← reference images for tool orientation
-│   │   ├── co_trang_diem 1.png          (powder brush — bristles into frame)
-│   │   ├── nhip 1.png                   (tweezers — tips into frame)
-│   │   ├── khan_lau 1.png / khan_nano 1.png  (cloths)
-│   │   └── tamper 1.png                 (tamper)
-│   └── gdd/
-│       └── level_design.pdf             ← original 6-level GDD
-│
+├── references/                 ← style refs, GDD PDFs, tool orientation examples
 └── projects/
-    ├── level_05_plushie/
-    │   ├── items_config.json            ← canonical small-scope example
-    │   ├── final/                       ← 10 production PNGs
-    │   └── approved/                    (target for Phase 7)
-    │
-    ├── level_06_aircon/
-    │   ├── items_config.json            ← canonical complex example (30 assets)
-    │   ├── final/                       ← 30 production PNGs
-    │   ├── approved/                    (target for Phase 7)
-    │   └── staging/                     ← anchor preserved so chain regen works
-    │
-    └── tools/
-        ├── tools_manifest.json          ← shared tool library registry
-        └── final/                       ← 14 production tool sprites
+    ├── level_05_plushie/       ← V2 canonical
+    ├── level_06_aircon/        ← V3 canonical
+    ├── level_07_keyboard/      ← V6 canonical
+    ├── level_08_fireplace/     ← V3 canonical
+    └── tools/                  ← shared tool sprite library
 ```
 
-## Two Canonical Examples — What to Study
+## Backwards Compatibility
 
-### Level 5 — Plushie (`projects/level_05_plushie/`)
-Simplest possible level: one item, one chain, three independent trash overlays. Read this first if you're new to the schema. Use it as the template for any simple "single item, cleaning steps" level (shoe, jewelry, kettle, etc.).
+V6 is **fully backwards compatible**. V2/V3/V4/V5 configs (Levels 5, 6, 8) keep working unchanged. Only levels that opt in to V6 (by declaring `step_type` or `spec` blocks on assets) route through the new prompt agent.
 
-### Level 6 — AC (`projects/level_06_aircon/`)
-Maximally complex example: chain + sub-parts that reference chain states via `source:` field + style variants + textured wall background + special-purpose tools (plastic bags extracted from a specific chain state). Read this when you need to design something that's assembled from parts or has more than one cleaning surface.
-
-## Core Rules (locked in V2)
-
-- **Always I2I.** T2I drifts off-style. Use `source:` or `sources:` to provide visual context.
-- **Multi-anchor I2I for sprites that need both style AND content reference.** Pass `sources: ["style_ref", "chain:00_closed_dusty"]`.
-- **No half-states.** Each chain state is a clean snapshot — never an in-progress transition.
-- **Dirt should be DRAMATIC.** "Mildly dirty" reads as "nothing to clean."
-- **Tools point away — diagonal side profile.** See `docs/TOOL_RULES.md`.
-- **Trash items are SEPARATE sprites.** Don't bake them into the chain.
-- **Backgrounds are opaque scene plates.** No rembg, drawn behind everything.
-
-## Approximate Costs
-
-| Action | Cost |
-|---|---|
-| Anchor exploration (FLUX + NB-2) | $0.08 |
-| Chain state | $0.03 each |
-| Sub-part sprite | $0.03 each |
-| Tool sprite | $0.03 each |
-| Background plate | $0.03 each |
-| Full new level (~16 assets) | ~$0.50 |
-| With safe retry buffer | ~$1.00 |
-| Level 6 (30+ assets, expensive variant) | ~$2.50–3.00 |
-
-## When Things Go Wrong
-
-See `BEST_PRACTICES.md` → "When Things Go Wrong" for the troubleshooting table. Most common: identity drift across chain (tighten `color_constant`), warped subparts (force "perfectly flat rectangular" in prompt), bg fringe (rembg algorithm choice in Phase 5).
-
-## Credits
-
-Built on `art-asset-producer` pipeline. Uses Fal.ai (Nano-Banana 2 Edit, FLUX Pro 1.1), rembg (U2Net), Pillow. Style reference adapted from premium product-photography render references.
-
-Total V1 → V2 dev: 1 session. Most of the friction-fixing happened by writing actual levels and watching them break.
+To force V5-style envelope for a level even after migration, set `"pipeline_version": 5` at the top of items_config.json.

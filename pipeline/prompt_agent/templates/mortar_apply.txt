@@ -1,0 +1,21 @@
+# Step type: mortar_apply
+# Rough mortar applied over brick joints — uneven, unfinished, freshly applied.
+
+LIGHTING: {{lighting}}
+CAMERA: {{camera}}
+TASK (mortar_apply — apply rough mortar over the raw joints from prior state):
+{{diff_from_prev}}
+
+OBJECTS IN FRAME: {{object_count}}
+PRESERVE FROM PREV: {{preserve_from_prev}}
+
+MORTAR SPEC: rough wet grey mortar/cement. Bumpy, uneven, visible trowel marks + raised ridges. Mortar overlaps slightly onto brick faces. NOT smooth — that's the next step (sanding).
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+CONTAINMENT: {{containment}}
+BG: {{bg_directive}}

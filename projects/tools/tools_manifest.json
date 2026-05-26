@@ -82,5 +82,17 @@
     "first_used_level": 6,
     "prompt": "ONE SINGLE handheld electric rotating-brush scrubber \u2014 a small power-tool with a white-and-teal plastic ergonomic grip handle, a short shaft, and a circular rotating bristle brush head at the end. Looks like a motorised cleaning tool, more powerful than a manual brush. Apply the tool orientation rule: shown in side profile, the grip handle in the LOWER-RIGHT of the image, the circular brush head extending diagonally toward the UPPER-LEFT with the side of the bristle disc fully visible. Full tool clearly visible. NO motion lines, NO foam, NO water \u2014 single coherent tool silhouette.",
     "method": "i2i_from_style_ref"
+  },
+  "spray_bottle_red_v6test": {
+    "filename": "spray_bottle_red_v6test.png",
+    "first_used_level": 6,
+    "prompt": "ONE SINGLE spray bottle \u2014 exactly one bottle, modern realistic product-style. Body color: muted RED-GREY (dusty brick-red with grey undertones, matte plastic finish). Cylindrical bottle body with a trigger sprayer head and short nozzle at the top. View: from BEHIND the bottle, slightly tilted to the LEFT, so the rear of the bottle and the back side of the trigger head are facing the camera at a three-quarter rear angle. Modern realistic styling, premium product-photo quality. Single coherent silhouette, NOT TWO BOTTLES, NOT MERGED. No foam, no spray, no water, no liquid, no hands.",
+    "method": "i2i_from_style_ref_via_google_flash"
+  },
+  "foam_sprayer_pink_v6test": {
+    "filename": "foam_sprayer_pink_v6test.png",
+    "first_used_level": 6,
+    "prompt": "ONE SINGLE electric foam-sprayer machine \u2014 modern realistic product-style. Two-tone color: MAGENTA PINK (hot pink / c\u00e1nh sen) body with BLACK accents (black trigger handle, black hose, black nozzle tip). A power foam-cannon: cylindrical pink tank/body, black coiled hose, black trigger gun at the end of the hose, small fan-shaped nozzle at the tip. View: from BEHIND the machine, slightly tilted to the LEFT, so the rear of the tank and the back of the trigger gun face the camera at a three-quarter rear angle. Modern realistic styling, premium product-photo quality. Single coherent silhouette. NO foam emerging, NO water, NO motion lines, NO hands.",
+    "method": "i2i_from_style_ref_via_google_flash"
   }
 }

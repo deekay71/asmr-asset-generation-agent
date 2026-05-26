@@ -1,0 +1,168 @@
+{
+  "schema_version": "3.0",
+  "level": 7,
+  "name": "keyboard",
+  "title": "Stage Bàn phím (Mechanical Keyboard Restoration)",
+  "style_reference": "../style_reference/style_anchor_compact.png",
+
+  "chain_consistency_contract": "Use the same EXACT mechanical keyboard model in every state. Keep the same strictly front-on top-down view, the same proportions, the same width-to-height ratio, the same silhouette, and the same key layout across all states. The keyboard must look like one continuous restoration process, not different keyboards. Keycap positions, switch positions, frame outline, and corner geometry must stay CONSISTENT and synchronised between adjacent states, then gradually reduce dirt/stain levels as cleaning progresses. The full-size layout (function row, alphanumeric block, modifier keys, arrow cluster, numpad) must remain identical across every state.",
+
+  "asmr_framing": "This is for a 2D ASMR cleaning game. The player wants a deeply satisfying disgust→clean transition as they restore a filthy, neglected mechanical keyboard. Dirty states should feel disgusting, embedded with old grime, neglected, ugly — like the keyboard has been sitting in an attic for 20 years collecting dust, leaves, moss and mould. Clean states should feel fresh, bright, satisfying, and like-new — a beautiful clean mechanical keyboard ready to type on. No people, no hands, no UI, no text, no labels, no room background visible in the asset.",
+
+  "style_mode": "2d_game_asset_flat",
+
+  "sensory_vocabulary": {
+    "dust_adjectives": ["thick", "dense", "heavy", "old", "dry", "decade-old", "matted", "powdery-brown"],
+    "stain_adjectives": ["yellow-brown", "moldy", "patchy", "deeply embedded", "ugly", "old", "unsanitary", "smoker-yellow"],
+    "foam_adjectives": ["thick", "rich", "dense", "fine-bubbled", "creamy", "car-wash style", "satisfying"],
+    "clean_adjectives": ["fresh", "bright", "crisp", "like new", "satisfying", "polished", "polished-aluminium"]
+  },
+
+  "color_constant": "The keyboard identity is FIXED: a modern full-size mechanical keyboard, dark slate-grey aluminium frame (#3A3D42), bright white keycaps with crisp dark legends (NO actual text rendered — implied/blurred for the asset), full-size layout (function row across top, alphanumeric block, modifier keys, arrow cluster on the right, numpad on the far right). Mechanical switches visible only when keycaps are removed — Cherry-MX-style cross-mount switches in a slightly lighter grey plate inside each switch well. The frame has a slim profile with subtle rounded corners. NEVER change the layout, the frame colour, the keycap colour, the switch positions, or the keyboard proportions. Only dust, leaves, moss, stains, foam, or wetness change between states.",
+
+  "anchor_state": "06_pristine",
+  "bg_color": "#00FF00",
+  "generation_order": "reverse",
+
+  "_chain_restructure_note": "V5 restructure (May 2026): main chain now keeps keycaps INSTALLED in all 4 states (00/01/02/06). The 'bare frame with keycaps detached' visual lives entirely in the Phase 1b subflow composite, which sources from the style reference (generates from scratch). Vertex Flash couldn't reliably remove keycaps in I2I chain transitions — so the V4 subflow architecture is the cleaner home for the keycaps-detached view.",
+  "states": [
+    {
+      "id": "00_trashed",
+      "tool": "mini_blower_A",
+      "source_state": "01_leaves_off",
+      "step_type": "dirty_base",
+      "prompt": "Keep the EXACT same keyboard silhouette, layout, proportions and front-on view as the source. ONLY change: the keyboard is now in its most ABANDONED, DISGUSTING, NEGLECTED state — like it has been forgotten in a derelict attic for THIRTY YEARS. The keyboard is OVERWHELMINGLY filthy: every surface BLANKETED in a thick dense matted layer of old grey-brown dust covering 90% of the keys, dust matted DEEPLY into every single gap and crevice between every key, fur-like dust stalactites dripping along the sides and bottom. EIGHT to TEN dried leaves (mixed maple + pine + oak, orange-yellow-brown, brittle, curled) visibly resting on TOP of the keyboard scattered chaotically across the surface. THICK GREEN-GREY MOSS growing aggressively along ALL FOUR edges of the keyboard, creeping over corners and partially over keys near the borders. Some individual keys are completely BURIED under the debris and not visible at all. The keyboard looks unrecognisable as a usable object — archaeological detritus pulled from a long-abandoned room. NO debris items on the floor in front of the keyboard. Effects MUST stay strictly within the keyboard silhouette + immediate edge. Background: flat solid pure green chroma-key #00FF00."
+    },
+    {
+      "id": "01_leaves_off",
+      "tool": "mini_brush_A",
+      "source_state": "02_dust_swept",
+      "step_type": "dust_layer",
+      "prompt": "Keep the EXACT same keyboard silhouette, layout, proportions and view as the source image. ONLY change: the dried leaves are GONE, the green moss is GONE — but the keyboard is STILL DRAMATICALLY DIRTY. Every key is still BLANKETED in a thick dense layer of old grey-brown dust covering 80% of every keycap surface, dust matted DEEPLY into every gap and crevice, dust streaks running down the sides, dust caked along the frame edges. Individual key outlines just barely peek through the heavy dust mat. The dust layer is OBVIOUSLY HEAVY and disgusting — still in need of aggressive cleaning. NO leaves, NO moss, NO debris. Background: flat solid pure green chroma-key #00FF00."
+    },
+    {
+      "id": "02_dust_swept",
+      "tool": "keycap_puller",
+      "source_state": "06_pristine",
+      "step_type": "stain_reveal",
+      "prompt": "Keep the EXACT same keyboard silhouette, layout, proportions, two-tone keycap arrangement and view as the source image. ONLY change: every single keycap is now DRAMATICALLY STAINED — deeply yellow-brown smoker-discoloration covering 95% of every keycap surface, ugly patchy moldy spots, almost every keycap looks DISGUSTING and DEEPLY SOILED (not a subtle yellow tint — heavy embedded stains as if decades of cigarette smoke, coffee, sweat and grease have soaked in). The WASD cluster, spacebar, and modifier keys are DARKEST — almost dirty-grey-brown — looking the most worn and unsanitary. The aluminium frame between keycaps is ENCRUSTED with yellow-brown grime in every visible joint, seam and bezel. The legends on the keys are partially obscured by the grime but still imply alphanumeric characters. All keycaps remain INSTALLED on the keyboard frame. NO dust covering — the staining IS the surface, deeply embedded. NO leaves, NO moss. Background: flat solid pure green chroma-key #00FF00."
+    },
+    {
+      "id": "06_pristine",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": true,
+      "step_type": "polish_complete",
+      "prompt_i2i_nb2": "Generate a new image in the EXACT same premium product-photography art style as this reference. Subject: a fully restored MODERN FULL-SIZE MECHANICAL KEYBOARD viewed strictly from a top-down angle (looking straight down at the keyboard from above), no tilt, no angle, camera dead-centre. Dark slate-grey aluminium frame, bright white keycaps with crisp dark legends (legends should be blurred / non-readable for the asset — implied detail only), full-size layout: function row across the top, alphanumeric block in the middle, modifier keys at the bottom, arrow cluster on the right, numpad on the far right. Slim profile, subtle rounded corners, mechanical Cherry-MX-style switches just barely peeking from under the keycaps. Looks brand new, satisfying, crisp, polished. Centered on a flat solid pure green chroma-key #00FF00 background. Matte clean render. Same semi-realistic stylized 3D-prop quality as the reference compact powder case but with the 2D game-asset flatness. NO text legends rendered, NO logos, NO branding, NO RGB lighting, NO desk surface, NO hands.",
+      "note": "Anchor — Style A (modern full-size, dark frame + white caps)."
+    }
+  ],
+
+  "subflows": [
+    {
+      "id": "keycaps_detached",
+      "filename": "subflow_keycaps_detached.png",
+      "from_chain_state": "02_dust_swept",
+      "parts": ["keycap_row"],
+      "prompt": "Look at the assembled dirty keyboard in the source image as a STYLE REFERENCE ONLY (for color palette, dirt level, and frame style). DO NOT copy the assembled keyboard into the output. The OUTPUT is a fundamentally different composite.\n\nOUTPUT REQUIREMENTS — the output image contains EXACTLY TWO sections and NOTHING ELSE:\n\nSECTION 1 (TOP HALF of frame, ~45% of image height): A BARE keyboard frame — dark slate-grey aluminium, full-size layout outline, dusty/yellow-brown stained. ALL KEYCAPS REMOVED — every key well is empty, revealing the grid of Cherry-MX cross-mount switches inside. This is just the frame chassis with no caps anywhere.\n\nSECTION 2 (BOTTOM HALF of frame, ~45% of image height): A LARGE GRID OF DETACHED KEYCAPS laid out in MULTIPLE ROWS (5–6 stacked rows) — the COMPLETE set of keys that came off the keyboard: function row + alphanumeric block + modifier keys + arrow cluster + numpad. Every keycap is laid stem-down (face-up), spaced evenly with small visible gaps between them. EVERY KEYCAP SHOWS A VISIBLE BLURRED CHARACTER LEGEND on its top surface — alphanumeric letters/numbers/symbols printed as blurred-but-recognisable typography (NOT blank caps). Keycaps preserve the source's two-tone color scheme — darker grey modifier-style + lighter cream alphanumeric — and are uniformly DIRTY (yellow-brown smoker-stained, WASD/spacebar/modifiers darkest).\n\nSEPARATOR: a small breathing strip (~10% of image height) between section 1 and section 2.\n\nCRITICAL CONSTRAINTS — explicit anti-patterns the model MUST avoid:\n• DO NOT include an assembled keyboard ANYWHERE in the output. There must be ZERO views of a keyboard with keycaps installed. The keycaps must NEVER appear on the frame in this image.\n• DO NOT add a third section. Only the bare frame on top and the keycap grid on bottom. NO intermediate assembled view, NO duplicate, NO extra panels.\n• DO NOT show the keyboard in three or more arrangements. Only the two listed sections.\n\nCanvas: flat solid pure green chroma-key #00FF00 background. NO hands, NO tools, NO text, NO additional decoration. Output is a clean two-element instructional layout: bare frame above, keycap grid below."
+    }
+  ],
+
+  "subparts": [
+    {
+      "id": "keycaps_dusty",
+      "filename": "subpart_keycaps_dusty.png",
+      "source": "subflow:keycaps_detached",
+      "step_type": "subpart_dusty",
+      "prompt_t2i": "Take the composite image from the reference. EXTRACT JUST the row of dirty detached keycaps (the bottom portion of the composite — not the keyboard frame). Present the keycap row ALONE as an isolated horizontal strip on a flat solid pure green chroma-key #00FF00 background. The keycaps are arranged in the same neat horizontal line, same spacing as the source. The keycaps are STILL VERY DIRTY: yellow-brown stained, moldy patches, some darker grime spots, deeply embedded smoker-yellow discoloration, the same disgusting old condition as the source. Preserve the EXACT keycap arrangement and the EXACT dirt pattern from the source. The strip is wider than tall (aspect roughly 4:1)."
+    },
+    {
+      "id": "keycaps_foamed",
+      "filename": "subpart_keycaps_foamed.png",
+      "source": "subpart:keycaps_dusty",
+      "step_type": "foam_application",
+      "prompt_t2i": "Take the dirty keycap row from the reference image. Change ONLY: the entire keycap row is now densely and EVENLY covered in a thick UNIFORM layer of fine white car-wash style soap foam — small dense fizzy bubbles spread consistently across every keycap, no gaps. Foam stays STRICTLY within the keycap silhouettes (no bleeding into the green background). The dirty surface under the foam is hidden by the foam. The keycap arrangement, positions, spacing, and isolated green background remain identical to the reference."
+    },
+    {
+      "id": "keycaps_clean",
+      "filename": "subpart_keycaps_clean.png",
+      "source": "subpart:keycaps_foamed",
+      "step_type": "polish_complete",
+      "prompt_t2i": "Take the foam-covered keycap row from the reference image. Change ONLY: ALL foam has been completely wiped off, the keycaps are now PRISTINE clean — bright white, crisp, fresh, like new. No foam, no stains, no dust, no yellow tint. The keycap arrangement, positions, spacing, and isolated green background remain identical to the reference."
+    }
+  ],
+
+  "trash_overlays": [
+    {
+      "id": "leaf_maple_orange",
+      "filename": "leaf_maple_orange.png",
+      "step_type": "trash_overlay",
+      "prompt_t2i": "A single dried maple leaf, classic five-pointed maple leaf shape, autumn orange and rust-brown coloration with slight curl at the edges, crispy dry texture, small irregular tears around the edges. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 2D game asset render. Soft warm top-left lighting, gentle soft shadow under the leaf. Premium product-render quality. Centered, single leaf, slight rotation for natural look."
+    },
+    {
+      "id": "leaf_pine_yellow",
+      "filename": "leaf_pine_yellow.png",
+      "step_type": "trash_overlay",
+      "prompt_t2i": "A small cluster of dried pine needles, yellow-brown faded coloration, thin elongated needles bundled at one end, crispy dry texture. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 2D game asset render. Soft warm top-left lighting, gentle soft shadow. Premium product-render quality. Centered, single cluster."
+    },
+    {
+      "id": "leaf_brown_dry",
+      "filename": "leaf_brown_dry.png",
+      "step_type": "trash_overlay",
+      "prompt_t2i": "A small generic dried oak/elm leaf, oval shape with subtle lobed edges, dark brown and dried-tan coloration, brittle crispy texture, slight curl, visible vein pattern. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 2D game asset render. Soft warm top-left lighting, gentle soft shadow. Premium product-render quality. Centered, single leaf."
+    },
+    {
+      "id": "moss_vine_clump",
+      "filename": "moss_vine_clump.png",
+      "step_type": "trash_overlay",
+      "prompt_t2i": "A small irregular clump of green-grey moss with a few thin vine tendrils trailing off, moss has fluffy felt-like texture, faded sage-green to muddy-olive coloration. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 2D game asset render. Soft warm top-left lighting, gentle soft shadow. Premium product-render quality. Centered, single clump."
+    }
+  ],
+
+  "style_variants": [
+    {
+      "id": "style_variant_B_compact_black",
+      "filename": "keyboard_06_pristine_styleB.png",
+      "prompt_t2i": "A fully restored COMPACT 60% MECHANICAL KEYBOARD, top-down view, all black keycaps with subtle dark legends, dark anodised black aluminium frame, no numpad, no arrow cluster row (60% layout — just function-row-less main block), slim minimalist profile. Centered on a flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 2D game asset render, matte finish, soft warm top-left lighting. NO RGB lighting, NO desk surface, NO logos, NO branding."
+    },
+    {
+      "id": "style_variant_C_retro_typewriter",
+      "filename": "keyboard_06_pristine_styleC.png",
+      "prompt_t2i": "A fully restored RETRO TYPEWRITER-STYLE MECHANICAL KEYBOARD, top-down view, cream and beige round keycaps with vintage serif legends (legends blurred / non-readable), brass-coloured trim along the frame edges, exposed Cherry-style switches visible in dark mounting plate between the round keycaps. Vintage 1950s typewriter aesthetic but in mechanical-keyboard form factor. Centered on a flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 2D game asset render, matte finish, soft warm top-left lighting. NO RGB lighting, NO desk surface, NO logos."
+    }
+  ],
+
+  "backgrounds": [
+    {
+      "id": "desk_wood_surface",
+      "filename": "background_desk_wood_surface.png",
+      "source": "chain:06_pristine",
+      "prompt_t2i": "Take the reference image and REMOVE THE KEYBOARD ENTIRELY — completely erase the keyboard from the scene, leaving only the desk surface behind. Show ONLY a warm wooden desk surface (where the keyboard was sitting) — natural walnut or oak wood grain texture with subtle visible wood-grain lines, soft warm honey-brown coloration with gentle tonal variation, slight micro-scratches and use marks suggesting a real desk (NOT pristine). The lighting matches the reference image: same soft warm top-left light direction with gentle gradient. The desk surface should be slightly soft-focus / low detail so foreground sprites pop. The wood grain fills the entire frame edge-to-edge. NO keyboard, NO objects, NO clutter, NO logos, NO text — just an empty warm wooden desk top. Semi-realistic stylized 2D game asset render. This background is OPAQUE — do NOT use the green chroma key, this is a final scene plate."
+    }
+  ],
+
+  "tool_orientation_rule": "Full side-profile view, rotated diagonally across the frame. Handle in LOWER-RIGHT of the image, business-end in UPPER-LEFT. Full length of the tool clearly visible in profile. The business-end is visible from the SIDE — not pointing at the camera, not pointing straight away. NO water, NO foam, NO mist, NO debris, NO motion lines, NO sparks, NO hands holding it. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 2D game asset render in the same premium product-photography style as the reference. Soft warm top-left lighting, gentle highlight rim, soft drop shadow under the tool. Centered, single object, 15% padding around object.",
+
+  "tools_required": [
+    {"id": "mini_blower_A", "filename": "mini_blower_A.png", "cached": true, "prompt_t2i": "(cached from prior level)"},
+    {"id": "spray_bottle_A", "filename": "spray_bottle_A.png", "cached": true, "prompt_t2i": "(cached from prior level)"},
+    {"id": "brush_A", "filename": "brush_A.png", "cached": true, "prompt_t2i": "(cached from prior level)"},
+    {
+      "id": "mini_brush_A",
+      "filename": "mini_brush_A.png",
+      "prompt_t2i": "ONE SINGLE small detailing brush — a slim wooden handle (about pencil-thickness) with a compact rounded head of stiff cream-coloured bristles, smaller than a typical scrub brush, suitable for cleaning narrow gaps and crevices. Apply the tool orientation rule: shown in side profile, the slim wooden handle in the LOWER-RIGHT of the image, the small bristle head extending diagonally toward the UPPER-LEFT. Full length clearly visible from the side."
+    },
+    {
+      "id": "keycap_puller",
+      "filename": "keycap_puller.png",
+      "prompt_t2i": "ONE SINGLE wire-loop keycap puller — a classic mechanical-keyboard maintenance tool: a small loop of chromed steel wire (about U-shape or O-shape) attached to a black or red plastic grip handle. The wire loops hook UNDER keycaps to pull them up off the switches. Apply the tool orientation rule: shown in side profile, the plastic grip handle in the LOWER-RIGHT of the image, the wire loop extending diagonally toward the UPPER-LEFT. Full length clearly visible. NO keycap attached, NO keyboard visible — just the puller tool itself."
+    },
+    {
+      "id": "cloth",
+      "filename": "cloth.png",
+      "prompt_t2i": "ONE SINGLE microfibre cleaning cloth — a soft square of pale yellow / cream microfibre fabric, partially folded over on itself with visible soft folds and natural drape, slight texture suggesting the fine fabric weave. Apply the tool orientation rule: shown laid diagonally across the frame, the folded thicker edge in the LOWER-RIGHT of the image, the open corner extending diagonally toward the UPPER-LEFT, the fabric face clearly visible from a slight angle. NO water, NO dirt on the cloth, NO suds — clean fresh cloth."
+    }
+  ],
+
+  "notes": "V5 Level 7 keyboard — first true sub-flow test (V4.3). Main chain 7 states; subflow composite shows keyboard frame + detached keycap row arranged together; 3 keycap sub-states cascade from the composite via subpart:source. All foreground assets on green #00FF00 chroma key. Default backend: google_flash (Vertex Flash). Estimated total: ~21 generations × $0.04 = $0.84."
+}

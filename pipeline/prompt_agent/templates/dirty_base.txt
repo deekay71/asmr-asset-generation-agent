@@ -1,0 +1,21 @@
+# Step type: dirty_base
+# Used for the worst / most-abandoned state in a chain. Heavy dust, debris, neglect.
+
+LIGHTING: {{lighting}}
+CAMERA: {{camera}}
+TASK (dirty_base — most-abandoned chain state, generated I2I from a cleaner source):
+{{diff_from_prev}}
+
+OBJECTS IN FRAME: {{object_count}}
+PRESERVE FROM PREV: {{preserve_from_prev}}
+
+INTENSITY: dirt must feel DRAMATICALLY overwhelming, not casually dirty. Player must immediately see what to clean.
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+CONTAINMENT: {{containment}}
+BG: {{bg_directive}}

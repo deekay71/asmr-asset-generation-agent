@@ -1,0 +1,19 @@
+# Step type: subpart_dusty
+# A detached sub-part in its dusty / dirty starting state, sourced from a parent chain image.
+
+LIGHTING: {{lighting}}
+CAMERA: front-on, no perspective distortion (flat parts)
+TASK (subpart_dusty — extract a detached part from the parent image):
+{{subject_description}}
+
+DIRT SPEC: same dust style + intensity as the parent reference. Part shown ALONE, isolated, detached.
+
+SHAPE: {{shape_constraint}}
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+BG: {{bg_directive}}

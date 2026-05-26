@@ -1,0 +1,21 @@
+# Step type: scrub_pattern
+# Foam-covered surface with brushed-in cloth-wipe arcs.
+
+LIGHTING: {{lighting}}
+CAMERA: {{camera}}
+TASK (scrub_pattern — modify foam coating with cloth-wipe arcs):
+{{diff_from_prev}}
+
+OBJECTS IN FRAME: {{object_count}}
+PRESERVE FROM PREV: {{preserve_from_prev}}
+
+SCRUB SPEC: curved wavy wipe-arc lines, mixed direction, visible ridges where foam gathered + thinned valleys where wiped flat. Soft cloth-wipe arcs — NOT brush-furrows, NOT spirals, NOT stamped patterns.
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+CONTAINMENT: {{containment}}
+BG: {{bg_directive}}
