@@ -1,0 +1,505 @@
+{
+  "schema_version": "3.0",
+  "level": 6,
+  "name": "aircon",
+  "title": "Stage Điều hoà (Air Conditioner)",
+  "style_reference": "../style_reference/style_anchor_compact.png",
+  "chain_consistency_contract": "Use the same EXACT wall-mounted split-system air conditioner model in every state. Keep the same strictly front-on camera angle, the same proportions, the same size, the same silhouette, and the same object design across all states. The AC must look like one continuous cleaning process, not different ACs. Dirt, dust, stain, and bag positions must stay CONSISTENT and synchronised between adjacent states, then gradually reduce as cleaning progresses. The coil fin layout, fan blade positions, circuit board position, and shell housing geometry must remain identical across every state.",
+  "asmr_framing": "This is for a 2D ASMR cleaning game. The player wants a deeply satisfying disgust→clean transition as they restore an abandoned old AC unit. Dirty states should feel disgusting, deeply embedded, ugly, neglected — like the AC has been sitting in a warehouse for years collecting filth. Clean states should feel fresh, bright, glossy, almost brand new, satisfying. No people, no hands, no UI, no text, no labels, no room background visible in the asset.",
+  "style_mode": "2d_game_asset_flat",
+  "sensory_vocabulary": {
+    "dust_adjectives": [
+      "thick",
+      "dense",
+      "heavy",
+      "old",
+      "dry",
+      "blanketed",
+      "neglected",
+      "decade-old"
+    ],
+    "stain_adjectives": [
+      "deeply embedded",
+      "ugly",
+      "old",
+      "uneven",
+      "stubborn",
+      "disgusting",
+      "patchy",
+      "unsanitary",
+      "sewage-like",
+      "coffee-soaked"
+    ],
+    "foam_adjectives": [
+      "thick",
+      "rich",
+      "dense",
+      "satisfying",
+      "fine-bubbled",
+      "creamy",
+      "full coverage",
+      "car-wash style"
+    ],
+    "clean_adjectives": [
+      "fresh",
+      "bright",
+      "white",
+      "glossy",
+      "like new",
+      "satisfying",
+      "polished"
+    ]
+  },
+  "color_constant": "The AC unit is a modern wall-mounted split-system indoor unit, matte glossy white plastic body. Internal coil fins are aluminium-silver. The shell is the same shape across all states. Only dust, stains, plastic bags, foam, or wetness should change between states — NEVER change the base materials, body color, coil fin geometry, fan position, or circuit board position.",
+  "anchor_state": "filthy_iter9",
+  "bg_color": "#00FF00",
+  "generation_order": "reverse",
+  "states": [
+    {
+      "id": "00_closed_dusty",
+      "tool": "hand_rubber_glove",
+      "source_state": "01_open_shell_off_dusty",
+      "prompt": "Keep the EXACT same camera framing, zoom and proportions. Only change: the AC unit is now FULLY CLOSED with the front cover panel back on and ALL components reassembled — no internal coil visible, no filters visible. The unit is now COMPLETELY OBSCURED by extreme filth — the ENTIRE surface is densely buried under a thick mat of grey-brown dust like a felt blanket, dust covering 95% of the unit so only tiny patches of white plastic peek through, heavy matted cobwebs draping across every corner and along the top edge, dust hanging in fur-like stalactite drips along the bottom vent slats, dirty greasy smears and grime layers stacked across the top, every single louvre slat caked with dust so thick the slats are barely distinguishable, dust collected in the bottom outlet vent. The unit looks ABANDONED FOR 20 YEARS in a forgotten warehouse — OVERWHELMING, FULLY-COVERING, FULLY DIRTY. Background: flat grey #808080."
+    },
+    {
+      "id": "filthy_iter3",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder — photoreal-from-clean-ref iter, staged for amplification regen."
+    },
+    {
+      "id": "filthy_iter4",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder for iter4 source."
+    },
+    {
+      "id": "filthy_iter5",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder — canvas for top-black-detail restoration via multi-source ref."
+    },
+    {
+      "id": "filthy_iter6",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder — top-corner mold + L-to-R gradient iter, staged for subtle-mold/brighter-louver fix."
+    },
+    {
+      "id": "filthy_iter7",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder — subtle-mold + brighter-louver iter, staged for next 3-change pass."
+    },
+    {
+      "id": "filthy_real_base",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder — user-saved base for 3-change multi-source regen."
+    },
+    {
+      "id": "filthy_iter8",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder — base for further photoreal push."
+    },
+    {
+      "id": "filthy_iter9",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder — base for targeted right-edge panel-gap closure."
+    },
+    {
+      "id": "01_open_shell_off_dusty",
+      "tool": "blower_A",
+      "source_state": "02_coil_stained",
+      "prompt": "Keep the EXACT same camera framing, zoom and proportions. Only change: the front cover panel, the outer shell housing, and both dust filter screens are all DETACHED and no longer visible on the unit. The internal aluminium coil fins are exposed — but they are HEAVILY DUSTY, packed with thick grey-brown dust between every fin gap, cobweb-like dust hanging from the fan blades, dust caked on the inner shell walls, dirty buildup throughout. A green circuit board is exposed on the right side, NOT yet covered by any plastic bag. The dust is dramatic and obvious. No stains visible yet (they're underneath all the dust). Background: flat grey #808080."
+    },
+    {
+      "id": "02_coil_stained",
+      "tool": "plastic_bag_circuit_cover",
+      "source_state": "03_coil_double_protected",
+      "prompt": "Keep the EXACT same camera framing, zoom and proportions. Only change: all the heavy dust on the coil fins is now COMPLETELY GONE — but underneath the dust, deep ugly STAINS are revealed across the aluminium coil, the fan blades, and the inner shell walls: dark brown coffee-soaked discoloration, blackish sewage-water stains, mouldy yellowish patches, greasy grime streaks. The coil looks shocking and disgusting now that the dust has been blown away. The circuit board on the right is exposed and visible (NO plastic bag yet). NO dust, NO foam, NO bags. Background: flat grey #808080."
+    },
+    {
+      "id": "03_coil_double_protected",
+      "tool": "spray_bottle_A",
+      "source_state": "04_coil_foamed",
+      "prompt": "Keep the EXACT same camera framing, zoom and proportions. Only change: TWO protective plastic bags are now installed: (1) a clear translucent blue plastic bag wrapping over the green circuit board on the right side of the unit, (2) a second translucent plastic bag attached underneath the bottom of the AC, gathered open like a water-catching pouch ready to collect dirty water drips. The coil itself is STILL very stained (dark brown coffee-stains, sewage discoloration, greasy patches all visible) — only the bags have been added, the staining is unchanged. NO foam. Background: flat grey #808080."
+    },
+    {
+      "id": "04_coil_foamed",
+      "tool": "hose_A",
+      "source_state": "05_coil_clean",
+      "prompt": "Keep the EXACT same camera framing, zoom and proportions. Only change: the entire coil area is now densely and EVENLY covered in a thick UNIFORM layer of fine white car-wash style soap foam — small dense fizzy bubbles in a creamy soapy mass spread CONSISTENTLY across the FULL width of the coil from the LEFT edge all the way to the RIGHT edge, every coil fin completely coated with no gaps, no patches missing foam, no concentration in one spot — the foam fills the coil space evenly like a snow blanket of equal depth across the entire opening. The texture is clearly SOAPY with VISIBLE FINE BUBBLES distributed evenly throughout. The TWO protective plastic bags from the previous state (one BLUE-tinted bag over the green circuit board on the right side of the AC, one LARGE translucent plastic pouch underneath catching drips) are STILL clearly visible and FULLY in place — preserve both bags faithfully exactly where they were. Background: flat grey #808080."
+    },
+    {
+      "id": "05_coil_clean",
+      "tool": "hand_rubber_glove",
+      "source_state": "06_pristine_assembled",
+      "prompt": "Keep the EXACT same camera framing, zoom and proportions. Only change: the unit is in the same OPEN configuration (no front cover, no filters, no shell housing attached — coil exposed) but the coil is now pristine clean, white-and-aluminium, fresh-new-looking, no stains, no dust, no foam, no plastic bags (bags removed). Faint clean-wet sheen on the aluminium fins. The empty slots where the cover/filters/shell will go are clearly visible and empty. Background: flat grey #808080."
+    },
+    {
+      "id": "clean_ref_v6",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder — manually staged from references/aircon_clean_ref.png."
+    },
+    {
+      "id": "filthy_iter0",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder — early matte iteration of 00_filthy_v6."
+    },
+    {
+      "id": "filthy_iter1",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder — current canonical filthy AC (matte muddy state, before realistic push)."
+    },
+    {
+      "id": "00_filthy_v6",
+      "tool": null,
+      "source_state": "filthy_iter9",
+      "step_type": "dirty_base",
+      "spec": {
+        "lighting": "3/4 top-down directional, shadow falling top-down and left-to-right, soft gradient",
+        "camera": "strictly front-on, no tilt, no angle, dead-centre",
+        "object_count": "1 fully-assembled AC unit (extremely dirty), plus 1 clean wall background colored #adbd97",
+        "object_shape": "AC with ALL parts assembled (front cover ON, outer shell ON, both dust filters in place) — the unit is INTACT, not dismantled. EXTREMELY filthy and disgusting, rendered in PHOTOREALISTIC PRODUCT-PHOTOGRAPHY style with high-fidelity material detail: visible micro-roughness in the dust layer, realistic specular response from the cleaner areas of the plastic where the dirt is thinnest, soft subsurface light scattering in the mold patches, fine grain detail in the mud-cake texture. The dirt reads primarily as CRUSTED MUDDY TEXTURE — thick brown-grey mud-cake encrusting the surface with realistic depth and 3D crustiness, dried mud splatter, mud streaks with visible drip-and-pool patterns, muddy buildup with realistic shadow occlusion in every recess. Plastic shell turned yellow-brown with age — show realistic plastic material properties: subtle reflectivity in less-dirty areas, micro-scratches under the dirt, age-cracking patterns. Heavy matted mud-and-dust crust covers the surface with realistic photographic depth-of-field. Black-grey grime patches across the top and corners. Green-black moss/mold creeping along the edges and underneath, rendered with realistic biological texture (small fluffy mold colonies with visible filaments, slight 3D body). Long dark vertical dried-mud streaks running down the front with realistic gravity drip patterns. Dried mud chunks and old crusted residue at the bottom — show 3D volume and cast shadows. The horizontal louvre vents are PITCH BLACK inside, choked with dense crusted mud and dust. The bottom edge has dried dirty-water tide marks with realistic mineral-deposit rings. Overall extremely unsanitary — the viewer must feel an URGENT impulse to clean it RIGHT NOW.",
+        "object_position": "AC centered horizontally on the wall, vertically shifted UP so it sits in the upper third of the frame",
+        "object_descriptions": [
+          {
+            "name": "AC unit",
+            "state": "fully assembled (cover + shell + filters all in place), extremely dirty: yellowed plastic, thick matted dust, black-grey grime patches, green-black mold along edges, long dried-water streaks, dried mud at the bottom, louvre slats pitch-black inside and stuffed with dust + hair + lint + cobwebs + mold, dirty-water tide marks along the bottom edge",
+            "color": "originally white plastic body — now AGED YELLOW from years of grime, with multi-color filth (grey dust, black grime, green-black mold, brown water stains) layered on top"
+          }
+        ],
+        "preserve_from_prev": "preserve the EXACT same AC silhouette, frame proportions, louvre layout, side air-intake panels, and overall body geometry as the reference image — only the surface condition changes",
+        "diff_from_prev": "SINGLE source image: a photo-realistic soiled AC on a sage-green wall. The source is the baseline — everything must be preserved EXCEPT the one targeted fix described below.\n\nTARGETED FIX (the ONLY change):\n\nThe MAIN CENTER FRONT PANEL of the AC has a visible WIDE VERTICAL GAP along its RIGHT EDGE where it meets the right side casing of the unit. This gap runs from the TOP-RIGHT CORNER of the main center panel down to the BOTTOM-RIGHT CORNER of the main center panel. The gap is roughly 2-4mm wide, prominently visible, structurally wrong — it should not exist on a properly-assembled AC.\n\nCLOSE THIS GAP. Specifically:\n- The right vertical edge of the main center front panel must sit FLUSH against the right side casing of the unit.\n- The seam there should become a tight, thin, hairline-width vertical line — like a clean factory-assembled product seam, NOT an open gap.\n- The right-side casing piece should appear to butt up against the main panel's right edge with no daylight visible between them.\n- Look at how the LEFT vertical edge of the main center panel currently meets the left side casing — TIGHT AND FLUSH. Mirror that exact level of tightness on the RIGHT edge.\n\nSTRICT PRESERVATION (everything else stays identical to the source):\n- LEFT vertical edge of the main panel — already flush, keep it that way\n- TOP horizontal edge of the main panel — already flush, keep it that way\n- BOTTOM horizontal seam where the main panel meets the louver-vent panel — keep at its current tight state, do NOT widen it, do NOT re-open it\n- ALL dirt elements at the source's intensity and location: dark grime patches, vertical drip streaks, dust mottling, all mold patches (top-corners + bottom-edge + bottom-right + the new bottom-right mold colony), tide marks\n- Cream-ochre yellowing on exposed plastic\n- Matte oxidized plastic finish — NO shine\n- Louver vent state\n- AC silhouette, proportions, position (upper third), fully-assembled state\n- Sage-green wall colour and tonal variation\n- Camera angle, framing, composition, lighting direction\n- The photographic / DSLR rendering quality\n- No Samsung text, no logos, no branding\n\nABSOLUTELY FORBIDDEN:\n- Leaving any visible vertical gap along the right edge of the main center panel — it MUST become a tight hairline seam\n- Re-opening the bottom horizontal seam between the main panel and the louver-vent panel (that was already fixed in the source — keep tight)\n- Adding, removing, relocating, recolouring, amplifying, or reducing any dirt element\n- Reintroducing plastic shine, specular highlights, or wet sheen\n- Changing the AC silhouette, composition, position, wall colour, or lighting\n- Cartoon flat shading, painterly brushstrokes, sketch, line-art\n- Oversaturated colours or HDR look\n- Adding logos / text / branding\n\nOutput must look ~98% identical to the source. ONLY the right vertical panel gap closes — everything else stays exactly as in the source.",
+        "notes": "Background = solid clean wall #adbd97 (sage green-grey). AC fully assembled (cover, shell, filters all in place). This is the WORST dirty state — disgust peak."
+      }
+    },
+    {
+      "id": "01_open_dusty_v6_iter0",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder — prior output of 01_open_dusty_v6, staged for iterate-on-prior-output regen."
+    },
+    {
+      "id": "01_open_dusty_v6_iter1",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": false,
+      "prompt": "Placeholder — 4-row layout iteration, staged for further targeted regen."
+    },
+    {
+      "id": "01_open_dusty_v6",
+      "tool": null,
+      "source_state": "01_open_dusty_v6_iter1",
+      "step_type": "disassembly_layout",
+      "spec": {
+        "lighting": "3/4 top-down directional, shadow falling top-down and left-to-right, soft gradient",
+        "camera": "strictly front-on, no tilt, no angle, dead-centre",
+        "object_count": "1 disassembled AC scene: the BARE INTERNAL CHASSIS (no outer cover, no outer shell, no filters) PLUS the 4 detached parts (cover + outer shell + 2 dust filter screens) laid out together in the same image, all on a clean sage-green wall background #adbd97",
+        "object_shape": "A SINGLE COMPOSITE IMAGE showing FIVE elements arranged together on the sage-green wall, with CORRECT RELATIVE SCALING so the viewer can intuitively understand which part came off which slot:\n\nUPPER REGION (~50% of frame, occupying the upper-third zone the AC normally sits in): the BARE AC INTERNAL CHASSIS — the wall-mounted backplate / metal bracket holding the coil assembly. NO outer cover panel, NO outer shell housing, NO filters. Just the bare internal mechanism: exposed aluminium coil fins (horizontal grille of fine vertical aluminium slats), exposed fan blade chamber on one side, exposed inner walls, exposed circuit board area on the right side. The chassis is still DIRTY in the same matte muddy-brown dust style as the source — thick matted dust between every fin gap, dust caked on inner walls, dust on the fan blades. Aged-yellow remnants on whatever plastic edges remain. Green-black mold along the bottom edge of the chassis.\n\nLOWER REGION (~45% of frame): the FOUR DETACHED PARTS laid out neatly in a single ROW (left to right), all face-up, slightly spaced apart, all in matching matte muddy-dirty condition (yellowed plastic, dusty, mold patches):\n  1. Outer SHELL HOUSING — the largest part, on the LEFT — the curved white-plastic outer body with horizontal louvre slats across its front face and the bottom outlet vent. ABOUT 60% the width of the chassis above. Aged-yellow plastic, muddy dust, mold.\n  2. Front COVER PANEL — to the right of the shell — a thinner flat rectangular panel that fits over the front. ABOUT 45% the width of the chassis. Aged-yellow plastic, muddy dust, dark louver remnants.\n  3. Dust FILTER SCREEN #1 — to the right of the cover — rectangular mesh panel in a yellow plastic frame. ABOUT 25% the width of the chassis. Mesh completely clogged with felt-like grey-brown muddy dust.\n  4. Dust FILTER SCREEN #2 — far right, twin of filter #1 — same scale, same clogged-dust condition, slightly different dust pattern.\n\nThe parts are laid below the chassis like a maintenance exploded-view, with a small breathing gap (~5% of frame height) separating the upper chassis from the lower parts row. All parts cast soft drop shadows on the wall. NO labels, NO arrows, NO text.\n\nCORRECT SCALING is critical — the shell housing must look LARGER than each filter screen; the cover panel must be FLATTER and THINNER than the shell; the two filters must be IDENTICAL in size to each other. Sizes are proportional to what they'd look like on the assembled AC.",
+        "object_position": "Composite image fills the whole frame: bare chassis in the upper half (centered, occupying its normal upper-third slot), 4 removed parts in a row across the lower half. All parts in the bottom row are smaller than the chassis above. Centered overall on the sage-green wall.",
+        "preserve_from_prev": "preserve EXACTLY: the sage-green wall background colour #adbd97, the aged-yellow plastic colour for all dirty parts, the matte chalky non-shiny finish, the muddy dust style and texture, the green-black mold pattern, the lighting direction (3/4 top-down, soft shadows top-down + left-to-right), and the overall semi-realistic stylized 2D game-asset render quality. The chassis in the upper region keeps the same silhouette outline + position as the source AC frame.",
+        "diff_from_prev": "SINGLE reference image (source): the filthy assembled AC on a sage-green wall. EVERY visual property in the output must MATCH THE SOURCE EXACTLY — same matte muddy-brown dust texture, same aged-yellow plastic colour, same green-black mold pattern, same sage-green wall #adbd97, same 3/4 top-down lighting and shadow direction, same 2D game-asset render quality, same NON-SHINY matte finish. Do NOT introduce a different art style, palette, or rendering technique.\n\nTASK: take the filthy AC from the source and produce a SINGLE composite image showing it FULLY DISASSEMBLED — exactly FIVE distinct elements visible together in one frame, all on the same sage-green wall, all sharing the source's exact dirty style. Every element must be visually distinct and correctly scaled so they would physically fit back together.\n\n=== THE FIVE ELEMENTS ===\n\n[A] BARE AC CHASSIS — the wall-mounted internal mechanism with the FULL AC internals visible (this must clearly read as 'the inside of an air conditioner', not just a plain grille). DISTINGUISHING FEATURES: (i) a horizontal aluminium-fin coil grille spanning most of the width (a band of fine vertical aluminium slats), (ii) ELECTRONICS / CONTROL UNIT visible on one side (right side) — a green-tinted printed circuit board with small black components mounted on it, wiring harnesses with multi-coloured wires, plastic connector housings, a small black control box, (iii) the chassis frame around the coil and electronics (aged-yellow plastic edges, metal mounting brackets). The chassis is INSTANTLY recognisable as the internal guts of an AC unit. NO outer shell, NO louver assembly, NO filters attached. Long horizontal shape — width = full assembled AC width, height = slim (~22% of width). Heavily caked in the source's matte muddy-brown dust over both the coil fins AND the electronics.\n\n[B] OUTER SHELL HOUSING (vỏ) — the HOLLOW curved white-plastic outer casing that wraps around the chassis when assembled — viewed in a way that makes it OBVIOUS the shell has been REMOVED from the AC (i.e., it is a hollow shell laid down on the wall). DISTINGUISHING FEATURES: (i) curved 3D body with visible front-face depth (NOT a flat panel), (ii) HOLLOW INTERIOR visible — show a 3/4 angle or partial inside view so the viewer can see the hollow underside / inside of the shell, OR show the shell as a plain curved smooth body where it is unambiguous that it is just the cover (no functional internals on its face), (iii) the FRONT face is a smooth or subtly textured curved surface — NO bottom air-outlet vent slats, NO horizontal louvre blades, NO mechanical openings. The shell is just the EXTERIOR COSMETIC COVER — all the functional vents/louvres belong to OTHER parts. SHOW THE COMPLETE SHELL — full width, full height visible, breathing room on all sides, NOT cropped. Width matches [A]; height bulkier. Aged-yellow plastic, muddy dust crust on the outer surface, green-black mold patches in recesses.\n\n[C] OUTLET LOUVER ASSEMBLY (nắp gió — the moving slats at the bottom of the assembled AC) — a slim HORIZONTAL ASSEMBLY of swing-louver blades. When the AC is assembled, this assembly sits at the BOTTOM of the unit and its blades pivot to direct the cooled airflow up or down. DISTINGUISHING FEATURES: (i) a row of multiple PARALLEL HORIZONTAL LOUVER BLADES (typically 3–6 long thin blades stacked together horizontally), each blade slightly curved or angled, spanning the full width of the assembly, (ii) thin aged-yellow plastic side rails at the left and right ends holding the blades' pivot pins, (iii) very SLIM PROFILE — much thinner than the outer shell, almost a thin horizontal slat strip. This is the part the user sees moving up and down inside the bottom outlet vent of the AC. Width matches [A] and [B]. Aged-yellow plastic, muddy dust caked along the blades, green-black mold in the gaps between blades.\n\n[D] DUST FILTER #1 (tấm lọc bụi) — a HORIZONTAL rectangular mesh screen in a thin yellow plastic frame. ORIENTATION: WIDER THAN TALL, landscape orientation, roughly 2:1 to 5:2 aspect ratio (the long edge runs left-to-right). Width sized so that TWO of these placed SIDE BY SIDE (horizontally adjacent) fit into a single row matching the chassis [A] width — each filter is roughly 45% of the chassis width. Mesh COMPLETELY CLOGGED with felt-like matted muddy grey-brown dust — mesh weave barely visible under the dust.\n\n[E] DUST FILTER #2 — IDENTICAL twin of [D]. Same width, same height, same horizontal orientation, same yellow frame, same clogged-dust condition (slightly different dust pattern so they read as two distinct items but they are clearly a matched pair).\n\n=== LAYOUT — FOUR HORIZONTAL ROWS, STACKED VERTICALLY ===\n\nSingle image, no panels/borders/labels. The frame is divided into FOUR HORIZONTAL ROWS stacked top-to-bottom, with small breathing gaps between rows. All parts centered horizontally in their rows, all face-up flat on the sage-green wall, all casting soft drop shadows.\n\nROW 1 (TOP, ~22% of frame height): element [A] BARE CHASSIS — long thin horizontal grille, centered, full width.\n\nROW 2 (SECOND, ~28% of frame height): element [B] OUTER SHELL HOUSING — taller than the chassis (bulkier 3D body), HOLLOW form visible (the shell is clearly a cover removed from the unit, NO bottom slats / NO outlet vent / NO louver blades on its body), centered, FULL SIZE and UNCROPPED — entire shell silhouette must fit inside the row with breathing room on all sides.\n\nROW 3 (THIRD, ~14% of frame height — slimmer because this is a slim slat strip): element [C] OUTLET LOUVER ASSEMBLY — a slim horizontal strip of parallel pivoting louver blades, centered, full width.\n\nROW 4 (BOTTOM, ~22% of frame height): elements [D] + [E] TWO DUST FILTERS — both in horizontal orientation, placed side by side horizontally (left filter = [D], right filter = [E]), small gap between them, together spanning roughly the same width as the rows above.\n\nBetween each row, leave a small ~2% breathing gap (sage-green wall visible between rows). NO row borders, NO dividing lines, NO numbers, NO labels — just the elements stacked on the wall.\n\n=== STYLE — every element matches the source EXACTLY ===\n\nMatte aged-yellow plastic, thick matted grey-brown muddy dust crust, green-black mold patches in the bottom corners and recesses, NO glossy shine, NO specular highlights, NO wet sheen. Lighting: 3/4 top-down, soft shadows top-down + left-to-right. Sage-green wall #adbd97.\n\n=== ABSOLUTELY FORBIDDEN ===\n\n- Any text, labels, arrows, numbers, dimension lines, callouts, panels, borders, dividers, or 'Samsung'/logos/branding ANYWHERE in the image.\n- An assembled AC appearing anywhere.\n- [B] outer shell and [C] outlet louver assembly looking IDENTICAL — they MUST be distinguishable: [B] is a bulky hollow 3D plain curved cover (NO functional vents/slats on its body); [C] is a slim flat strip of multiple parallel pivoting horizontal louver blades.\n- The outer shell [B] showing horizontal slats, louver blades, or a bottom outlet vent on its body — those features belong ONLY to the outlet louver assembly [C].\n- The chassis [A] looking like just a plain grille rectangle without electronics — the chassis MUST visibly include the circuit board, wiring, and control electronics so it reads as the inside of an AC.\n- Inventing a separate 'inner shell' frame — there are only the 4 detached parts above.\n- Two filters being different sizes from each other.\n- A filter being larger than the front cover or the outer shell.\n- Filters in VERTICAL / portrait orientation — they MUST be HORIZONTAL / landscape.\n- The chassis showing a circular fan chamber or visible round fan blades on its face — the chassis is mostly grille only.\n- The outer shell [B] being CROPPED at any edge — it must be fully visible with breathing room.\n- A single-row layout with all 4 parts in one row — the layout MUST be 4 STACKED ROWS.\n- Chassis still having any of the 4 parts attached.\n- Cobwebs, hair, lint, or fibre threads (muddy dust only).\n- Glossy shine, specular highlights, clean white plastic.\n- Drift from the source's style or palette.\n\nStyle: semi-realistic stylized 2D game-asset render, modern, MATTE finish, crisp focus, sharp edges. NOT photoreal, NOT cartoon flat.",
+        "notes": "GDD Stage 6 Step 1 — Tháo nắp, vỏ và 2 tấm lọc bụi. Composite layout: bare chassis above + 4 removed parts in a row below, correct relative scaling, on sage-green wall."
+      }
+    },
+    {
+      "id": "02_dust_blown_v6",
+      "tool": null,
+      "source_state": "01_open_dusty_v6",
+      "step_type": "stain_reveal",
+      "spec": {
+        "lighting": "3/4 top-down directional, shadow falling top-down and left-to-right, soft gradient",
+        "camera": "strictly front-on, no tilt, no angle, dead-centre",
+        "object_count": "Same 5-element composite layout (chassis + outer shell + outlet louver assembly + 2 dust filters) on sage-green wall #adbd97 — only the chassis's coil condition changes; the other 4 parts are unchanged",
+        "object_position": "Same 4-stacked-row layout as the source: chassis on top, outer shell second, outlet louver assembly third, two horizontal filters bottom",
+        "preserve_from_prev": "preserve EXACTLY: the 4-stacked-row layout, the sage-green wall colour and surface, the matte non-shiny finish throughout, the aged-yellow plastic colour, the lighting direction (3/4 top-down) and shadow direction (top-down + left-to-right), the soft drop shadows under each element, the breathing gaps between rows, the overall semi-realistic stylized 2D game-asset render quality. PRESERVE UNCHANGED: rows 2, 3, and 4 — the outer shell housing [B], the outlet louver assembly [C], and both dust filters [D][E] all remain in their EXACT prior dirty condition (muddy dust, green-black mold, yellowed plastic). DO NOT clean them — they are cleaned in later steps.",
+        "diff_from_prev": "SINGLE reference image (source): the prior 4-stacked-row disassembly composite (chassis + outer shell + outlet louver assembly + 2 horizontal dust filters on a sage-green wall, all in matte muddy-dirty condition). Match the source's EXACT style, palette, lighting, wall, render quality.\n\nTASK: change ONE thing — the chassis (ROW 1, the top element) has had its dust BLOWN OFF the coil. The thick matted muddy dust that was packed between the aluminium coil fins is now COMPLETELY GONE — but the cleaning has revealed UGLY EMBEDDED STAINS on the coil and inner components underneath. The other 4 parts (outer shell, outlet louver assembly, two filters) remain in their EXACT prior dirty condition — DO NOT change them, DO NOT clean them, DO NOT touch them.\n\nROW 1 CHASSIS CHANGES (the ONLY change in this image):\n\n- The aluminium coil fin grille is now VISIBLE AND CLEAN OF LOOSE DUST — the fine vertical aluminium slats are no longer buried; you can see each individual fin clearly.\n- BUT the coil and the inner components are now revealed to be HEAVILY STAINED with embedded grime that the dust was covering: dark brown coffee-soaked discoloration, blackish sewage-water streaks running between the fins, mouldy yellowish patches embedded on the aluminium, greasy grime trapped between the fins.\n- The electronics on the right side (circuit board, wiring, control unit) are also revealed under the dust: still dirty, still showing aged grime stains, but no longer buried under a felt mat of dust — the components are now visible (still ugly, still in need of further cleaning).\n- The stains are PATCHY and UNEVEN across the coil — not uniformly distributed; some sections darker than others.\n- The aged-yellow plastic frame edges of the chassis remain unchanged.\n- The chassis still has green-black mold along its bottom edge (unchanged).\n- Small wisps of grey dust may still be lingering at the very edges of the chassis frame (mostly blown off but not perfectly clean) — but the coil interior is FREE of the heavy dust layer.\n\nROWS 2, 3, 4 ARE COMPLETELY UNCHANGED from the source. The outer shell [B], outlet louver assembly [C], and both filters [D][E] remain in their EXACT same dirty muddy-dust state. Do NOT redraw them, do NOT clean them, do NOT alter their dust coverage. They will be cleaned in later steps.\n\n=== STYLE — same as source ===\n\nMatte aged-yellow plastic, matte non-shiny finish, sage-green wall #adbd97, same 3/4 top-down lighting, same shadow direction, same 2D game-asset render quality. The newly-revealed stains on the chassis coil must use the SAME muddy-grimy colour palette as the rest of the image (brown / yellow-brown / dark grime), keeping the whole composition visually coherent.\n\n=== ABSOLUTELY FORBIDDEN ===\n\n- Changing rows 2, 3, or 4 in any way (those 4 parts must remain identical to the source).\n- The chassis coil still being buried under thick matted dust — the dust IS gone, only embedded stains remain.\n- The chassis coil being fully cleaned (stains must be visible — it is NOT pristine yet).\n- Any text, labels, arrows, numbers, panels, borders, dividers, 'Samsung'/logos/branding anywhere.\n- An assembled AC appearing anywhere.\n- Reverting the chassis to a plain grille without electronics — the circuit board and wiring on the right must still be visible.\n- Cobwebs, hair, lint, or fibre threads.\n- Glossy plastic shine or specular highlights.\n- Clean white plastic anywhere.\n- Drift from the source's exact style or palette.\n\nStyle: semi-realistic stylized 2D game-asset render, modern, MATTE finish, crisp focus, sharp edges. NOT photoreal, NOT cartoon flat.",
+        "notes": "GDD Stage 6 Step 2 — Thổi bụi dàn lạnh. Same 5-element 4-row composite as the source; only the chassis coil changes (dust gone, stains revealed). Other 4 parts unchanged."
+      }
+    },
+    {
+      "id": "04_foamed_v6test",
+      "tool": "foam_sprayer_pink_v6test",
+      "source_state": "03_coil_double_protected",
+      "step_type": "foam_application",
+      "spec": {
+        "reference_images": [
+          "../../references/foam_style_ref.png"
+        ],
+        "lighting": "3/4 top-down directional, shadow falling top-down and left-to-right, soft gradient",
+        "camera": "strictly front-on, no tilt, no angle",
+        "object_count": "1 AC unit fully buried in cascading foam, plus 1 clean wall background (color #adbd97)",
+        "object_shape": "THICK, CREAMY, MERINGUE-LIKE FOAM in heavy voluminous SCULPTURAL BLOBS that completely engulf the AC — NOT tiny fizzy bubbles, NOT popcorn-puff blobs, NOT discrete dots. The foam has the consistency of WHIPPED CREAM / SHAVING CREAM / BEATEN EGG WHITES — soft creamy off-white peaks and folds with subtle warm cream tint, heavy substantial body. Foam visibly CASCADES DOWNWARD off the bottom edge of the AC like a slow-motion waterfall, hanging in big creamy stalactite drips and chunky pendant blobs about 60–80% of the AC's own height BELOW the unit. Foam coverage extends well past the AC outline (~130–150% of silhouette width and height) — bleeding sideways slightly and dripping heavily downward. Tiny traces of yellow-brown grime peek through in a few spots where the dirt is dissolving into the foam.",
+        "object_position": "AC centered horizontally on the wall background, vertically shifted up so the AC sits in the upper third of the frame (1/3 from top); the foam cascade fills the middle and lower-middle of the frame.",
+        "object_descriptions": [
+          {
+            "name": "AC unit",
+            "state": "front cover detached, outer shell detached, dust filters detached — internal coil fins fully exposed, then completely engulfed by thick cascading meringue foam",
+            "color": "white plastic body with aluminium-silver coil (almost entirely hidden by the foam)"
+          }
+        ],
+        "preserve_from_prev": "preserve the unit silhouette, coil fin layout, fan blade positions, and the two protective plastic bags from 03_coil_double_protected (blue-tinted bag over the green circuit board on the right, large translucent pouch underneath catching drips) — bags should still read through/behind the foam cascade",
+        "diff_from_prev": "The FIRST reference image shows the EXACT FOAM STYLE to replicate: a cascading curtain of thick WHITE BUBBLY SOAP FOAM, dense piled-up suds, with big voluminous drips flowing down off the unit's edges. The SECOND reference is the AC source — keep its shape, the coil layout, and the two protective plastic bags (blue bag over green circuit board on the right; large translucent pouch underneath catching drips).\n\nTASK: take the AC from the second image and add a heavy soap-foam cascade to it. Replace the flat grey #808080 background with a SOLID CLEAN WALL colored #adbd97 (soft sage green-grey, flat painted wall with subtle tonal variation, NO texture, NO chroma key). Position the AC centered horizontally and shifted UP so it sits in the upper third of the frame; the foam cascade fills the middle and lower-middle of the frame.\n\nFOAM RENDERING (critical):\n- Texture: thick WHITE SOAP FOAM made of fine-to-medium dense bubbles, like piled-up dish-soap suds, car-wash foam, or sea foam. Visible bubble structure throughout, NOT smooth waxy frosting, NOT melted ice cream. Off-white with subtle warm cream tint, soft satin highlights on the rounded mounds.\n- Form: a BIG voluminous CASCADING DRAPE pouring down off the bottom edge of the AC in heavy curtain-like pendant drips, hanging 60–80% of the AC's own height below the unit.\n- Coverage: foam covers roughly 75% of the AC — completely fills the coil cavity and drapes heavily over the top and sides, BUT the AC's frame outline, the louver edges along the top, the side edges of the unit, and BOTH protective plastic bags (blue bag over green circuit board on the right; large translucent drip-catcher pouch underneath) REMAIN CLEARLY VISIBLE peeking through and around the foam. The viewer must still be able to read the AC's silhouette and identity. Foam bleed extends ~130% of the silhouette outward, heaviest downward.\n- A few faint yellow-brown grime streaks peek through where foam is dissolving the dirt.\n\nFORBIDDEN: foam completely hiding the AC (we must still see the unit), perfectly smooth glassy wax surface, melted ice-cream look, popcorn-puff coarse blobs, crushed-snow grain, sandy noise.\n\nStyle: HIGH-RESOLUTION premium product-photography render quality, crisp focus, sharp edges, high detail. Semi-realistic stylized 2D game-asset render, modern. NO blur, NO low-resolution mush, NO compression artifacts, NO cartoon flatness.",
+        "notes": "FOAM STYLE = second reference image (foam_style_ref.png): thick creamy meringue/shaving-cream cascade dripping down past the unit, sculptural blobs, NOT fizzy bubbles. Background is a SOLID CLEAN WALL #adbd97 (sage green-grey) — NOT a chroma-key cutout."
+      }
+    },
+    {
+      "id": "06_pristine_assembled",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": true,
+      "prompt_t2i_flux": "A modern wall-mounted split-system air conditioner indoor unit, perfectly straight front-on view, no tilt, no angle, camera dead-centre and level with the unit, glossy white plastic body with subtle cream highlights, horizontal louvres across the front, slim modern design, manufacturer logo blank, looks brand new and pristine. Centered on a flat grey #808080 background. Semi-realistic stylized 3D mobile-game prop render, smooth gradients, soft warm top-left lighting, gentle soft shadow under the unit, premium product-style render. NOT photoreal, NOT cartoon flat.",
+      "prompt_i2i_nb2": "Generate a new image in the EXACT same art style, rendering quality, lighting and finish as this reference. Subject: a modern wall-mounted split-system air conditioner indoor unit, perfectly straight front-on view, no tilt, no angle, camera dead-centre and level with the unit, glossy white plastic body with subtle cream highlights in the warm lighting, horizontal louvres across the front, slim modern design, no visible brand name, looks brand new and pristine. Centered on a flat grey #808080 background. Soft warm top-left lighting with gentle soft shadow under the unit. Same semi-realistic stylized 3D-prop render quality as the reference compact powder case. NO text, NO logos, NO branding.",
+      "note": "Anchor — generated in Phase 1. Already locked. This is style_variant_A."
+    }
+  ],
+  "subparts": [
+    {
+      "id": "cover_dusty",
+      "filename": "subpart_cover_dusty.png",
+      "source": "chain:00_closed_dusty",
+      "prompt_t2i": "Look at the FULLY DIRTY closed AC unit in the reference image. EXTRACT JUST the front cover panel (the front rectangular face of the AC with the horizontal louvre slats) from this image and present it ALONE as a single detached part lying isolated on a flat grey #808080 background. Preserve the EXACT same heavy dust pattern, dust matting, dust drips, dirty louvre slats and overall fully-dirty 20-years-in-a-warehouse condition as the cover area in the reference image. The detached panel viewed front-on, full panel clearly visible. Soft warm top-left lighting, gentle soft shadow. Semi-realistic stylized 3D mobile-game prop render. Centered, single object."
+    },
+    {
+      "id": "cover_stained",
+      "filename": "subpart_cover_stained.png",
+      "source": "subpart:cover_dusty",
+      "prompt_t2i": "Take the dusty cover panel in the reference image. Change ONLY: all the dust is COMPLETELY GONE, but underneath, the panel is revealed to be HEAVILY STAINED — dark brown coffee-soaked discoloration across the louvre slats, blackish sewage-water streaks running along the slats, mouldy yellowish patches, greasy grime spots. Looks shocking now that the dust is gone. The panel position, framing, lighting and isolated grey background must remain identical to the reference. NO dust, NO foam, NO bubbles."
+    },
+    {
+      "id": "cover_foamed",
+      "filename": "subpart_cover_foamed.png",
+      "source": "subpart:cover_stained",
+      "prompt_t2i": "Take the stained cover panel in the reference image. Change ONLY: the entire panel surface is now densely and EVENLY covered in a thick UNIFORM layer of fine white car-wash style soap foam — small dense fizzy bubbles spread CONSISTENTLY across the full panel from edge to edge, settling into the louvre grooves, no gaps, no patches missing foam. Stained surface underneath is hidden by the foam. Panel position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "cover_scrubbed",
+      "filename": "subpart_cover_scrubbed.png",
+      "source": "subpart:cover_foamed",
+      "prompt_t2i": "Take the foam-covered cover panel in the reference image. Change ONLY: the white foam coating now has CLEAR CURVED WAVY WIPE-ARC LINES across it — flowing cloth-wipe arcs in mixed directions, visible streak ridges where foam gathered and thinned valleys where the cloth pushed it aside. NOT brush-furrows, NOT spirals — soft curved cloth-wipe arcs. Panel position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "cover_clean",
+      "filename": "subpart_cover_clean.png",
+      "source": "subpart:cover_scrubbed",
+      "prompt_t2i": "Take the scrubbed-foam cover panel in the reference image. Change ONLY: all foam has been completely rinsed off, the panel is now PRISTINE clean — bright glossy white, no dust, no stains, no foam, no smudges, fresh-out-of-the-box look. Panel position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "shell_dusty",
+      "filename": "subpart_shell_dusty.png",
+      "source": "chain:00_closed_dusty",
+      "prompt_t2i": "Look at the FULLY DIRTY closed AC unit in the reference image. EXTRACT JUST the outer shell housing (the curved glossy white plastic body of the AC including the bottom outlet vent slats, NOT including the front cover face) and present it ALONE as a detached part lying isolated on a flat grey #808080 background. Preserve the EXACT same heavy dust matting, dust drips, dirty vent slats and overall fully-dirty 20-years-in-a-warehouse condition as the shell area of the reference image. The detached shell viewed front-on, full shape clearly visible. Soft warm top-left lighting, gentle soft shadow. Semi-realistic stylized 3D mobile-game prop render. Centered, single object."
+    },
+    {
+      "id": "shell_stained",
+      "filename": "subpart_shell_stained.png",
+      "source": "subpart:shell_dusty",
+      "prompt_t2i": "Take the dusty shell housing in the reference image. Change ONLY: all dust is COMPLETELY GONE, but underneath the shell is now revealed to be HEAVILY STAINED — dark brown coffee discoloration, blackish sewage-water streaks, mouldy yellowish patches, greasy grime spots across the curved surface and along the vent slats. Looks shocking now. Shell position, framing, lighting and isolated grey background remain identical to the reference. NO dust, NO foam."
+    },
+    {
+      "id": "shell_foamed",
+      "filename": "subpart_shell_foamed.png",
+      "source": "subpart:shell_stained",
+      "prompt_t2i": "Take the stained shell housing in the reference image. Change ONLY: the entire shell surface is now densely and EVENLY covered in a thick UNIFORM layer of fine white car-wash style soap foam — small dense fizzy bubbles spread CONSISTENTLY across the curved body and settling into the vent slat grooves, no gaps. Stained surface underneath hidden by foam. Shell position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "shell_scrubbed",
+      "filename": "subpart_shell_scrubbed.png",
+      "source": "subpart:shell_foamed",
+      "prompt_t2i": "Take the foam-covered shell housing in the reference image. Change ONLY: the white foam coating now has CLEAR CURVED WAVY WIPE-ARC LINES across it — flowing cloth-wipe arcs in mixed directions, visible streak ridges and thinned valleys. NOT brush-furrows, NOT spirals — soft curved cloth-wipe arcs. Shell position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "shell_clean",
+      "filename": "subpart_shell_clean.png",
+      "source": "subpart:shell_scrubbed",
+      "prompt_t2i": "Take the scrubbed-foam shell housing in the reference image. Change ONLY: all foam has been completely rinsed off, the shell is now PRISTINE clean — bright glossy white, no dust, no stains, no foam, fresh-out-of-the-box. Shell position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "filter_1_dusty",
+      "filename": "subpart_filter_1_dusty.png",
+      "source": "chain:00_closed_dusty",
+      "prompt_t2i": "Look at the FULLY DIRTY closed AC unit in the reference image. Generate a SINGLE detached rectangular AC dust filter screen. THE FILTER MUST BE A PERFECTLY FLAT RECTANGULAR PANEL — strict rectangle shape (about 4:5 aspect ratio, slightly taller than wide), no perspective distortion, no warping, no trapezoid shape, no curvature, no foreshortening. Viewed PERFECTLY HEAD-ON like a flat slab seen face-front. White plastic rectangular frame around a fine mesh screen interior. The mesh is COMPLETELY CLOGGED and obscured by a thick felt-like mat of grey-brown dust MATCHING the same dust style, intensity and grey-brown color as the dust visible on the AC in the reference image. Dust fuzz buildup hanging off the frame edges. Mesh essentially invisible under the dust load. Present the filter ALONE as a detached single part lying isolated on a flat grey #808080 background. Soft warm top-left lighting, gentle soft shadow under the panel. Semi-realistic stylized 3D mobile-game prop render. Centered, single flat rectangular object."
+    },
+    {
+      "id": "filter_1_stained",
+      "filename": "subpart_filter_1_stained.png",
+      "source": "subpart:filter_1_dusty",
+      "prompt_t2i": "Take the dusty filter screen in the reference image. Change ONLY: the thick dust mat is COMPLETELY GONE, but the mesh is now revealed to be HEAVILY STAINED — dark brown coffee-soaked discoloration across the mesh strands, blackish sewage-water staining in patches, yellowish mouldy tinge, greasy grime trapped in the weave. Mesh shape now visible but uglified by stains. Filter position, framing, lighting and isolated grey background remain identical to the reference. NO dust, NO foam."
+    },
+    {
+      "id": "filter_1_foamed",
+      "filename": "subpart_filter_1_foamed.png",
+      "source": "subpart:filter_1_stained",
+      "prompt_t2i": "Take the stained filter screen in the reference image. Change ONLY: the filter is now densely covered in a thick UNIFORM layer of fine white car-wash style soap foam — small dense bubbles coating both the white plastic frame and clinging in the mesh weave, evenly distributed across the entire filter with no gaps. Stained mesh underneath hidden by foam. Filter position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "filter_1_scrubbed",
+      "filename": "subpart_filter_1_scrubbed.png",
+      "source": "subpart:filter_1_foamed",
+      "prompt_t2i": "Take the foam-covered filter screen in the reference image. Change ONLY: the foam coating now has CLEAR CURVED WAVY WIPE-ARC LINES across it — flowing cloth-wipe arcs in mixed directions across both mesh and frame. NOT brush-furrows, NOT spirals — soft curved cloth-wipe arcs. Filter position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "filter_1_clean",
+      "filename": "subpart_filter_1_clean.png",
+      "source": "subpart:filter_1_scrubbed",
+      "prompt_t2i": "Take the scrubbed-foam filter screen in the reference image. Change ONLY: all foam has been completely rinsed off, the filter is now PRISTINE clean — bright white frame, see-through clean mesh strands, no dust, no stains, no foam, fresh-out-of-the-box. Filter position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "filter_2_dusty",
+      "filename": "subpart_filter_2_dusty.png",
+      "source": "chain:00_closed_dusty",
+      "prompt_t2i": "Look at the FULLY DIRTY closed AC unit in the reference image. Generate a SECOND detached rectangular AC dust filter screen (twin to filter 1). THE FILTER MUST BE A PERFECTLY FLAT RECTANGULAR PANEL — strict rectangle shape (about 4:5 aspect ratio, slightly taller than wide), no perspective distortion, no warping, no trapezoid shape, no curvature, no foreshortening. Viewed PERFECTLY HEAD-ON like a flat slab seen face-front. White plastic rectangular frame around a fine mesh screen interior. The mesh is COMPLETELY CLOGGED with a thick felt-like mat of grey-brown dust MATCHING the dust style and intensity on the AC in the reference image, with a slightly different dust pattern from the first filter so it reads as distinct. Present the filter ALONE as a detached single part lying isolated on a flat grey #808080 background. Soft warm top-left lighting, gentle soft shadow under the panel. Semi-realistic stylized 3D mobile-game prop render. Centered, single flat rectangular object."
+    },
+    {
+      "id": "filter_2_stained",
+      "filename": "subpart_filter_2_stained.png",
+      "source": "subpart:filter_2_dusty",
+      "prompt_t2i": "Take the dusty filter screen in the reference image. Change ONLY: the thick dust mat is COMPLETELY GONE, but the mesh is now revealed to be HEAVILY STAINED — dark brown coffee patches, blackish sewage-water streaks, yellowish mouldy tinge, greasy grime trapped in the weave. Mesh shape now visible but uglified by stains. Filter position, framing, lighting and isolated grey background remain identical to the reference. NO dust, NO foam."
+    },
+    {
+      "id": "filter_2_foamed",
+      "filename": "subpart_filter_2_foamed.png",
+      "source": "subpart:filter_2_stained",
+      "prompt_t2i": "Take the stained filter screen in the reference image. Change ONLY: the filter is now densely covered in a thick UNIFORM layer of fine white car-wash style soap foam — small dense bubbles coating both the white plastic frame and clinging in the mesh weave, evenly distributed. Stained mesh underneath hidden by foam. Filter position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "filter_2_scrubbed",
+      "filename": "subpart_filter_2_scrubbed.png",
+      "source": "subpart:filter_2_foamed",
+      "prompt_t2i": "Take the foam-covered filter screen in the reference image. Change ONLY: the foam coating now has CLEAR CURVED WAVY WIPE-ARC LINES across it — flowing cloth-wipe arcs in mixed directions across both mesh and frame. NOT brush-furrows, NOT spirals — soft curved cloth-wipe arcs. Filter position, framing, lighting and isolated grey background remain identical to the reference."
+    },
+    {
+      "id": "filter_2_clean",
+      "filename": "subpart_filter_2_clean.png",
+      "source": "subpart:filter_2_scrubbed",
+      "prompt_t2i": "Take the scrubbed-foam filter screen in the reference image. Change ONLY: all foam has been completely rinsed off, the filter is now PRISTINE clean — bright white frame, see-through clean mesh strands, no dust, no stains, no foam, fresh-out-of-the-box. Filter position, framing, lighting and isolated grey background remain identical to the reference."
+    }
+  ],
+  "style_variants": [
+    {
+      "id": "style_variant_B_dark",
+      "filename": "aircon_06_pristine_assembled_styleB.png",
+      "prompt_t2i": "A modern wall-mounted split-system air conditioner indoor unit, perfectly straight front-on view, no tilt, no angle, camera dead-centre and level with the unit. Style B variant: glossy MATTE DARK CHARCOAL GRAY body with subtle metallic shimmer, horizontal louvres across the front, slim modern premium design, looks brand new and pristine, sleeker more upscale aesthetic than the standard white version. Centered on a flat grey #808080 background. Semi-realistic stylized 3D mobile-game prop render, smooth gradients, soft warm top-left lighting, gentle soft shadow under the unit, premium product-style render. NOT photoreal, NOT cartoon flat. NO logos, NO text, NO branding."
+    },
+    {
+      "id": "style_variant_C_champagne",
+      "filename": "aircon_06_pristine_assembled_styleC.png",
+      "prompt_t2i": "A modern wall-mounted split-system air conditioner indoor unit, perfectly straight front-on view, no tilt, no angle, camera dead-centre and level with the unit. Style C variant: glossy soft CHAMPAGNE-GOLD / WARM CREAM body with subtle pearl shimmer and rose-gold accent trim along the louvres and edges, horizontal louvres across the front, slim modern luxury design, looks brand new and pristine, premium boutique aesthetic. Centered on a flat grey #808080 background. Semi-realistic stylized 3D mobile-game prop render, smooth gradients, soft warm top-left lighting, gentle soft shadow under the unit, premium product-style render. NOT photoreal, NOT cartoon flat. NO logos, NO text, NO branding."
+    }
+  ],
+  "backgrounds": [
+    {
+      "id": "wall_background",
+      "filename": "background_wall.png",
+      "source": "chain:06_pristine_assembled",
+      "prompt_t2i": "Take the image and REMOVE THE AC UNIT ENTIRELY — completely erase the air conditioner from the scene, leaving only the empty wall behind. Show ONLY an interior wall surface — soft warm-cream painted plaster wall with CLEARLY VISIBLE SURFACE TEXTURE across the ENTIRE frame: pronounced orange-peel stucco bumps, visible paint-stipple grain, fine wall plaster relief, slight irregular bumpiness, low-relief raised speckles catching light differently across the surface, the unmistakable tactile texture of a real lightly-stuccoed painted interior wall photographed close-up under raking light. The texture is OBVIOUSLY PRESENT and easily seen — bumpy, grainy, stipple-patterned across every part of the wall. NOT a smooth gradient, NOT subtle streaks — a properly TEXTURED stuccoed painted wall with surface relief that catches the soft warm top-left lighting and creates small soft shadow micro-variation. The wall stays soft-focus enough that foreground sprites still read clearly, but the wall texture is unmistakably visible. Keep the EXACT same camera framing, perspective, soft warm top-left lighting, gentle shadow gradient, and overall render style as the original reference. The wall fills the entire frame edge-to-edge. NO air conditioner, NO objects, NO furniture, NO trim, NO mouldings, NO logos, NO text, NO clutter, NO outlets, NO switches — just an empty textured warm-cream stuccoed wall. Semi-realistic stylized 3D mobile-game scene background."
+    }
+  ],
+  "tool_orientation_rule": "Full side-profile view, rotated diagonally across the frame. Handle in LOWER-RIGHT of the image, business-end in UPPER-LEFT. Full length of the tool clearly visible in profile. The business-end (bristles / nozzle / tip / opening) is visible from the SIDE — not pointing at the camera, not pointing straight away into the background, but oriented diagonally up-left so the side reads clearly. NO water, NO foam, NO mist, NO air stream, NO motion lines, NO sparks, NO attached debris, NO hands holding it — just the dry isolated tool itself. Isolated on flat white background. Semi-realistic stylized 3D mobile-game prop render in the same premium product-photography style as the reference. Soft warm top-left lighting, gentle highlight rim, soft drop shadow directly under the tool. Centered, single object, 15% padding around object.",
+  "tools_required": [
+    {
+      "id": "hand_rubber_glove",
+      "filename": "hand_rubber_glove.png",
+      "cached": true,
+      "prompt_t2i": "(cached from prior level — already in manifest)"
+    },
+    {
+      "id": "hose_A",
+      "filename": "hose_A.png",
+      "cached": true,
+      "prompt_t2i": "(cached from prior level)"
+    },
+    {
+      "id": "brush_A",
+      "filename": "brush_A.png",
+      "cached": true,
+      "prompt_t2i": "(cached from prior level)"
+    },
+    {
+      "id": "mini_blower_A",
+      "filename": "mini_blower_A.png",
+      "cached": true,
+      "prompt_t2i": "(cached from prior level)"
+    },
+    {
+      "id": "blower_A",
+      "filename": "blower_A.png",
+      "prompt_t2i": "A handheld electric leaf-blower / dust-blower with a long extended barrel nozzle, compact pistol-grip body in light blue plastic, the nozzle barrel about 2x the length of the grip, trigger handle. Larger and more powerful-looking than a mini compact blower. Apply the tool orientation rule: shown in side profile, the trigger grip in the LOWER-RIGHT of the image, the long barrel nozzle extending diagonally toward the UPPER-LEFT. The full length of the blower from grip to nozzle tip is clearly visible from the side. No air stream, no dust particles."
+    },
+    {
+      "id": "spray_bottle_A",
+      "filename": "spray_bottle_A.png",
+      "prompt_t2i": "ONE SINGLE spray bottle — exactly one bottle, not two, not merged shapes, not multiple bottles. A foam soap spray bottle consisting of: a cylindrical white plastic body (tall bottle shape), a blue plastic trigger sprayer head screwed onto the top of the body, a short cylindrical nozzle on the trigger head. Apply the tool orientation rule: the entire single bottle is rotated diagonally in the frame — the bottom of the bottle body is in the LOWER-RIGHT corner, the trigger sprayer head and nozzle extend diagonally toward the UPPER-LEFT, the nozzle opening points up-left. Clean side profile, single coherent product silhouette, NOT TWO BOTTLES, NOT TWO HEADS, NOT MERGED. The full bottle silhouette is one unified shape from base to nozzle tip. No foam, no spray, no liquid, no second bottle, no duplicate parts."
+    },
+    {
+      "id": "plastic_bag_circuit_cover",
+      "filename": "plastic_bag_circuit_cover.png",
+      "source": "chain:03_coil_double_protected",
+      "prompt_t2i": "Look at the AC unit in the reference image which has TWO protective plastic bags installed on it. EXTRACT JUST the SMALL BLUE-TINTED translucent plastic bag (the one wrapping over the green circuit board on the right side of the AC) and present it ALONE as a detached cleaning tool lying isolated on a flat WHITE background. Preserve the EXACT SAME shape, crumple pattern, soft folds, blue plastic tint and semi-transparency as the bag has in the reference image — it should look like the same bag, just removed from the AC and shown on its own. Apply the tool orientation rule: shown laid flat diagonally across the frame, the gathered closed end in the LOWER-RIGHT of the image, the open mouth of the bag extending diagonally toward the UPPER-LEFT. The full bag is clearly visible. NO writing, NO logos, NO contents inside. Soft warm top-left lighting, gentle soft shadow. Premium product-render. Centered, 15% padding."
+    },
+    {
+      "id": "plastic_bag_drip_catcher",
+      "filename": "plastic_bag_drip_catcher.png",
+      "source": "chain:03_coil_double_protected",
+      "prompt_t2i": "Look at the AC unit in the reference image which has TWO protective plastic bags installed on it. EXTRACT JUST the LARGER translucent plastic bag/sack (the one attached underneath the bottom of the AC, gathered open like a wide pouch to catch water drips) and present it ALONE as a detached cleaning tool lying isolated on a flat WHITE background. Preserve the EXACT SAME shape, open-mouth pouch design, soft folds and plastic transparency as the bag has in the reference image — it should look like the same bag, just removed from the AC and shown on its own. Apply the tool orientation rule: shown laid flat diagonally across the frame, the gathered closed bottom in the LOWER-RIGHT of the image, the open mouth of the bag extending diagonally toward the UPPER-LEFT. The full bag is clearly visible. NO writing, NO logos, NO contents inside. Soft warm top-left lighting, gentle soft shadow. Premium product-render. Centered, 15% padding."
+    },
+    {
+      "id": "industrial_blower_B",
+      "filename": "industrial_blower_B.png",
+      "prompt_t2i": "ONE SINGLE industrial-grade electric air blower — a heavy-duty large dust-blower with a substantial yellow-and-black plastic motor body, large rear air-intake grille, thick wide chrome-tipped nozzle barrel, large pistol-grip handle. Looks bigger, more powerful and more rugged than a regular consumer blower. Apply the tool orientation rule: shown in side profile, the large handle/motor body in the LOWER-RIGHT of the image, the wide nozzle barrel extending diagonally toward the UPPER-LEFT. Full body and nozzle clearly visible in profile. NO air stream, NO motion lines, NO debris — single coherent tool silhouette."
+    },
+    {
+      "id": "foam_machine_B",
+      "filename": "foam_machine_B.png",
+      "prompt_t2i": "ONE SINGLE electric foam dispenser machine — a cylindrical white-and-blue plastic foam-cannon body with a coiled hose attachment, a black trigger gun on the end of the hose, and a small fan-shaped nozzle at the very tip. Looks like a small electric power-foam sprayer, more capable than a hand-held spray bottle. Apply the tool orientation rule: shown in side profile, the cylindrical body/tank in the LOWER-RIGHT of the image, the hose curving and the trigger gun/nozzle extending diagonally toward the UPPER-LEFT. Full unit clearly visible. NO foam emerging, NO water, NO motion lines — single coherent tool silhouette."
+    },
+    {
+      "id": "pressure_washer_B",
+      "filename": "pressure_washer_B.png",
+      "prompt_t2i": "ONE SINGLE electric pressure-washer spray gun — a robust pistol-grip black-and-yellow plastic body with a long chrome-steel lance / extension wand, a trigger handle, and a narrow high-pressure jet nozzle at the tip of the lance. Looks heavy-duty, more powerful than a garden hose nozzle. Apply the tool orientation rule: shown in side profile, the pistol grip/handle in the LOWER-RIGHT of the image, the long lance and high-pressure nozzle extending diagonally toward the UPPER-LEFT. Full length clearly visible. NO water, NO mist, NO jet — single coherent tool silhouette."
+    },
+    {
+      "id": "spray_bottle_red_v6test",
+      "filename": "spray_bottle_red_v6test.png",
+      "step_type": "tool_sprite",
+      "spec": {
+        "camera": "viewed from BEHIND, slightly tilted to the LEFT — back of the bottle facing the camera, trigger and nozzle direction visible from the rear-three-quarter angle"
+      },
+      "prompt_t2i": "ONE SINGLE spray bottle — exactly one bottle, modern realistic product-style. Body color: muted RED-GREY (dusty brick-red with grey undertones, matte plastic finish). Cylindrical bottle body with a trigger sprayer head and short nozzle at the top. View: from BEHIND the bottle, slightly tilted to the LEFT, so the rear of the bottle and the back side of the trigger head are facing the camera at a three-quarter rear angle. Modern realistic styling, premium product-photo quality. Single coherent silhouette, NOT TWO BOTTLES, NOT MERGED. No foam, no spray, no water, no liquid, no hands."
+    },
+    {
+      "id": "foam_sprayer_pink_v6test",
+      "filename": "foam_sprayer_pink_v6test.png",
+      "step_type": "tool_sprite",
+      "spec": {
+        "camera": "viewed from BEHIND, slightly tilted to the LEFT — back of the unit facing the camera at a rear-three-quarter angle"
+      },
+      "prompt_t2i": "ONE SINGLE electric foam-sprayer machine — modern realistic product-style. Two-tone color: MAGENTA PINK (hot pink / cánh sen) body with BLACK accents (black trigger handle, black hose, black nozzle tip). A power foam-cannon: cylindrical pink tank/body, black coiled hose, black trigger gun at the end of the hose, small fan-shaped nozzle at the tip. View: from BEHIND the machine, slightly tilted to the LEFT, so the rear of the tank and the back of the trigger gun face the camera at a three-quarter rear angle. Modern realistic styling, premium product-photo quality. Single coherent silhouette. NO foam emerging, NO water, NO motion lines, NO hands."
+    },
+    {
+      "id": "mini_scrubber_B",
+      "filename": "mini_scrubber_B.png",
+      "prompt_t2i": "ONE SINGLE handheld electric rotating-brush scrubber — a small power-tool with a white-and-teal plastic ergonomic grip handle, a short shaft, and a circular rotating bristle brush head at the end. Looks like a motorised cleaning tool, more powerful than a manual brush. Apply the tool orientation rule: shown in side profile, the grip handle in the LOWER-RIGHT of the image, the circular brush head extending diagonally toward the UPPER-LEFT with the side of the bristle disc fully visible. Full tool clearly visible. NO motion lines, NO foam, NO water — single coherent tool silhouette."
+    }
+  ],
+  "notes": "Updated per new GDD (CSV San_Art). 7 main chain states (was 6). 20 fully-baked sub-part sprites (5 states × 4 parts) — NO engine overlay compositing. 3 style variants (A=current anchor, B=dark charcoal, C=champagne-gold). 2 distinct plastic bag sprites (circuit-cover small + drip-catcher large). New blower_A tool. Always-I2I rule applies. Each backward step must add a DRAMATIC visual change, never subtle."
+}

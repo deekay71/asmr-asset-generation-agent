@@ -1,0 +1,18 @@
+# Base template — used when no specific step_type template matches.
+# Fields with empty/missing values are pruned from the final prompt.
+
+LIGHTING: {{lighting}}
+CAMERA: {{camera}}
+TASK ({{task_type}}): {{diff_from_prev}}
+OBJECTS: {{object_count}}
+PRESERVE FROM PREV: {{preserve_from_prev}}
+NOTES: {{notes}}
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+CONTAINMENT: {{containment}}
+BG: {{bg_directive}}

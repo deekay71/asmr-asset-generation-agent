@@ -1,0 +1,21 @@
+# Step type: foam_application
+# Used when an asset is freshly coated in soap foam (car-wash style).
+
+LIGHTING: {{lighting}}
+CAMERA: {{camera}}
+TASK (foam_application — apply fresh foam to the source asset):
+{{diff_from_prev}}
+
+OBJECTS IN FRAME: {{object_count}}
+PRESERVE FROM PREV: {{preserve_from_prev}}
+
+FOAM SPEC: fine dense bubbles, car-wash style. Spread CONSISTENTLY across the full asset surface — no central blob, no patches missing foam. Bubbles visible throughout. Foam STAYS within the asset silhouette.
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+CONTAINMENT: {{containment}}
+BG: {{bg_directive}}

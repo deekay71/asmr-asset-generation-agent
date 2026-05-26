@@ -1,0 +1,27 @@
+# Step type: disassembly_layout
+# Composite image showing an asset disassembled into its individual cleaning parts,
+# all visible together in correct relative scale on a shared background.
+# Used at the "cover off" step of cleaning chains.
+
+LIGHTING: {{lighting}}
+CAMERA: {{camera}}
+TASK (disassembly_layout — single composite image, all detached parts + remaining bare asset visible together, no labels, no borders):
+{{diff_from_prev}}
+
+OBJECTS IN FRAME: {{object_count}}
+LAYOUT / POSITION: {{object_position}}
+PRESERVE FROM PREV (style + composition lock): {{preserve_from_prev}}
+
+PARTS DESCRIPTION:
+{{object_shape}}
+
+SCALING RULE: parts must be sized so they would physically fit back together onto the bare asset. Twin parts (e.g. filter pairs) MUST be identical to each other. No part may exceed the bare asset's bounding box.
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+CONTAINMENT: {{containment}}
+BG: {{bg_directive}}

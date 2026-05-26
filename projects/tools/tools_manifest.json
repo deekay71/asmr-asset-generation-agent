@@ -1,0 +1,98 @@
+{
+  "hand_rubber_glove": {
+    "filename": "hand_rubber_glove.png",
+    "first_used_level": 6,
+    "prompt": "A bright yellow rubber cleaning glove (empty, no hand inside, in a relaxed natural shape with fingers slightly curled forward), glossy rubber surface with soft cream highlights, the wrist/cuff opening visible. Apply the tool orientation rule: shown in side profile, the wrist/cuff in the LOWER-RIGHT of the image, the fingertips extending diagonally toward the UPPER-LEFT, the side of the glove and fingers fully visible.",
+    "method": "i2i_from_style_ref"
+  },
+  "brush_A": {
+    "filename": "brush_A.png",
+    "first_used_level": 6,
+    "prompt": "A wooden-handled cleaning scrub brush with an oval head of cream-coloured stiff bristles. Apply the tool orientation rule: shown in side profile, the wooden handle in the LOWER-RIGHT of the image, the bristle head extending diagonally toward the UPPER-LEFT. The SIDE of the bristle cluster is fully visible \u2014 bristles fanning toward upper-left, individual bristle texture clear, like a premium product photograph of a scrub brush laid diagonally.",
+    "method": "i2i_from_style_ref"
+  },
+  "hose_A": {
+    "filename": "hose_A.png",
+    "first_used_level": 6,
+    "prompt": "A garden hose spray gun / nozzle, chrome and green-plastic body, trigger grip handle. Apply the tool orientation rule: shown in side profile, the trigger grip in the LOWER-RIGHT of the image, the chrome nozzle opening pointing diagonally toward the UPPER-LEFT. The full length of the spray gun from grip to nozzle is clearly visible from the side. No water emerging.",
+    "method": "i2i_from_style_ref"
+  },
+  "hairdryer_A": {
+    "filename": "hairdryer_A.png",
+    "first_used_level": 6,
+    "prompt": "A handheld hair dryer in soft peach / rose-gold color, with side air vents, a cool tip and trigger button. Apply the tool orientation rule: shown in side profile, the handle grip in the LOWER-RIGHT of the image, the barrel nozzle pointing diagonally toward the UPPER-LEFT. The full L-shape (handle + barrel) is clearly visible from the side. No air stream emerging from the nozzle.",
+    "method": "i2i_from_style_ref"
+  },
+  "lint_roller_A": {
+    "filename": "lint_roller_A.png",
+    "first_used_level": 6,
+    "prompt": "A lint roller cleaning tool, soft pink plastic handle and a white sticky-tape roller head. Apply the tool orientation rule: shown in side profile, the pink handle in the LOWER-RIGHT of the image, the white roller head extending diagonally toward the UPPER-LEFT. The full length of handle + roller is clearly visible from the side. No lint stuck on the roller.",
+    "method": "i2i_from_style_ref"
+  },
+  "mini_blower_A": {
+    "filename": "mini_blower_A.png",
+    "first_used_level": 6,
+    "prompt": "A small handheld electric dust blower, compact body in light blue plastic, short tapered nozzle, trigger grip. Apply the tool orientation rule: shown in side profile, the trigger grip and body in the LOWER-RIGHT of the image, the tapered nozzle pointing diagonally toward the UPPER-LEFT. The full shape from grip to nozzle is clearly visible from the side. No air stream, no dust particles.",
+    "method": "i2i_from_style_ref"
+  },
+  "blower_A": {
+    "filename": "blower_A.png",
+    "first_used_level": 6,
+    "prompt": "A handheld electric leaf-blower / dust-blower with a long extended barrel nozzle, compact pistol-grip body in light blue plastic, the nozzle barrel about 2x the length of the grip, trigger handle. Larger and more powerful-looking than a mini compact blower. Apply the tool orientation rule: shown in side profile, the trigger grip in the LOWER-RIGHT of the image, the long barrel nozzle extending diagonally toward the UPPER-LEFT. The full length of the blower from grip to nozzle tip is clearly visible from the side. No air stream, no dust particles.",
+    "method": "i2i_from_style_ref"
+  },
+  "plastic_bag_circuit_cover": {
+    "filename": "plastic_bag_circuit_cover.png",
+    "first_used_level": 6,
+    "prompt": "Look at the AC unit in the reference image which has TWO protective plastic bags installed on it. EXTRACT JUST the SMALL BLUE-TINTED translucent plastic bag (the one wrapping over the green circuit board on the right side of the AC) and present it ALONE as a detached cleaning tool lying isolated on a flat WHITE background. Preserve the EXACT SAME shape, crumple pattern, soft folds, blue plastic tint and semi-transparency as the bag has in the reference image \u2014 it should look like the same bag, just removed from the AC and shown on its own. Apply the tool orientation rule: shown laid flat diagonally across the frame, the gathered closed end in the LOWER-RIGHT of the image, the open mouth of the bag extending diagonally toward the UPPER-LEFT. The full bag is clearly visible. NO writing, NO logos, NO contents inside. Soft warm top-left lighting, gentle soft shadow. Premium product-render. Centered, 15% padding.",
+    "method": "i2i_from_chain:03_coil_double_protected"
+  },
+  "plastic_bag_drip_catcher": {
+    "filename": "plastic_bag_drip_catcher.png",
+    "first_used_level": 6,
+    "prompt": "Look at the AC unit in the reference image which has TWO protective plastic bags installed on it. EXTRACT JUST the LARGER translucent plastic bag/sack (the one attached underneath the bottom of the AC, gathered open like a wide pouch to catch water drips) and present it ALONE as a detached cleaning tool lying isolated on a flat WHITE background. Preserve the EXACT SAME shape, open-mouth pouch design, soft folds and plastic transparency as the bag has in the reference image \u2014 it should look like the same bag, just removed from the AC and shown on its own. Apply the tool orientation rule: shown laid flat diagonally across the frame, the gathered closed bottom in the LOWER-RIGHT of the image, the open mouth of the bag extending diagonally toward the UPPER-LEFT. The full bag is clearly visible. NO writing, NO logos, NO contents inside. Soft warm top-left lighting, gentle soft shadow. Premium product-render. Centered, 15% padding.",
+    "method": "i2i_from_chain:03_coil_double_protected"
+  },
+  "spray_bottle_A": {
+    "filename": "spray_bottle_A.png",
+    "first_used_level": 6,
+    "prompt": "ONE SINGLE spray bottle \u2014 exactly one bottle, not two, not merged shapes, not multiple bottles. A foam soap spray bottle consisting of: a cylindrical white plastic body (tall bottle shape), a blue plastic trigger sprayer head screwed onto the top of the body, a short cylindrical nozzle on the trigger head. Apply the tool orientation rule: the entire single bottle is rotated diagonally in the frame \u2014 the bottom of the bottle body is in the LOWER-RIGHT corner, the trigger sprayer head and nozzle extend diagonally toward the UPPER-LEFT, the nozzle opening points up-left. Clean side profile, single coherent product silhouette, NOT TWO BOTTLES, NOT TWO HEADS, NOT MERGED. The full bottle silhouette is one unified shape from base to nozzle tip. No foam, no spray, no liquid, no second bottle, no duplicate parts.",
+    "method": "i2i_from_style_ref"
+  },
+  "industrial_blower_B": {
+    "filename": "industrial_blower_B.png",
+    "first_used_level": 6,
+    "prompt": "ONE SINGLE industrial-grade electric air blower \u2014 a heavy-duty large dust-blower with a substantial yellow-and-black plastic motor body, large rear air-intake grille, thick wide chrome-tipped nozzle barrel, large pistol-grip handle. Looks bigger, more powerful and more rugged than a regular consumer blower. Apply the tool orientation rule: shown in side profile, the large handle/motor body in the LOWER-RIGHT of the image, the wide nozzle barrel extending diagonally toward the UPPER-LEFT. Full body and nozzle clearly visible in profile. NO air stream, NO motion lines, NO debris \u2014 single coherent tool silhouette.",
+    "method": "i2i_from_style_ref"
+  },
+  "foam_machine_B": {
+    "filename": "foam_machine_B.png",
+    "first_used_level": 6,
+    "prompt": "ONE SINGLE electric foam dispenser machine \u2014 a cylindrical white-and-blue plastic foam-cannon body with a coiled hose attachment, a black trigger gun on the end of the hose, and a small fan-shaped nozzle at the very tip. Looks like a small electric power-foam sprayer, more capable than a hand-held spray bottle. Apply the tool orientation rule: shown in side profile, the cylindrical body/tank in the LOWER-RIGHT of the image, the hose curving and the trigger gun/nozzle extending diagonally toward the UPPER-LEFT. Full unit clearly visible. NO foam emerging, NO water, NO motion lines \u2014 single coherent tool silhouette.",
+    "method": "i2i_from_style_ref"
+  },
+  "pressure_washer_B": {
+    "filename": "pressure_washer_B.png",
+    "first_used_level": 6,
+    "prompt": "ONE SINGLE electric pressure-washer spray gun \u2014 a robust pistol-grip black-and-yellow plastic body with a long chrome-steel lance / extension wand, a trigger handle, and a narrow high-pressure jet nozzle at the tip of the lance. Looks heavy-duty, more powerful than a garden hose nozzle. Apply the tool orientation rule: shown in side profile, the pistol grip/handle in the LOWER-RIGHT of the image, the long lance and high-pressure nozzle extending diagonally toward the UPPER-LEFT. Full length clearly visible. NO water, NO mist, NO jet \u2014 single coherent tool silhouette.",
+    "method": "i2i_from_style_ref"
+  },
+  "mini_scrubber_B": {
+    "filename": "mini_scrubber_B.png",
+    "first_used_level": 6,
+    "prompt": "ONE SINGLE handheld electric rotating-brush scrubber \u2014 a small power-tool with a white-and-teal plastic ergonomic grip handle, a short shaft, and a circular rotating bristle brush head at the end. Looks like a motorised cleaning tool, more powerful than a manual brush. Apply the tool orientation rule: shown in side profile, the grip handle in the LOWER-RIGHT of the image, the circular brush head extending diagonally toward the UPPER-LEFT with the side of the bristle disc fully visible. Full tool clearly visible. NO motion lines, NO foam, NO water \u2014 single coherent tool silhouette.",
+    "method": "i2i_from_style_ref"
+  },
+  "spray_bottle_red_v6test": {
+    "filename": "spray_bottle_red_v6test.png",
+    "first_used_level": 6,
+    "prompt": "ONE SINGLE spray bottle \u2014 exactly one bottle, modern realistic product-style. Body color: muted RED-GREY (dusty brick-red with grey undertones, matte plastic finish). Cylindrical bottle body with a trigger sprayer head and short nozzle at the top. View: from BEHIND the bottle, slightly tilted to the LEFT, so the rear of the bottle and the back side of the trigger head are facing the camera at a three-quarter rear angle. Modern realistic styling, premium product-photo quality. Single coherent silhouette, NOT TWO BOTTLES, NOT MERGED. No foam, no spray, no water, no liquid, no hands.",
+    "method": "i2i_from_style_ref_via_google_flash"
+  },
+  "foam_sprayer_pink_v6test": {
+    "filename": "foam_sprayer_pink_v6test.png",
+    "first_used_level": 6,
+    "prompt": "ONE SINGLE electric foam-sprayer machine \u2014 modern realistic product-style. Two-tone color: MAGENTA PINK (hot pink / c\u00e1nh sen) body with BLACK accents (black trigger handle, black hose, black nozzle tip). A power foam-cannon: cylindrical pink tank/body, black coiled hose, black trigger gun at the end of the hose, small fan-shaped nozzle at the tip. View: from BEHIND the machine, slightly tilted to the LEFT, so the rear of the tank and the back of the trigger gun face the camera at a three-quarter rear angle. Modern realistic styling, premium product-photo quality. Single coherent silhouette. NO foam emerging, NO water, NO motion lines, NO hands.",
+    "method": "i2i_from_style_ref_via_google_flash"
+  }
+}

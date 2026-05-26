@@ -1,0 +1,113 @@
+{
+  "level": 5,
+  "name": "plushie",
+  "title": "Stage Gấu bông (Teddy Bear)",
+  "style_reference": "../style_reference/style_anchor_compact.png",
+  "style_description": "Semi-realistic stylized 3D mobile-game prop render. Soft warm lighting from top-left. Smooth gradients, gentle highlight rim, soft shadow under object. Premium product-photography feel. Warm cream/peach/honey palette. Subtle texture detail without going photoreal. Front-on camera, slight 5-degree tilt. NO flat cel-shading, NO cartoon outlines, NO photoreal.",
+  "style_lock_prefix": "Match the EXACT same art style, render quality, lighting and finish as the FIRST reference image. The SECOND image is the source to be transformed. Preserve the bear's chocolate brown fur color (#5C3A20), the same camera framing, zoom, pose and proportions as the second image.",
+  "color_constant": "The bear's fur base color is STILL the same chocolate brown (#5C3A20) as the original anchor — only wetness, dirt or foam should change the visible surface, never the underlying fur tone.",
+  "no_half_states_rule": "Each state is a CLEAN snapshot — never a transition. Never show a half-cleaned / half-rinsed / half-foamed state. Each state must be visually distinct from its neighbours so the player sees clear progress.",
+  "anchor_state": "06_pristine",
+  "bg_color": "#808080",
+  "generation_order": "reverse",
+  "states": [
+    {
+      "id": "00_very_dirty",
+      "tool": "hand_rubber_glove",
+      "source_state": "01_muddy_wet",
+      "trash_overlays_external": ["gum", "wrapper", "lollipop_stick"],
+      "prompt": "Keep the EXACT same camera framing, zoom, pose and proportions. Only change: the bear is now DRAMATICALLY DIRTY — large irregular brown mud smears and dirt streaks visible across the chest, belly and arms; multiple sparse dried grass clumps and small dead leaf bits visibly stuck in the fur on shoulders and legs; dark muddy stains around the paws and bottom; fur is wet, matted, clumped together with visible glistening muddy water. The dirt is BOLD and CLEARLY VISIBLE — high contrast against the chocolate brown fur, easy to read at a glance. NO trash items (no gum, no wrappers, no candy) on the bear itself — just heavy organic outdoor dirt. Background: flat grey #808080."
+    },
+    {
+      "id": "01_muddy_wet",
+      "tool": "hose_A",
+      "source_state": "02_foam_blanket",
+      "prompt": "Keep the EXACT same camera framing, zoom, pose and proportions. Only change: the bear has just been hit with water — the bold mud smears, grass clumps and leaf debris from before are all GONE, the fur is now very wet and darkened with a glossy soaked sheen, slightly clumped. A small amount of faint residual dirt discoloration remains in deep crevices (under arms, between legs, behind ears) hinting that soap is still needed. NO foam, NO mud, NO debris. Background: flat grey #808080."
+    },
+    {
+      "id": "02_foam_blanket",
+      "tool": "spray_bottle_A",
+      "source_state": "03_scrubbed_streaks",
+      "prompt": "Keep the EXACT same camera framing, zoom, pose and proportions. Only change: the bear is covered in freshly sprayed soap foam — organic and varied, with irregular blob shapes, mixed bubble sizes (some tiny dense fizz, some big airy bubbles), thicker accumulation in body crevices (under chin, between legs, behind ears) and thinner film on smooth areas (forehead, belly). Some patches of dark wet fur peek through where foam hasn't built up. NOT a uniform white blanket. NO scrub streaks yet. Soft warm top-left lighting catches the wet bubbles. Background: flat grey #808080."
+    },
+    {
+      "id": "03_scrubbed_streaks",
+      "tool": "brush_A",
+      "source_state": "04_rinsed_clean_wet",
+      "prompt": "Keep the EXACT same camera framing, zoom, pose and proportions. Only change: the soap foam covering the bear has clearly been BRUSHED IN by hand-scrubbing — visible drag-streaks and brush-mark furrows in the foam follow the curve of the body, mixed-direction streaks across belly and limbs (not perfect spirals, not stamped patterns). Foam is denser where the brush has gathered it (edges, crevices) and thinner where scrubbed flat. Soft warm lighting catches the streak ridges. Background: flat grey #808080."
+    },
+    {
+      "id": "04_rinsed_clean_wet",
+      "tool": "hose_A",
+      "source_state": "05_dry_lint",
+      "prompt": "Keep the EXACT same camera framing, zoom, pose and proportions. Only change: ALL foam has been completely rinsed off the bear. The fur is now wet, clean and fully chocolate brown — no foam anywhere, no dirt anywhere, just freshly washed wet fur with a glossy soaked sheen, slightly clumped and darker than dry. The bear looks completely clean of soap and dirt but still soggy. Background: flat grey #808080."
+    },
+    {
+      "id": "05_dry_lint",
+      "tool": "hairdryer_A",
+      "source_state": "06_pristine",
+      "prompt": "Keep the EXACT same camera framing, zoom, pose and proportions. Only change: the bear is now completely dry — fur looks fluffy, full, dry, NOT wet, NOT clumped. A few faint white lint specks and stray fluff bits are visibly scattered across the otherwise clean dry fur (on the chest, arms and head). The bear is dry and clean but not yet final-polished. Background: flat grey #808080."
+    },
+    {
+      "id": "06_pristine",
+      "tool": "lint_roller_A",
+      "source_state": null,
+      "is_anchor": true,
+      "prompt_t2i_flux": "A cute brown teddy bear plush toy, front-facing camera with a slight 5 degree tilt, sitting upright pose with arms slightly forward, soft fluffy fur with subtle highlights, classic black bead eyes, small stitched nose, gentle smile, premium high-end soft-toy quality. Centered on a flat grey #808080 background. Semi-realistic stylized 3D mobile-game prop render, smooth gradients, soft warm top-left lighting, gentle soft shadow under the bear, warm cream and honey-brown palette. NOT photoreal, NOT cartoon flat. Detailed soft fur texture without being photographic. Premium product-style render.",
+      "prompt_i2i_nb2": "Generate a new image in the EXACT same art style, rendering quality, lighting, gradient detail and finish as this reference. Subject: a cute brown teddy bear plush toy, front-facing camera with a slight 5 degree tilt, sitting upright pose with arms slightly forward, soft fluffy fur, classic black bead eyes, small stitched nose, gentle smile. Centered on a flat grey #808080 background. Soft warm top-left lighting with gentle soft shadow under the bear. Same semi-realistic stylized 3D-prop render quality as the reference compact powder case. NO text, NO logos, NO branding.",
+      "note": "Anchor — generated in Phase 1. The lint_roller_A tool transitions player from state 05 to here (the player has nothing to do on this final state)."
+    }
+  ],
+  "trash_overlays": [
+    {
+      "id": "gum",
+      "filename": "trash_gum.png",
+      "prompt_t2i": "A blob of pink chewing gum, sticky stretched messy shape, glossy semi-translucent pink #FFB6C1, small darker pink hairs/streaks suggesting it has been stuck to fur. Isolated on flat grey #808080 background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting, gentle soft shadow under object. Premium product-render quality. Centered, single object."
+    },
+    {
+      "id": "wrapper",
+      "filename": "trash_wrapper.png",
+      "prompt_t2i": "A crumpled snack food wrapper made of shiny foil-plastic, partially folded with visible creases and crinkles, mixed colors (red, yellow, silver), no readable text or brand. Isolated on flat grey #808080 background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting, gentle soft shadow. Premium product-render quality. Centered, single object."
+    },
+    {
+      "id": "lollipop_stick",
+      "filename": "trash_lollipop_stick.png",
+      "prompt_t2i": "A used lollipop on a white paper stick, partially eaten round red candy at the tip, glossy and slightly sticky, white paper stick. Isolated on flat grey #808080 background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting, gentle soft shadow under object. Premium product-render quality. Centered, single object."
+    }
+  ],
+  "tools_global_rule": "All tools are PLAYER-POV overlay sprites: handle/grip oriented TOWARD camera (lower-front), business-end (nozzle/bristles/barrel/roller/fingers) pointing AWAY from camera into the background as if the player is reaching forward to clean something. ONLY the dry tool itself — NO water, NO foam, NO mist, NO air streams, NO heat lines, NO motion lines, NO sparks, NO attached debris, NO hands (unless the tool IS a hand/glove). Effects are added at runtime by the engine. See TOOL_RULES.md.",
+  "tools_required": [
+    {
+      "id": "hand_rubber_glove",
+      "filename": "hand_rubber_glove.png",
+      "prompt_t2i": "A bright yellow rubber cleaning glove worn on a hand, viewed from BEHIND the wrist — the back of the hand and fingers extend AWAY from the camera into the background, fingers slightly cupped as if reaching forward to grab something to clean. The wrist/cuff opening is toward the camera (foreground). Glossy yellow rubber surface with soft highlights. ONLY the gloved hand, NOTHING else — no objects, no surfaces, no effects. Isolated on flat white background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting, gentle soft shadow. Premium product-render quality. Centered, 15% padding around object."
+    },
+    {
+      "id": "hose_A",
+      "filename": "hose_A.png",
+      "prompt_t2i": "A garden hose spray-gun nozzle. Trigger handle/grip oriented TOWARD the camera in the lower-front of the frame; the nozzle barrel and opening point AWAY from the camera into the background, as if the player is holding it to spray something in front of them. Chrome and green plastic body. The nozzle is DRY and IDLE — NO water, NO mist, NO spray, NO droplets emerging anywhere. ONLY the tool itself. Isolated on flat white background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting, gentle soft shadow. Premium product-render quality. Centered, 15% padding around object."
+    },
+    {
+      "id": "spray_bottle_A",
+      "filename": "spray_bottle_A.png",
+      "prompt_t2i": "A foam soap spray bottle. Trigger handle/grip oriented TOWARD the camera in the lower-front of the frame; the sprayer nozzle points AWAY from the camera into the background, as if the player is holding it to spray something in front of them. White plastic body, blue trigger sprayer head. The bottle is DRY and IDLE — NO foam, NO bubbles, NO suds, NO liquid emerging anywhere. ONLY the bottle itself. Isolated on flat white background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting, gentle soft shadow. Premium product-render quality. Centered, 15% padding around object."
+    },
+    {
+      "id": "brush_A",
+      "filename": "brush_A.png",
+      "prompt_t2i": "A wooden-handled cleaning scrub brush. The wooden handle is oriented TOWARD the camera in the lower-front of the frame; the bristle head points AWAY from the camera into the background, as if the player is holding it to scrub something in front of them. Oval brush head with cream-colored bristles. The brush is DRY and CLEAN — NO water, NO foam, NO suds, NO debris in the bristles. ONLY the brush itself. Isolated on flat white background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting, gentle soft shadow. Premium product-render quality. Centered, 15% padding around object."
+    },
+    {
+      "id": "hairdryer_A",
+      "filename": "hairdryer_A.png",
+      "prompt_t2i": "A handheld hair dryer. The grip handle is oriented TOWARD the camera in the lower-front of the frame; the barrel and nozzle point AWAY from the camera into the background, as if the player is holding it to dry something in front of them. Soft peach/rose-gold color with side air vents. The dryer is IDLE — NO air stream, NO warm air, NO heat lines, NO motion lines. ONLY the dryer itself. Isolated on flat white background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting, gentle soft shadow. Premium product-render quality. Centered, 15% padding around object."
+    },
+    {
+      "id": "lint_roller_A",
+      "filename": "lint_roller_A.png",
+      "prompt_t2i": "A lint roller cleaning tool. The plastic handle is oriented TOWARD the camera in the lower-front of the frame; the sticky roller head points AWAY from the camera into the background, as if the player is holding it to roll over something in front of them. Soft pink plastic handle, white sticky tape roller head. The roller is FRESH and CLEAN — NO lint, NO fluff, NO fur, NO debris stuck to it. ONLY the tool itself. Isolated on flat white background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting, gentle soft shadow. Premium product-render quality. Centered, 15% padding around object."
+    }
+  ],
+  "style_variants": ["A_brown_teddy"],
+  "notes": "7 chain states (00_very_dirty → 06_pristine). State 00 base also used for step 2 (water spray) — trash overlays disappear during step 1 without changing the base. Each state is a CLEAN snapshot, no half-states. Trash overlays generated independently as transparent PNGs. Always I2I — chain uses multi-anchor [pristine_anchor, source_state]; trash/tools I2I from compact style reference."
+}

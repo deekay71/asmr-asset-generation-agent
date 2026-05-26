@@ -1,0 +1,157 @@
+{
+  "schema_version": "3.0",
+  "level": 8,
+  "name": "fireplace",
+  "title": "Stage Lò sưởi (Fireplace Restoration)",
+  "style_reference": "../style_reference/style_anchor_compact.png",
+
+  "_v3_doc": "V3 fields (chain_consistency_contract, asmr_framing, style_mode, sensory_vocabulary) are auto-injected as a prompt envelope before every chain/sprite/tool task body. Replaces V2's scattered style_description + style_lock_prefix + manual per-prompt framing.",
+
+  "chain_consistency_contract": "Use the same EXACT fireplace model in every state. Keep the same front-view camera angle, the same proportions, the same size, the same silhouette, and the same surround design across all states. The fireplace must look like one continuous restoration process, not different fireplaces. Brick + stone block layout positions, mortar joint positions, and missing-brick hole positions must stay CONSISTENT and synchronised between states, then gradually transition as restoration progresses. The substantial dark oak mantel must remain the same size and wood tone across every state. The hearth opening shape and the pale stone hearth slab must remain unchanged.",
+
+  "asmr_framing": "This is for a 2D ASMR cleaning game. The player wants a deeply satisfying disgust→clean transition as they restore an abandoned old fireplace. Dirty states should feel disgusting, neglected, ugly, deeply embedded — like the fireplace has been forgotten in a derelict cabin for decades. Clean states should feel fresh, satisfying, bright, and rewarding — the centerpiece of a cosy living room, fully restored. No people, no hands, no UI, no text, no labels, no room background visible in the asset.",
+
+  "style_mode": "2d_game_asset_flat",
+
+  "sensory_vocabulary": {
+    "dirty_adjectives": ["disgusting", "deeply embedded", "old", "uneven", "neglected", "filthy", "abandoned", "stubborn", "patchy", "unsanitary", "blanketed"],
+    "foam_adjectives": ["thick", "rich", "dense", "satisfying", "soft", "fine-bubbled", "creamy", "full coverage", "car-wash style"],
+    "clean_adjectives": ["fresh", "bright", "glossy", "like new", "satisfying", "polished", "rewarding", "centerpiece"],
+    "scrub_pattern": "curved flowing wavy wipe trails clearly visible on the foam surface"
+  },
+
+  "color_constant": "The fireplace identity is FIXED: matte rustic mixed-masonry surround built from warm reddish-brown clay bricks (#8B4A2F) of varied sizes mixed with larger pale grey-cream natural stone blocks, hand-laid organic pattern with subtle wear and visible mortar joints. A SUBSTANTIAL thick dark-stained wooden mantelpiece runs across the top, wider than the surround with slight overhang, visible wood grain. The hearth opening is a rectangular dark recess with a sooty pale-grey-black interior. A flat pale stone hearth slab extends forward at the base. NEVER change the brick/stone composition, NEVER change the mantel size or wood tone, NEVER change the hearth opening shape, NEVER change the hearth slab. Only restoration progress (dust, ash, brick holes, mortar, polish) changes between states.",
+
+  "anchor_state": "04_pristine",
+  "bg_color": "#00FF00",
+  "generation_order": "reverse",
+  "_notes_chain": "5 chain BASES (was 7). Cobwebs + 5 debris items + 4 brick props live as INDEPENDENT overlays (trash_overlays + subparts), so steps 1+2 (sweep cobwebs, pick debris) only animate overlays — no base changes. Steps 3-6 each transform the BASE.",
+  "states": [
+    {
+      "id": "00_filthy",
+      "tool": "hand_brush_orange",
+      "source_state": "01_hearth_clean",
+      "_used_by_steps": [1, 2, 3],
+      "prompt": "Keep the EXACT same camera framing, fireplace silhouette, mantel, hearth opening, hearth slab, brick + stone layout, and proportions as the reference image.\n\nONLY change: the fireplace is now in its most DISGUSTING, NEGLECTED, ABANDONED state — like it has been forgotten in a derelict cabin for 30 years. The entire surface is BLANKETED in a thick dense layer of old grey-brown dust, the kind of dust that has settled and matted over decades. Dust is OVERWHELMING and FULLY COVERING — completely obscuring the matte clay and stone underneath in places. Heavy dust caked into every mortar joint. Dust streaks running down the bricks and stone blocks like dirty waterfalls. Thick dust matting on top of the mantel surface. Cobwebby grey grime in every upper corner and crevice. Old soot-blackened smudges around the hearth opening. A thick UGLY mound of grey ash piled INSIDE the hearth opening (not in front of it).\n\nFOUR conspicuous missing-brick / missing-stone holes in the surround are clearly visible — dark embedded cavities where bricks have fallen out. Hole positions must match the reference image's brick layout.\n\nThe filth must feel deeply disgusting and embedded — not casually dirty. NO debris items on the hearth floor or in front of the fireplace (those are added by overlays). NO cobweb sheets in the opening (those are overlays).\n\nBackground: flat solid pure green chroma-key #00FF00 (NOT grey, NOT off-green — strictly #00FF00 green-screen for compositing)."
+    },
+    {
+      "id": "01_hearth_clean",
+      "tool": "hand_rubber_glove",
+      "source_state": "02_bricks_placed",
+      "_used_by_step": 4,
+      "prompt": "Keep the EXACT same camera framing, fireplace silhouette, mantel, hearth opening, hearth slab, brick + stone layout, and proportions. ONLY change: the heavy dust covering and ash mound from the previous state are now COMPLETELY GONE — the fireplace surface is clean (matte bricks and stones visible cleanly), the mortar joints are clean grey, the mantel is clean dark wood, the hearth interior is clean dark sooty stone (no ash). However the FOUR missing-brick / missing-stone HOLES in the surround are STILL CLEARLY VISIBLE in the EXACT SAME POSITIONS as the source image — dark cavities awaiting new bricks. NO dust, NO ash, NO cobwebs, NO debris. Background: flat solid pure green chroma-key #00FF00."
+    },
+    {
+      "id": "02_bricks_placed",
+      "tool": "trowel",
+      "source_state": "03_mortar_rough",
+      "_used_by_step": 5,
+      "prompt": "Keep the EXACT same camera framing, fireplace silhouette, mantel, hearth opening, hearth slab, surrounding brick + stone layout, and proportions. ONLY change: the FOUR missing-brick holes are now FILLED with NEW fresh-looking clay bricks (slightly brighter and cleaner reddish-brown than the surrounding aged bricks so they read as 'just placed') — bricks installed in the SAME POSITIONS as the source image's holes. The joints around the 4 new bricks are RAW and VISIBLE — clearly visible dark seams between new bricks and old surround, NO mortar in those new joints yet. The rest of the wall remains untouched (existing mortar lines stay clean). Background: flat solid pure green chroma-key #00FF00."
+    },
+    {
+      "id": "03_mortar_rough",
+      "tool": "sandpaper_A",
+      "source_state": "04_pristine",
+      "_used_by_step": 6,
+      "prompt": "Keep the EXACT same camera framing, fireplace silhouette, mantel, hearth opening, hearth slab, brick + stone layout, and proportions. ONLY change: the raw joints around the 4 newly-placed bricks (and any hairline cracks) are now FILLED with rough wet grey mortar / cement — visible as messy uneven grey lines spreading slightly beyond the joints, bumpy and uneven surface, NOT smooth, with visible trowel marks and slightly raised mortar ridges. The mortar overlaps a bit onto the brick faces in places, looking unfinished and freshly-applied. Background: flat solid pure green chroma-key #00FF00."
+    },
+    {
+      "id": "04_pristine",
+      "tool": null,
+      "source_state": null,
+      "is_anchor": true,
+      "prompt_t2i_flux": "A fully restored residential living-room fireplace, perfectly straight front-on view, no tilt, matte rustic mixed-masonry surround of warm reddish-brown clay bricks interspersed with pale grey-cream natural stone blocks, hand-laid organic pattern with visible mortar joints, a substantial thick dark-stained oak mantelpiece running across the top with visible wood grain and slight overhang, a generous rectangular dark hearth opening with sooty pale-grey interior (empty, no fire), a flat pale stone hearth slab extending forward at the base. Centered on a flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 3D mobile-game prop render, smooth gradients, soft warm top-left lighting, gentle soft shadow under the fireplace, premium product-style render. MATTE finish — NO glossy highlights. NO photoreal, NO cartoon flat.",
+      "prompt_i2i_nb2": "Generate a new image in the EXACT same premium product-photography art style and lighting quality as this reference. Subject: a substantial RESIDENTIAL LIVING-ROOM FIREPLACE — wide proportions, matte mixed-masonry surround (warm reddish-brown clay bricks mixed with pale grey-cream natural stone blocks in an organic non-uniform pattern), substantial thick dark-stained oak mantelpiece with visible wood grain spanning across the top, generous rectangular dark hearth opening with sooty pale-grey interior (empty — no fire, no logs), flat pale stone hearth slab extending forward at the base. Perfectly straight front-on view, no tilt, no angle. Centered on a flat solid pure green chroma-key #00FF00 background (NOT grey — strictly bright green for chroma-key compositing). Soft warm top-left lighting with gentle shading. Same semi-realistic stylized 3D-prop render quality as the reference compact. Matte finish, NO glossy highlights. NO text, NO logos, NO fire, NO smoke, NO decorations on the mantel.",
+      "note": "Anchor — Style A. Generated in Phase 1."
+    }
+  ],
+  "trash_overlays": [
+    {
+      "id": "cobweb_large_horizontal",
+      "filename": "cobweb_large_horizontal.png",
+      "prompt_t2i": "A large dusty grey horizontal cobweb sheet, irregular spider-web pattern with radial strands and concentric rings, dust caked on the web fibres giving fuzzy grey appearance, semi-translucent, stretched as if spanning a horizontal opening. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting. Premium product-render quality. Centered, single cobweb, wide horizontal proportions (about 2:1)."
+    },
+    {
+      "id": "cobweb_medium_horizontal",
+      "filename": "cobweb_medium_horizontal.png",
+      "prompt_t2i": "A medium-size dusty grey cobweb sheet, irregular spider-web pattern with thinner fibres than the large cobweb, dust caked, semi-translucent, slightly different shape and pattern from the large twin. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting. Premium product-render quality. Centered, single cobweb (1.5:1)."
+    },
+    {
+      "id": "debris_stone_shard",
+      "filename": "debris_stone_shard.png",
+      "prompt_t2i": "A small irregular shard of broken grey stone, sharp jagged edges, dirty greyish surface with darker streaks. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting. Premium product-render quality. Centered, single object."
+    },
+    {
+      "id": "debris_brick_chunk",
+      "filename": "debris_brick_chunk.png",
+      "prompt_t2i": "A broken chunk of red-brown brick, irregular shape with rough fracture edges, warm reddish-brown clay colour, partially soot-blackened. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting. Premium product-render quality. Centered, single object."
+    },
+    {
+      "id": "debris_burnt_log",
+      "filename": "debris_burnt_log.png",
+      "prompt_t2i": "A small burnt log piece — charred dark grey/black wood, cracked surface, ends slightly orange-red where it stopped burning, irregular cylindrical shape. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting. Premium product-render quality. Centered, single object."
+    },
+    {
+      "id": "debris_burnt_splinter",
+      "filename": "debris_burnt_splinter.png",
+      "prompt_t2i": "A small burnt wood splinter — thin charred dark-grey piece, partially black with hints of brown grain, sharp irregular edges. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting. Premium product-render quality. Centered, single object."
+    },
+    {
+      "id": "debris_ash_lump",
+      "filename": "debris_ash_lump.png",
+      "prompt_t2i": "A loose clump of grey fireplace ash, soft powdery texture, irregular pile shape, mostly mid-grey with darker soot streaks. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting. Premium product-render quality. Centered, single object."
+    }
+  ],
+  "subparts": [
+    {
+      "id": "brick_new",
+      "filename": "subpart_brick_new.png",
+      "prompt_t2i": "A single new clean rectangular fireplace brick, fresh warm reddish-brown clay (#8B4A2F), classic brick proportions (about 2:1 aspect), slightly rough fired-clay surface texture, edges crisp and chip-free. Isolated on flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting. Premium product-render quality. Centered, single rectangular brick."
+    }
+  ],
+  "style_variants": [
+    {
+      "id": "style_variant_B_modern_stone",
+      "filename": "fireplace_04_pristine_styleB.png",
+      "prompt_t2i": "A fully restored MODERN MINIMAL stone fireplace, perfectly straight front-on view, no tilt. Style B variant: large smooth pale grey limestone slabs (no brick pattern), a flat clean stone surround, a slim light-grey concrete mantel running horizontally across the top, rectangular dark hearth opening, flat pale stone hearth slab extending forward. Sleek minimalist aesthetic. Centered on a flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 3D mobile-game prop render, smooth gradients, soft warm top-left lighting, gentle shadow under the unit, premium product-style render. Matte finish, NO photoreal, NO cartoon flat. NO logos, NO text, NO fire."
+    },
+    {
+      "id": "style_variant_C_slate_iron",
+      "filename": "fireplace_04_pristine_styleC.png",
+      "prompt_t2i": "A fully restored LUXE INDUSTRIAL fireplace, perfectly straight front-on view, no tilt. Style C variant: dark grey-black slate tile surround with subtle natural variation, blackened wrought-iron trim framing the hearth opening, a dark iron mantel bar running horizontally across the top, pitch-dark hearth interior, dark stone hearth slab extending forward. Premium industrial-loft aesthetic. Centered on a flat solid pure green chroma-key #00FF00 background. Semi-realistic stylized 3D mobile-game prop render, smooth gradients, soft warm top-left lighting catching the slate texture, gentle shadow under the unit, premium product-style render. Matte finish, NO photoreal, NO cartoon flat. NO logos, NO text, NO fire."
+    }
+  ],
+  "backgrounds": [
+    {
+      "id": "wall_background",
+      "filename": "background_living_room_wall.png",
+      "source": "chain:04_pristine",
+      "prompt_t2i": "Take the reference image and REMOVE THE FIREPLACE ENTIRELY — completely erase the fireplace from the scene, leaving only the empty living-room wall and floor behind. Show ONLY a residential interior wall surface where the fireplace used to be mounted.\n\nTHE WALL: a classic warm-cream painted living-room wall covered in TASTEFUL VINTAGE WALLPAPER — soft repeating wallpaper pattern of faint vertical damask-style botanical motifs (subtle scrolling foliage / fleur-de-lis style ornament) in a slightly darker warm taupe tone against the cream base, low-contrast and gentle. CLEAR SURFACE TEXTURE under the pattern: visible paper grain, subtle paint-stipple roughness, faint plaster relief.\n\nFLOOR: a hint of dark stained wooden floor planks along the very bottom edge of the frame (top 10-15% of the frame's bottom region), with visible plank seams and wood grain, soft-focus.\n\nLIGHTING: MATCH the warm top-left lighting of the original fireplace reference — upper-left slightly brighter/warmer, lower-right slightly cooler/shadowed. Same colour temperature and softness.\n\nFOCUS: entire wall and floor strip slightly SOFT-FOCUS / low detail so foreground sprites pop. Wallpaper pattern visible but gently blurred.\n\nKeep the EXACT same camera framing as the reference. NO fireplace, NO objects, NO furniture, NO decorations. Semi-realistic stylized 3D mobile-game scene background.\n\nNOTE: this background remains OPAQUE — do NOT use the green chroma key, this is a final scene plate."
+    }
+  ],
+  "tool_orientation_rule": "Full side-profile view, rotated diagonally across the frame. Handle in LOWER-RIGHT of the image, business-end in UPPER-LEFT. Full length of the tool clearly visible in profile. The business-end is visible from the SIDE — not pointing at the camera, not pointing straight away into the background. NO water, NO foam, NO mist, NO debris, NO motion lines, NO sparks, NO hands holding it. Isolated on flat solid pure green chroma-key #00FF00 background (NOT white). Semi-realistic stylized 3D mobile-game prop render. Soft warm top-left lighting, gentle highlight rim, soft drop shadow directly under the tool. Centered, single object, 15% padding around object.",
+  "tools_required": [
+    {"id": "hand_rubber_glove", "filename": "hand_rubber_glove.png", "cached": true, "prompt_t2i": "(cached from prior level)"},
+    {
+      "id": "hand_brush_orange",
+      "filename": "hand_brush_orange.png",
+      "prompt_t2i": "A small handheld dustpan-style hearth brush with a curved wooden handle and a wide cluster of stiff bright ORANGE bristles fanning out at the head — like a classic hearth brush for sweeping cobwebs and ash. Apply the tool orientation rule: shown in side profile, the curved wooden handle in the LOWER-RIGHT of the image, the orange bristle cluster extending diagonally toward the UPPER-LEFT. The side of the orange bristles is fully visible — bristles fanning toward upper-left, individual bristle texture clear."
+    },
+    {
+      "id": "mini_vacuum_A",
+      "filename": "mini_vacuum_A.png",
+      "prompt_t2i": "ONE SINGLE compact handheld electric mini-vacuum — small portable vacuum with rounded cylindrical white-and-black plastic body, chrome nozzle tip, clear plastic dust-collection chamber, ergonomic pistol-grip handle. Apply the tool orientation rule: shown in side profile, the pistol grip in the LOWER-RIGHT of the image, the nozzle tip extending diagonally toward the UPPER-LEFT. Full body and nozzle clearly visible in profile. NO dust particles, NO motion lines — single coherent tool silhouette."
+    },
+    {
+      "id": "trowel",
+      "filename": "trowel.png",
+      "prompt_t2i": "ONE SINGLE bricklayer's pointing trowel — flat triangular pointed steel blade attached to a curved wooden handle, classic masonry trowel shape, steel blade pointed at the tip with a slight upward curve where it meets the handle. Apply the tool orientation rule: shown in side profile, the wooden handle in the LOWER-RIGHT of the image, the triangular steel blade extending diagonally toward the UPPER-LEFT with the blade tip pointing up-left. Full length clearly visible. NO cement, NO mortar on the blade — clean dry trowel."
+    },
+    {
+      "id": "sandpaper_A",
+      "filename": "sandpaper_A.png",
+      "prompt_t2i": "ONE SINGLE sheet of folded sandpaper, classic sandpaper appearance with tan-brown gritty paper face and a darker paper back, partially folded over on itself so it shows both the grit side and the back, soft natural curl at the edges. Apply the tool orientation rule: shown laid diagonally across the frame, the folded edge in the LOWER-RIGHT of the image, the open corner extending diagonally toward the UPPER-LEFT, the gritty face clearly visible. NO dust attached — clean fresh sheet."
+    }
+  ],
+  "notes": "V2.1 fireplace level — 5-state chain (collapsed from 7), all foreground assets on GREEN chroma-key #00FF00 for clean cuts. Phase 5 now picks HSV chroma-key removal automatically when bg_color is green. Phase 3 chain switched to single-image I2I (no anchor lock) to preserve hole position consistency. Cobwebs (2) + debris (5) live as independent overlays — engine composites them on top of state 00_filthy during gameplay steps 1+2."
+}
