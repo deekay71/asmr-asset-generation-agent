@@ -1,0 +1,21 @@
+# Step type: dust_layer
+# An intermediate dust state — not the worst, not clean.
+
+LIGHTING: {{lighting}}
+CAMERA: {{camera}}
+TASK (dust_layer — visible directional dust additive layer on the source):
+{{diff_from_prev}}
+
+OBJECTS IN FRAME: {{object_count}}
+PRESERVE FROM PREV: {{preserve_from_prev}}
+
+DUST SPEC: visible additive dust ON TOP of the surface (NOT a tint, NOT integral). Directional streaks where dust has settled, heavier in crevices/joints/vents. Colour: grey-brown.
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+CONTAINMENT: {{containment}}
+BG: {{bg_directive}}

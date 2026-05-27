@@ -1,0 +1,21 @@
+# Step type: brick_repair
+# Replacement bricks installed in previously empty holes — raw joints, no mortar yet.
+
+LIGHTING: {{lighting}}
+CAMERA: {{camera}}
+TASK (brick_repair — install new bricks in the hole positions, leave joints raw):
+{{diff_from_prev}}
+
+OBJECTS IN FRAME: {{object_count}}
+PRESERVE FROM PREV: {{preserve_from_prev}}
+
+BRICK SPEC: new bricks slightly brighter than surrounding aged bricks (read as 'just placed'). Positions MUST match the holes from the prior state. Joints around new bricks visible as dark seams — NO mortar yet.
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+CONTAINMENT: {{containment}}
+BG: {{bg_directive}}

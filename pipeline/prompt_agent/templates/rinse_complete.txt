@@ -1,0 +1,21 @@
+# Step type: rinse_complete
+# Foam fully rinsed off — wet clean surface.
+
+LIGHTING: {{lighting}}
+CAMERA: {{camera}}
+TASK (rinse_complete — rinse all foam off, leaving clean wet surface):
+{{diff_from_prev}}
+
+OBJECTS IN FRAME: {{object_count}}
+PRESERVE FROM PREV: {{preserve_from_prev}}
+
+RINSE SPEC: ALL foam completely rinsed off — no residue, no trapped bubbles. Underlying surface clean (no stains, no dust). Optional wet sheen / slight darkening if the material suits it (fabric, fur).
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+CONTAINMENT: {{containment}}
+BG: {{bg_directive}}

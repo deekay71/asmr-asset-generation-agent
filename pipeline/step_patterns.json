@@ -1,0 +1,762 @@
+{
+  "schema_version": "1.0",
+  "_doc": "Reusable step-type patterns. Each state or sprite in a level's items_config.json can opt in via `step_type: \"<key>\"`. The pipeline appends the matching pattern's best_practices + sensory_words to that asset's prompt envelope. When the user gives feedback that should permanently change how a pattern is generated, append a new bullet to `best_practices` (or `common_pitfalls`). Never delete history — additive only.",
+  "patterns": {
+    "dirty_base": {
+      "description": "An asset state showing the WORST dirty/abandoned condition — the player's starting point.",
+      "required_qualities": [
+        "Thick blanket of dust / grime fully covering the surface",
+        "OVERWHELMING and FULLY-COVERING, not 'casual dirt'",
+        "Deeply embedded, neglected, decade-old feel",
+        "Surface character (mortar joints, vent slats, fabric weave) caked enough to be barely distinguishable"
+      ],
+      "common_pitfalls": [
+        "'Mildly dirty' reads as 'nothing to clean' — push much harder",
+        "Dust patches localised in corners instead of blanketing — push for FULL COVERAGE",
+        "Surface details still crisp under the dust — should be partially obscured"
+      ],
+      "best_practices": [
+        "Use phrases like 'abandoned in a warehouse for 20 years', 'forgotten in a derelict cabin', 'BLANKETED in a thick dense layer'",
+        "Specify dust direction: 'streaks running down', 'matted into joints', 'caked across the top'",
+        "Forbid debris-overlay items from being baked in (those are separate sprites)",
+        "Explicitly state coverage percentage: 'covers 95%, only tiny patches of base material visible'",
+        "If the level's style_mode requests photoreal, render with DSLR-style realism: realistic lens behavior (subtle vignetting, mild chromatic aberration on edges), realistic sensor grain, realistic material response (subtle plastic micro-roughness, 3D dirt crustiness with cast micro-shadows), realistic depth of field. If the level's style_mode is stylized 2D, stay matte and flat.",
+        "Aged-plastic discolouration: when the original asset colour is white/light, push toward NICOTINE-YELLOW / SMOKER-BROWN — describe as 'aged from decades of grease and smoker-stain discolouration, no remaining white'. Yellowing is most intense in the lower half (drip zone) and progressively darker toward corners.",
+        "Mold behaviour: green-black mold/moss should creep along the BOTTOM EDGE first, then climb UP both side edges (~30-50% of height), then spread along bottom-third of the front face. Use realistic biological terms: 'fuzzy colonies', 'visible filaments at edges', 'organic irregular boundaries'.",
+        "Long vertical dripping water-streak runs: describe as 'dried-mineral deposits with concentrated dark heads and trailing tails, gravity-drip flow direction, mineral-deposit ringing at the run tips'. Multiple streaks (5-15) starting from top edge and any bezels/seams.",
+        "Texture primary type: if the dirt is OUTDOOR / NEGLECTED-IN-WEATHER, primary type is MUDDY (crusted dried mud-cake, mud splatter, mud streaks, mud crust packed into recesses) rather than indoor-dust. State this explicitly.",
+        "Iterate-on-prior-output: when the user gives small/targeted feedback (1–3 specific fixes) rather than a full re-roll, source the next I2I from the prior staged PNG, not from the original reference — preserves what the user already accepted."
+      ],
+      "sensory_words": [
+        "disgusting",
+        "neglected",
+        "filthy",
+        "blanketed",
+        "abandoned",
+        "decade-old",
+        "ugly",
+        "muddy",
+        "crusted",
+        "mold-coated",
+        "drip-streaked",
+        "aged-yellow",
+        "nicotine-stained"
+      ],
+      "forbid": [
+        "casual / mild dirt — must be dramatic and fully covering",
+        "dirt outside the asset silhouette",
+        "specific debris items baked in (those are overlays)",
+        "cobwebs, visible hair, lint, or fibre threads — use muddy/dusty filth only unless the asset explicitly wants them",
+        "any text on the unit: brand names (Samsung, LG, Daikin, etc.), logos, model numbers, manufacturer marks — units must be unbranded",
+        "plastic showroom shine or specular highlights on heavily-dirty surfaces (the dirt kills the shine; only the cleanest sliver patches may show subtle plastic sheen)",
+        "wet sheen across the whole body (only the drip streaks have realistic dried-mineral residue)",
+        "cartoon flat shading or sketch-line outlines when the level's style_mode is photoreal"
+      ],
+      "candidates": [
+        {
+          "polarity": "best_practice",
+          "text": "Clearly define the cleaning or transformation state.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Use percentage to specify coverage levels for cleaning.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Describe specific textures (e.g., 'thick microfoam', 'swirls').",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Ensure consistent application of effects (e.g., 'consistently scrubbed').",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Describe dirt/grime appearance (e.g., 'less thick dust', 'yellow dirt').",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Request output free of text, zoom, or pre-assembly.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Maintain original item shape and size during transformations.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Specify distinct phases for multi-stage processes.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        }
+      ]
+    },
+    "dust_layer": {
+      "description": "An asset state still covered in dust but less extreme than the worst dirty base — typically intermediate.",
+      "required_qualities": [
+        "Visible dust coverage with directional streaks",
+        "Particularly heavy in crevices, joints, vents"
+      ],
+      "common_pitfalls": [
+        "Dust looks like noise/texture instead of an additive layer"
+      ],
+      "best_practices": [
+        "Always say the dust is ON TOP of the surface, not part of it",
+        "Specify dust color (grey-brown most common)"
+      ],
+      "sensory_words": [
+        "dense",
+        "heavy",
+        "old",
+        "dry"
+      ],
+      "forbid": [
+        "dust drawn as integral colour shift — must be additive layer ON TOP",
+        "dust outside the asset silhouette"
+      ],
+      "candidates": []
+    },
+    "stain_reveal": {
+      "description": "After dust is blown away, ugly embedded stains are revealed. Player thinks the surface is clean but it's actually stained underneath.",
+      "required_qualities": [
+        "Stains look deeply embedded, not surface-level",
+        "Yellow-brown / coffee / sewage-water palette",
+        "Patchy and uneven, not uniform",
+        "Stains visible on multiple surfaces (fins, fan blades, inner shell, etc.)"
+      ],
+      "common_pitfalls": [
+        "Stains look like simple discolouration instead of disgusting embedded grime",
+        "Even / symmetric distribution looks artificial — must be patchy and irregular"
+      ],
+      "best_practices": [
+        "Use 'deeply embedded, ugly, old, uneven, disgusting'",
+        "Phrase examples: 'like surfaces soaked in sewage water and old coffee for years', 'unsanitary patches', 'stubborn staining'",
+        "Explicitly remove dust: 'ALL the dust is GONE — but underneath the stains are revealed'",
+        "State that the player should feel revolted — this is the disgust peak",
+        "Ensure stain distribution is patchy, not uniform."
+      ],
+      "sensory_words": [
+        "disgusting",
+        "deeply embedded",
+        "stubborn",
+        "patchy",
+        "unsanitary",
+        "sewage-like",
+        "coffee-soaked",
+        "mouldy"
+      ],
+      "forbid": [
+        "uniform / even discolouration — must be patchy and irregular",
+        "loose dust still present — only embedded stain remains",
+        "subtle yellow tint — must read as DISGUSTING and deeply embedded",
+        "Stains must not be uniformly distributed."
+      ],
+      "candidates": [
+        {
+          "polarity": "forbid",
+          "text": "Stains must not be uniformly distributed.",
+          "seen_count": 1,
+          "first_seen": "2026-05-25T07:31:46",
+          "last_seen": "2026-05-25T07:31:46",
+          "from_assets": [
+            "02_dust_swept"
+          ],
+          "source_comment": "Stains were too uniform - need patchy distribution",
+          "rationale": "Uniform stains lack realism and visual interest.",
+          "promoted_at": "2026-05-25T19:31:20.307625",
+          "promoted_clause": "Stains must not be uniformly distributed."
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Ensure stain distribution is patchy, not uniform.",
+          "seen_count": 1,
+          "first_seen": "2026-05-25T07:32:09",
+          "last_seen": "2026-05-25T07:32:09",
+          "from_assets": [
+            "02_dust_swept"
+          ],
+          "source_comment": "Stains were too uniform - need patchy distribution",
+          "rationale": "Uniform stain distribution diminishes visual realism and variety.",
+          "promoted_at": "2026-05-25T19:31:20.307625",
+          "promoted_clause": "Ensure stain distribution is patchy, not uniform."
+        }
+      ]
+    },
+    "foam_application": {
+      "description": "An asset state showing fresh foam applied EVENLY across the entire surface.",
+      "required_qualities": [
+        "Thick uniform coverage across the FULL width / height of the asset",
+        "Fine bubbles, car-wash style",
+        "Foam stays WITHIN the asset silhouette — never drips into the background",
+        "Stained / dirty surface underneath is hidden by the foam"
+      ],
+      "common_pitfalls": [
+        "Foam concentrated in centre / blob shapes instead of even coverage",
+        "Foam dripping outside the asset silhouette into the green/grey background",
+        "Coverage gaps where you can still see the underlying surface",
+        "Foam looks like whipped cream / paint instead of soap bubbles"
+      ],
+      "best_practices": [
+        "Use 'thick UNIFORM layer of fine white car-wash style soap foam'",
+        "'Spread CONSISTENTLY across the full surface, no gaps, no patches missing foam'",
+        "'Every [fin / louvre / groove] completely coated'",
+        "'Small dense fizzy bubbles distributed evenly throughout'",
+        "Explicitly say 'foam stays within the asset silhouette — does NOT extend past the object outline'",
+        "Reference: car-wash foam, snow blanket, dense rich layer",
+        "Cascade vs coating: if the brief shows foam ENGULFING the asset (heavy cascade), use language like 'thick cascading curtain of dense soap suds with big pendant drips pouring off the bottom edge' and aim for ~75% coverage with the asset silhouette + any preserved overlays still readable through the foam. For light coatings, keep the 'thick UNIFORM layer of fine bubbles' framing.",
+        "Multi-source for foam style: pass a foam-style reference image via spec.reference_images as the FIRST source (style target) and the prev-state as the SECOND (canvas). Refs-first ordering lets the model adopt the foam form without losing the asset.",
+        "Foam form: when cascading, describe explicitly — 'big voluminous pendant drips hanging 60–80% of asset height below the unit', avoid 'smooth waxy frosting' (over-corrects to melted-wax) and avoid 'fine fizzy bubbles' (returns to popcorn-puff). Aim for 'piled-up dish-soap suds / sea foam'."
+      ],
+      "sensory_words": [
+        "thick",
+        "rich",
+        "dense",
+        "satisfying",
+        "fine-bubbled",
+        "creamy",
+        "soapy"
+      ],
+      "forbid": [
+        "foam concentrated in centre / blob shape",
+        "foam dripping outside the asset silhouette into the background",
+        "patches of bare surface visible through foam",
+        "foam looks like whipped cream / paint instead of soap bubbles",
+        "previous overlays (plastic bags, protective sheets) erased"
+      ],
+      "candidates": []
+    },
+    "scrub_pattern": {
+      "description": "Foam-covered surface with brushed-in scrub patterns — curved wavy cloth-wipe arcs.",
+      "required_qualities": [
+        "CURVED WAVY wipe-arc lines, flowing direction",
+        "Mixed-direction streaks (not all parallel)",
+        "Visible ridges where foam gathered, thinned valleys where scrubbed flat",
+        "Still WITHIN the asset silhouette"
+      ],
+      "common_pitfalls": [
+        "Perfect spirals — looks mechanical/stamped",
+        "Brush-furrow texture instead of cloth-wipe arcs",
+        "Uniform direction (all left-to-right) looks like a wallpaper pattern"
+      ],
+      "best_practices": [
+        "Use 'CURVED WAVY WIPE-ARC LINES, flowing cloth-wipe curves, mixed-direction arc patterns'",
+        "Forbid: 'NOT brush-furrows, NOT spirals, NOT stamped patterns'",
+        "Visible 'ridges where foam gathered' and 'thinned valleys where scrubbed flat'"
+      ],
+      "sensory_words": [
+        "satisfying",
+        "flowing",
+        "wavy",
+        "rhythmic"
+      ],
+      "forbid": [
+        "perfect spirals — looks mechanical / stamped",
+        "brush-furrow texture instead of cloth-wipe arcs",
+        "all streaks in one uniform direction"
+      ],
+      "candidates": []
+    },
+    "rinse_complete": {
+      "description": "After rinsing, the asset is clean and wet. Foam is fully gone.",
+      "required_qualities": [
+        "ALL foam completely rinsed off — no residue",
+        "Underlying surface is clean (no stains, no dust)",
+        "Optional: subtle wet sheen if it makes sense for the material"
+      ],
+      "common_pitfalls": [
+        "Residual foam patches left behind",
+        "Stains coming back through (should be gone by this point)"
+      ],
+      "best_practices": [
+        "Explicitly say 'ALL foam has been completely rinsed off'",
+        "'No stains, no dust, no foam — just the clean surface'",
+        "For metal/aluminium: 'glossy water sheen'; for fabric: 'darker wet tone, slightly clumped'"
+      ],
+      "sensory_words": [
+        "clean",
+        "fresh",
+        "wet",
+        "glossy"
+      ],
+      "forbid": [
+        "residual foam patches still visible",
+        "stains coming back through (should be gone by this point)"
+      ],
+      "candidates": []
+    },
+    "polish_complete": {
+      "description": "Final pristine state — the anchor. Brand new, satisfying, restored.",
+      "required_qualities": [
+        "Bright, fresh, like-new appearance",
+        "No dust, no stains, no foam, no wetness, no wear",
+        "All restoration work is invisible (mortar smoothed, bricks blended, finish polished)"
+      ],
+      "common_pitfalls": [
+        "Anchor looks GLOSSY (too plastic/3D-render) when the level wants matte 2D",
+        "Visible mortar lines between new and old parts — should be seamless"
+      ],
+      "best_practices": [
+        "Match the style_mode declaration (2d_game_asset_flat vs 3d_prop_render)",
+        "Use 'fresh, bright, glossy, like-new, satisfying, polished, brand-new'",
+        "For replacement bricks/parts: 'colour-matched to surrounding, no visible boundary'"
+      ],
+      "sensory_words": [
+        "fresh",
+        "bright",
+        "polished",
+        "like new",
+        "satisfying",
+        "rewarding",
+        "centerpiece"
+      ],
+      "forbid": [
+        "anchor looks glossy / plastic-render when style_mode is 2d_game_asset_flat",
+        "visible mortar lines / boundary between new and old parts"
+      ],
+      "candidates": []
+    },
+    "trash_overlay": {
+      "description": "A single trash / debris item that lives as an independent overlay sprite.",
+      "required_qualities": [
+        "Single object isolated on flat green chroma-key background",
+        "Centered, full object visible, soft drop shadow",
+        "Recognisable silhouette at thumbnail size"
+      ],
+      "common_pitfalls": [
+        "Multiple objects in one sprite (e.g. a pile)",
+        "Object touches the frame edge",
+        "Strong cast shadow that breaks the rembg cut"
+      ],
+      "best_practices": [
+        "Always say 'ONE SINGLE [item], isolated, single object'",
+        "Explicit 'centered, 15% padding around object'",
+        "Soft warm top-left lighting only"
+      ],
+      "sensory_words": [
+        "distinct",
+        "tappable"
+      ],
+      "forbid": [
+        "multiple objects in one sprite (must be ONE object)",
+        "object touches the frame edge",
+        "hard cast shadow that breaks rembg cut"
+      ],
+      "candidates": []
+    },
+    "tool_sprite": {
+      "description": "A cleaning tool the player drags onto the asset.",
+      "required_qualities": [
+        "Diagonal side-profile orientation: handle lower-right, business-end upper-left",
+        "Full tool length visible",
+        "NO water/foam/mist/motion lines/hands",
+        "Single coherent silhouette (never 'merged into two tools')"
+      ],
+      "common_pitfalls": [
+        "Business-end pointing AT the camera (foreshortened)",
+        "Merged-tool silhouette (two heads, two handles)",
+        "Embedded effects (water spray, foam, motion lines) — these are runtime VFX"
+      ],
+      "best_practices": [
+        "Always prefix prompt with 'ONE SINGLE [tool]'",
+        "Apply the level's `tool_orientation_rule` (auto-appended by pipeline)",
+        "Forbid: NO water, NO foam, NO mist, NO motion lines, NO hands"
+      ],
+      "sensory_words": [
+        "clean",
+        "dry",
+        "premium",
+        "product-photo"
+      ],
+      "forbid": [
+        "business-end pointing AT the camera (foreshortened)",
+        "merged-tool silhouette (two heads, two handles)",
+        "embedded VFX (water spray, foam, motion lines) — these are runtime"
+      ],
+      "candidates": []
+    },
+    "subpart_dusty": {
+      "description": "A detached sub-part in its initial dusty state. Sources from the parent's dirtiest chain state.",
+      "required_qualities": [
+        "Same dust style as the parent chain state",
+        "Part shown alone, detached, on flat green chroma-key bg",
+        "Shape must be true to the part (flat panel, mesh, cylinder, etc. — no warping)"
+      ],
+      "common_pitfalls": [
+        "Warped / trapezoidal shape (model adds perspective)",
+        "Dust style different from parent's dust style"
+      ],
+      "best_practices": [
+        "Source from `chain:<state>` so dust style is consistent",
+        "Explicitly say 'PERFECTLY FLAT RECTANGULAR PANEL, no perspective, no warping' for flat parts",
+        "Specify aspect ratio: 'about 4:5 aspect, slightly taller than wide'"
+      ],
+      "sensory_words": [
+        "detached",
+        "isolated"
+      ],
+      "forbid": [
+        "warped / trapezoidal shape — must be flat with no perspective",
+        "dust style different from the parent reference"
+      ],
+      "candidates": []
+    },
+    "brick_repair": {
+      "description": "A state where 4 (or N) replacement bricks have been placed into previously-empty holes. Joints visible, no mortar yet.",
+      "required_qualities": [
+        "New bricks slightly brighter than surrounding old bricks (read as 'just placed')",
+        "Brick positions match the hole positions from the previous state",
+        "Joints around new bricks visible as dark seams (no mortar yet)"
+      ],
+      "common_pitfalls": [
+        "Brick positions drift between holes-state and bricks-state",
+        "Mortar applied prematurely — that's the next step"
+      ],
+      "best_practices": [
+        "Always say 'NEW bricks installed in the SAME POSITIONS as the source image's holes'",
+        "'Slightly brighter and cleaner reddish-brown than the surrounding aged bricks'",
+        "'Joints around the new bricks are RAW and VISIBLE — NO mortar yet'"
+      ],
+      "sensory_words": [
+        "fresh",
+        "newly-placed"
+      ],
+      "forbid": [
+        "brick positions drift away from the prior hole positions",
+        "mortar applied prematurely — that's the NEXT step"
+      ],
+      "candidates": []
+    },
+    "mortar_apply": {
+      "description": "Mortar applied over joints — rough, uneven, freshly applied.",
+      "required_qualities": [
+        "Mortar fills the joints around the new bricks",
+        "Surface is bumpy / uneven (NOT smooth — that's the next step)",
+        "Visible trowel marks and raised ridges",
+        "Mortar overlaps slightly onto brick faces in places"
+      ],
+      "common_pitfalls": [
+        "Mortar already smooth — pre-empts the sanding step",
+        "Mortar perfectly straight along joint lines — looks fake"
+      ],
+      "best_practices": [
+        "Use 'rough wet grey mortar / cement, messy uneven grey lines, bumpy ridges'",
+        "Explicitly say 'NOT smooth, NOT polished — looks freshly applied and unfinished'",
+        "'Overlaps a bit onto the brick faces in places'"
+      ],
+      "sensory_words": [
+        "rough",
+        "wet",
+        "unfinished",
+        "freshly-applied"
+      ],
+      "forbid": [
+        "mortar already smooth — pre-empts the sanding step",
+        "mortar lines perfectly straight along joints"
+      ],
+      "candidates": []
+    },
+    "background_scene": {
+      "description": "An opaque scene plate (wall / table / floor) that sits behind chain states at runtime.",
+      "required_qualities": [
+        "OPAQUE — no transparency, no chroma key",
+        "Surface texture visible (wallpaper, wood grain, stucco)",
+        "Lighting matches the foreground chain anchor",
+        "Soft-focus / low detail so foreground sprites pop"
+      ],
+      "common_pitfalls": [
+        "Background too detailed — fights foreground",
+        "Lighting direction inconsistent with the anchor"
+      ],
+      "best_practices": [
+        "I2I from the chain anchor with 'remove the [item] entirely, show only the wall/table behind'",
+        "Specify surface texture explicitly (wallpaper pattern, wood grain, stucco bumps)",
+        "Match anchor's lighting direction (warm top-left)"
+      ],
+      "sensory_words": [
+        "soft",
+        "atmospheric",
+        "warm"
+      ],
+      "forbid": [
+        "scene plate too detailed — competes with foreground",
+        "lighting direction inconsistent with the chain anchor",
+        "uses chroma key — backgrounds are opaque scene plates"
+      ],
+      "candidates": []
+    },
+    "disassembly_layout": {
+      "description": "A composite layout image showing an asset and ALL its detached cleaning parts together in one frame, in correct relative scale — used at the 'cover off' step of cleaning chains where the user needs to see what came off what.",
+      "required_qualities": [
+        "Every detached part visible in the same image alongside the bare/remaining asset",
+        "Correct relative scaling — parts must look like they came off the asset and could be re-fitted",
+        "Visually distinguishable parts (no two parts identical unless they are functional duplicates like filter pairs)",
+        "Same dirt style / palette / material condition across every element (they all came off the same dirty asset)"
+      ],
+      "common_pitfalls": [
+        "Inventing extra parts that don't exist on the real asset",
+        "Two visually-similar parts (e.g. outer shell + front cover) rendered identically",
+        "Wrong scale — filter larger than shell, etc.",
+        "Treating it like an exploded-view technical diagram with arrows/labels/borders"
+      ],
+      "best_practices": [
+        "Name each part by its DISTINGUISHING VISUAL FEATURE, not by jargon — e.g. 'curved 3D body with bottom outlet vent' for outer shell, 'slim flat panel with intake-grille pattern' for front cover, 'horizontal strip of parallel pivoting blades' for outlet louver. This disambiguates parts the model would otherwise conflate.",
+        "Specify relative widths/heights explicitly between parts: 'shell ≈ chassis width', 'each filter ≈ 35–45% of chassis width and arranged so two side-by-side match the chassis width'.",
+        "Use STACKED HORIZONTAL ROWS for the layout (one part per row, plus a row for the filter pair) — clearer than a single row of 4+ parts. Specify approximate row heights as % of frame.",
+        "Tell the model to leave small breathing gaps between rows (~2–5%) with the background wall visible — no panels, no borders.",
+        "Lock the dirt condition: 'every part shares the same matte muddy-dirty condition (aged-yellow plastic, muddy dust crust, green-black mold) — no part cleaner than another'.",
+        "If iterating from a prior layout output, name what's wrong with it explicitly so the model knows what NOT to inherit."
+      ],
+      "sensory_words": [
+        "disassembled",
+        "exploded",
+        "maintenance-view",
+        "laid-out",
+        "nested-pair"
+      ],
+      "forbid": [
+        "labels, arrows, numbers, dimension lines, callouts, borders, panels, dividers, text of any kind",
+        "an assembled version of the asset appearing anywhere in the composite",
+        "two functionally-different parts (e.g., outer shell vs. front cover) looking identical",
+        "scaling errors — filters larger than shells, twin parts at different sizes, etc.",
+        "inventing parts that aren't on the source asset (e.g., a separate 'inner shell' when the real anatomy has only cover + shell + filters)",
+        "complex backgrounds — keep the wall flat and consistent with the source"
+      ],
+      "candidates": []
+    },
+    "_cross_session": {
+      "description": "Cross-session patterns learned from approved + regen + deny verdicts.",
+      "best_practices": [],
+      "forbid": [],
+      "candidates": [
+        {
+          "polarity": "best_practice",
+          "text": "Start with `STEP:` to define the current phase of the action.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Use `CONCEPT:` to detail the main visual transformation.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Add `IMPROVE:` for iterative refinement of specific visual details.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Refer to input images by number (e.g., 'image 1', 'image 2').",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Specify visual references for desired style and texture.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Ensure consistent coverage of cleaning or visual effects.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Maintain object shape and size across transformations.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Clearly define visual characteristics of dirt, grime, or foam.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        }
+      ],
+      "required_qualities": [],
+      "common_pitfalls": [],
+      "sensory_words": []
+    }
+  },
+  "history": [
+    {
+      "ts": "2026-05-25",
+      "pattern": "foam_application",
+      "feedback": "Foam coverage was uneven and concentrated in the centre. Bags from previous step were lost in regen.",
+      "outcome": "Added best practices: 'spread CONSISTENTLY across the full width/height', 'preserve bag/plastic-bag overlays from previous state', 'no patches missing foam, no concentration in one spot'."
+    },
+    {
+      "ts": "2026-05-25",
+      "pattern": "scrub_pattern",
+      "feedback": "Initial scrub looked like brush-furrows; user wanted cloth-wipe arcs.",
+      "outcome": "Forbade 'brush-furrows' and 'spirals' explicitly; required 'curved wavy cloth-wipe arcs, mixed-direction flowing'."
+    },
+    {
+      "ts": "2026-05-25",
+      "pattern": "dirty_base",
+      "feedback": "Initial dirty states were not dramatic enough — players couldn't see what to clean.",
+      "outcome": "Locked in 'OVERWHELMING, FULLY-COVERING, ABANDONED FOR 20 YEARS' language. Pushed coverage percentages explicitly ('covers 95%')."
+    },
+    {
+      "ts": "2026-05-25",
+      "pattern": "tool_sprite",
+      "feedback": "Initial tools had business-end pointing at camera (foreshortened). Spray bottle merged into two tools.",
+      "outcome": "Locked diagonal side-profile rule. Added 'ONE SINGLE [tool]' anti-merge phrase to every tool prompt."
+    },
+    {
+      "ts": "2026-05-25T07:31:37",
+      "pattern": "dirty_base",
+      "asset_id": "00_trashed",
+      "verdict": "regen",
+      "comment": "Leaves should stay strictly within the keyboard footprint, not bleed past edges",
+      "distilled_clause": "Leaves must not extend beyond the keyboard footprint.",
+      "polarity": "forbid"
+    },
+    {
+      "ts": "2026-05-25T07:31:46",
+      "pattern": "stain_reveal",
+      "asset_id": "02_dust_swept",
+      "verdict": "regen",
+      "comment": "Stains were too uniform - need patchy distribution",
+      "distilled_clause": "Stains must not be uniformly distributed.",
+      "polarity": "forbid"
+    },
+    {
+      "ts": "2026-05-25T07:32:05",
+      "pattern": "dirty_base",
+      "asset_id": "00_trashed",
+      "verdict": "regen",
+      "comment": "Leaves should stay strictly within the keyboard footprint, not bleed past edges",
+      "distilled_clause": "Leaves must not extend beyond the keyboard footprint.",
+      "polarity": "forbid"
+    },
+    {
+      "ts": "2026-05-25T07:32:09",
+      "pattern": "stain_reveal",
+      "asset_id": "02_dust_swept",
+      "verdict": "regen",
+      "comment": "Stains were too uniform - need patchy distribution",
+      "distilled_clause": "Ensure stain distribution is patchy, not uniform.",
+      "polarity": "best_practice"
+    },
+    {
+      "ts": "2026-05-25T19:31:20.307625",
+      "pattern": "dirty_base",
+      "feedback": "L6 AC photoreal session: identified that muddy-crust texture (not just dust) is the right primary read for outdoor/neglected assets; cobwebs/hair/lint are over-applied by default and should be opt-in; logos/brand text leak through despite chroma-key prompts; plastic shine survives heavy dirt unless explicitly killed; photoreal style needs DSLR-language not just 'realistic'.",
+      "outcome": "Added best_practices for: photoreal style toggle, aged-yellow plastic colour push, mold creep behaviour, dripping water-streak language, muddy-vs-dust texture switch, iterate-on-prior-output rule. Added forbids for: cobwebs/hair/lint, brand text, plastic showroom shine, cartoon flat shading under photoreal. Removed vestigial L7 'Leaves must not extend beyond the keyboard footprint' rule that was leaking into every level."
+    },
+    {
+      "ts": "2026-05-25T19:31:20.307625",
+      "pattern": "stain_reveal",
+      "feedback": "Two candidates (uniform-distribution forbid + patchy-distribution best_practice) had been awaiting promotion. Validated by L6 AC stain step planning.",
+      "outcome": "Promoted both candidates to permanent rules."
+    },
+    {
+      "ts": "2026-05-25T19:31:20.307625",
+      "pattern": "foam_application",
+      "feedback": "L6 AC foam step required cascade-style foam (heavy drips off bottom), not the default 'fine bubbles uniform layer'. Initial attempts on Flash produced popcorn-puff texture; switching to Pro + multi-source (foam-style ref FIRST, prev-state ref SECOND) landed the cascade.",
+      "outcome": "Added best_practices for: cascade-vs-coating distinction, multi-source refs-first ordering for style targets, cascade form vocabulary (avoid 'smooth waxy frosting' and 'fine fizzy bubbles' — aim for 'piled-up dish-soap suds')."
+    },
+    {
+      "ts": "2026-05-25T19:31:20.307625",
+      "pattern": "disassembly_layout",
+      "feedback": "L6 AC step 1 (Tháo nắp/vỏ/2 filter) needed a composite layout showing all detached parts + bare chassis in one frame at correct scale. Multiple iterations failed with conflated outer-shell/inner-shell, wrong filter orientation, single-row layout. Landed with explicit part-by-distinguishing-feature naming + stacked-row layout + iterate-on-prior-output for small fixes.",
+      "outcome": "Created new pattern with best_practices for: name-by-distinguishing-feature, explicit relative scaling, stacked rows over single row, breathing gaps, dirt-condition lock across all parts. Created template disassembly_layout.txt."
+    },
+    {
+      "ts": "2026-05-27T08:03:40Z",
+      "step_type": "_cross_session",
+      "outcome": "analysis",
+      "summary": "Successful prompts are highly descriptive, utilizing `STEP`, `CONCEPT`, and `IMPROVE` sections for clear instructions and iterative refinements. Precise visual references, explicit texture descriptions, and clear coverage requirements consistently lead to accepted outputs, while also ensuring object integrity.",
+      "candidates_added": 16
+    }
+  ]
+}

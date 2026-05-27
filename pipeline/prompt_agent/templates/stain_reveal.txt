@@ -1,0 +1,21 @@
+# Step type: stain_reveal
+# Dust gone — embedded stains revealed underneath.
+
+LIGHTING: {{lighting}}
+CAMERA: {{camera}}
+TASK (stain_reveal — remove the loose dust/dirt to expose embedded stains):
+{{diff_from_prev}}
+
+OBJECTS IN FRAME: {{object_count}}
+PRESERVE FROM PREV: {{preserve_from_prev}}
+
+STAIN SPEC: yellow-brown / coffee-soaked / sewage-water palette. Deeply embedded, patchy, uneven — NOT uniform discolouration. Stains visible across all relevant surfaces. Loose dust is GONE — the surface is the staining itself.
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+CONTAINMENT: {{containment}}
+BG: {{bg_directive}}

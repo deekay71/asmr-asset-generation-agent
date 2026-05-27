@@ -1,0 +1,21 @@
+# Step type: polish_complete
+# Final pristine restored state — the anchor.
+
+LIGHTING: {{lighting}}
+CAMERA: {{camera}}
+TASK (polish_complete — fully restored final state):
+{{diff_from_prev}}
+
+OBJECTS IN FRAME: {{object_count}}
+PRESERVE FROM PREV: {{preserve_from_prev}}
+
+FINISH SPEC: bright, fresh, like-new. No dust, no stains, no foam, no wetness, no wear. Restoration work is invisible (mortar smoothed, new bricks blended, finish polished). Matches the style_mode (2d_game_asset_flat or 3d_prop_render).
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+CONTAINMENT: {{containment}}
+BG: {{bg_directive}}

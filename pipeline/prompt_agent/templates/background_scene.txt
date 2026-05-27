@@ -1,0 +1,18 @@
+# Step type: background_scene
+# An opaque scene plate (wall, table, floor) used at runtime BEHIND the chain states.
+
+LIGHTING: matches the chain anchor — same warm top-left direction and gradient
+CAMERA: same as the chain anchor
+TASK (background_scene — remove the foreground asset, leave only the scene plate):
+{{diff_from_prev}}
+
+SURFACE SPEC: {{surface_spec}}
+TEXTURE: clearly visible but understated. Soft-focus / low detail so foreground sprites pop.
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+OPAQUE — DO NOT use chroma key. Final scene plate.

@@ -1,59 +1,31 @@
-# Environment
+# Secrets
 .env
-.env.local
-.env.*.local
+gemini_service_account.json
+*.pem
+*.key
 
 # Python
 __pycache__/
-*.py[cod]
+*.pyc
 *.pyo
 *.pyd
 .Python
-*.egg
 *.egg-info/
-dist/
-build/
-eggs/
-parts/
-var/
-sdist/
-develop-eggs/
-.installed.cfg
-lib/
-lib64/
-venv/
 .venv/
-env/
-ENV/
-.virtualenv/
-pip-log.txt
-pip-delete-this-directory.txt
+venv/
 
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb
-
-# OS
+# macOS
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
 
-# IDEs
-.idea/
+# Editor
 .vscode/
+.idea/
 *.swp
-*.swo
-*~
 
-# Logs
-*.log
-logs/
+# Generated sessions (per-user, large, regenerable)
+runs/
+/tmp/*
 
-# Temp / staging outputs (keep final/, remove staging/)
-projects/*/staging/
-projects/*/raw/
-projects/*/temp/
+# Level staging (regenerable from CLI)
+projects/**/staging/
+projects/**/style_comparison.html

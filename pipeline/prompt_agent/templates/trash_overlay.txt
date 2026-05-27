@@ -1,0 +1,17 @@
+# Step type: trash_overlay
+# A single overlay sprite (leaf, debris, gum, wrapper, cobweb…).
+
+LIGHTING: {{lighting}}
+CAMERA: {{camera}}
+TASK (trash_overlay — standalone overlay sprite):
+{{subject_description}}
+
+ISOLATION: ONE SINGLE object, centered, fully visible, ~15% padding around. NO additional objects, NO grouping, NO pile. Soft drop shadow under the object only.
+
+BEST PRACTICES (auto):
+{{best_practices_block}}
+
+DO NOT (auto-forbid):
+{{forbid_block}}
+
+BG: {{bg_directive}}
