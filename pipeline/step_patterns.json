@@ -52,7 +52,88 @@
         "wet sheen across the whole body (only the drip streaks have realistic dried-mineral residue)",
         "cartoon flat shading or sketch-line outlines when the level's style_mode is photoreal"
       ],
-      "candidates": []
+      "candidates": [
+        {
+          "polarity": "best_practice",
+          "text": "Clearly define the cleaning or transformation state.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Use percentage to specify coverage levels for cleaning.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Describe specific textures (e.g., 'thick microfoam', 'swirls').",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Ensure consistent application of effects (e.g., 'consistently scrubbed').",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Describe dirt/grime appearance (e.g., 'less thick dust', 'yellow dirt').",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Request output free of text, zoom, or pre-assembly.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Maintain original item shape and size during transformations.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Specify distinct phases for multi-stage processes.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ]
+        }
+      ]
     },
     "dust_layer": {
       "description": "An asset state still covered in dust but less extreme than the worst dirty base — typically intermediate.",
@@ -485,6 +566,104 @@
         "complex backgrounds — keep the wall flat and consistent with the source"
       ],
       "candidates": []
+    },
+    "_cross_session": {
+      "description": "Cross-session patterns learned from approved + regen + deny verdicts.",
+      "best_practices": [],
+      "forbid": [],
+      "candidates": [
+        {
+          "polarity": "best_practice",
+          "text": "Start with `STEP:` to define the current phase of the action.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Use `CONCEPT:` to detail the main visual transformation.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Add `IMPROVE:` for iterative refinement of specific visual details.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Refer to input images by number (e.g., 'image 1', 'image 2').",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Specify visual references for desired style and texture.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Ensure consistent coverage of cleaning or visual effects.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Maintain object shape and size across transformations.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        },
+        {
+          "polarity": "best_practice",
+          "text": "Clearly define visual characteristics of dirt, grime, or foam.",
+          "seen_count": 1,
+          "first_seen": "2026-05-27T08:03:40Z",
+          "last_seen": "2026-05-27T08:03:40Z",
+          "from_assets": [
+            "cross_session_learner"
+          ],
+          "source_comment": "cross-session learner"
+        }
+      ],
+      "required_qualities": [],
+      "common_pitfalls": [],
+      "sensory_words": []
     }
   },
   "history": [
@@ -571,6 +750,13 @@
       "pattern": "disassembly_layout",
       "feedback": "L6 AC step 1 (Tháo nắp/vỏ/2 filter) needed a composite layout showing all detached parts + bare chassis in one frame at correct scale. Multiple iterations failed with conflated outer-shell/inner-shell, wrong filter orientation, single-row layout. Landed with explicit part-by-distinguishing-feature naming + stacked-row layout + iterate-on-prior-output for small fixes.",
       "outcome": "Created new pattern with best_practices for: name-by-distinguishing-feature, explicit relative scaling, stacked rows over single row, breathing gaps, dirt-condition lock across all parts. Created template disassembly_layout.txt."
+    },
+    {
+      "ts": "2026-05-27T08:03:40Z",
+      "step_type": "_cross_session",
+      "outcome": "analysis",
+      "summary": "Successful prompts are highly descriptive, utilizing `STEP`, `CONCEPT`, and `IMPROVE` sections for clear instructions and iterative refinements. Precise visual references, explicit texture descriptions, and clear coverage requirements consistently lead to accepted outputs, while also ensuring object integrity.",
+      "candidates_added": 16
     }
   ]
 }

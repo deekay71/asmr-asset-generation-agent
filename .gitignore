@@ -21,3 +21,11 @@ venv/
 .vscode/
 .idea/
 *.swp
+
+# Generated sessions (per-user, large, regenerable)
+runs/
+/tmp/*
+
+# Level staging (regenerable from CLI)
+projects/**/staging/
+projects/**/style_comparison.html

@@ -19,6 +19,17 @@ V6's new headline feature: **a self-improving prompt agent** that gets smarter e
 | **V3+ schema fields** | `chain_consistency_contract`, `asmr_framing`, `style_mode`, `containment_rule` — all optional, auto-injected. |
 | **V2 features still work** | Per-asset I2I via `source`, multi-anchor `sources: [...]`, `--state` / `--sprite` / `--tool` selectors, `--dry-run`, `--yes`, partial-promote via `--only-approved`. |
 
+## Web UI (V6.1)
+
+```bash
+pip install -r pipeline/requirements.txt
+streamlit run pipeline/ui/Home.py
+```
+
+Open http://localhost:8501. Tabs: **Home** dashboard · **Generate** (every phase + 🔍 prompt preview, live log streaming, dry-run cost) · **Review** (approve/reject/regen+comment → saves `approved_ids.json` / `regen_queue.json` directly + one-click `--learn`) · **Memory** (CRUD over `step_patterns.json` + candidate promotion) · **Insights** (cost dashboard + approval-rate by step_type) · **How It Works**.
+
+The CLI still works exactly as before — the UI shells out to it.
+
 ## Quick Start
 
 ```bash
